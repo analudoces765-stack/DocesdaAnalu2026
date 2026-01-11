@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Doces Da Analu</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<style>
+:root{
+  --rosa:#e91e63;
+  --texto:#4a1f2c;
+  --whatsapp:#25D366;
+}
+
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  min-height:100vh;
+  font-family:'Poppins',sans-serif;
+  background:linear-gradient(160deg,#ff5fa2,#ffb6d5);
+  display:flex;
+  justify-content:center;
+  padding:24px;
+}
+
+.container{
+  width:100%;
+  max-width:420px;
+  text-align:center;
+}
+
+.doces{
+  font-size:clamp(34px, 8vw, 42px);
+  font-weight:800;
+  letter-spacing:4px;
+  line-height:1;
+}
+.analu{
+  font-family:'Pacifico',cursive;
+  font-size:60px;
+  color:#b356a6;
+  display:block;
+  margin-top:-6px;
+}
+
+.subtitulo{
+  margin-top:10px;
+  color:#fff;
+  font-size:14px;
+}
+
+.video-container{
+  width:180px;
+  margin:18px auto 20px;
+  border-radius:15px;
+  overflow:hidden;
+  aspect-ratio:9/16;
+  box-shadow:0 8px 20px rgba(0,0,0,0.2);
+}
+
+.video-container iframe{
+  width:100%;
+  height:100%;
+  border:none;
+}
+
+.card{
+  background:#fff;
+  border-radius:28px;
+  padding:26px 22px;
+  box-shadow:0 18px 40px rgba(0,0,0,.18);
+}
+
+.lista{
+  list-style:none;
+  padding:0;
+  margin:0 0 18px;
+}
+
+.lista li{
+  padding:12px;
+  margin-bottom:10px;
+  background:#e6eaf0;
+  border-radius:16px;
+  font-weight:600;
+  color:var(--texto);
+}
+
+.pedido{
+  text-align:left;
+  margin-top:22px;
+}
+
+.pedido h3{
+  color:var(--rosa);
+  font-size:16px;
+  margin-bottom:8px;
+}
+
+.pedido select{
+  width:100%;
+  padding:10px;
+  border-radius:12px;
+  border:1px solid #cfa1b8;
+  margin-bottom:10px;
+}
+
+.sabores-check label{
+  display:block;
+  font-size:14px;
+  margin-bottom:6px;
+}
+
+.sabores-check input:disabled{
+  opacity:0.5;
+}
+
+.limite-msg{
+  font-size:13px;
+  color:#e91e63;
+  margin-top:8px;
+  font-weight:600;
+}
+
+.botao-acao{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  padding:14px;
+  border-radius:26px;
+  color:#ffffff;
+  font-weight:700;
+  text-decoration:none;
+  width:100%;
+  border:none;
+  margin-top:14px;
+  cursor:pointer;
+}
+
+.pedir-whats{background:var(--whatsapp);}
+.instagram{background:linear-gradient(45deg,#0f4ca8,#dc2743,#bc1888);}
+
+footer{
+  margin-top:16px;
+  color:#ffffff;
+  font-weight:600;
+}
+
+/* BUSCA FINAL */
+.busca-final{
+  background:#e0edee;
+  margin-top:28px;
+  padding:22px;
+  border-radius:26px;
+  box-shadow:0 12px 30px rgba(0,0,0,0.18);
+}
+
+.busca-final h3{
+  color:#e91e63;
+  font-size:16px;
+  margin-bottom:12px;
+}
+
+.busca-final input{
+  width:100%;
+  padding:14px;
+  border-radius:18px;
+  border:1px solid #e3cde6;
+  margin-bottom:16px;
+}
+
+.galeria-links{
+  display:grid;
+  gap:12px;
+}
+
+.pin-card{
+  padding:16px;
+  border-radius:18px;
+  font-weight:700;
+  text-decoration:none;
+  display:flex;
+  justify-content:center;
+  color:#7e9757;
+}
+
+/* CLASSE ESCONDIDO */
+.escondido{
+  display:none;
+}
+
+.btn-casamento{background:linear-gradient(135deg,#e075e0,#a51c87);}
+.btn-flores{background:linear-gradient(135deg,#ff9a9e,#fecfef); color:#d63384;}
+.btn-safari{background:linear-gradient(135deg,#f6d365,#fda085);}
+.btn-personalizado{background:linear-gradient(135deg,#b7c2f5,#d8d3dd);}
+.btn-aniversario{background:linear-gradient(135deg,#fbc2eb,#a6c1ee); color:#6f42c1;}
+.btn-futebol{background:linear-gradient(135deg,#43e97b,#38f9d7); color:#44202a;}
+.btn-praia{background:linear-gradient(135deg,#7cc26a,#bae597); color:#111814;}
+.btn-produções{background:linear-gradient(135deg,#89f7fe,#66a6ff); color:#1e1e1e;}
+.btn-morango{background:linear-gradient(135deg,#fbc7c7,#e40c0c); color:#b33a3a;}
+.btn-morango-recheado{background:linear-gradient(135deg,#d12831,#da3434); color:#c23434}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<span class="doces">DOCES</span>
+<span class="analu">da Analu</span>
+<div class="subtitulo">cardápio digital 💗</div>
+
+<div class="video-container">
+<iframe src="https://www.youtube.com/embed/MfYpWyL2XSA" allowfullscreen></iframe>
+</div>
+
+<div class="card">
+
+<ul class="lista">
+<li>Brigadeiro ao Leite</li>
+<li>Brigadeiro Meio Amargo</li>
+<li>Ninho</li>
+<li>Ninho Colorido</li>
+<li>Surpresa de Uva</li>
+<li>Casadinho</li>
+<li>Beijinho</li>
+<li>Amendoim</li>
+<li>Prestígio</li>
+</ul>
+
+<div class="pedido">
+<h3>Monte seu pedido</h3>
+
+<select id="combo">
+<option value="">Escolha o combo</option>
+<option>Caixinha da Felicidade (4 brigadeiros)</option>
+<option>25 Brigadeiros</option>
+<option>Meio cento (50 doces)</option>
+<option>Cento (100 doces)</option>
+</select>
+
+<div class="sabores-check">
+<label><input type="checkbox" value="Brigadeiro ao Leite"> Brigadeiro ao Leite</label>
+<label><input type="checkbox" value="Meio Amargo"> Meio Amargo</label>
+<label><input type="checkbox" value="Ninho"> Ninho</label>
+<label><input type="checkbox" value="Ninho Colorido"> Ninho Colorido</label>
+<label><input type="checkbox" value="Surpresa de Uva"> Surpresa de Uva</label>
+<label><input type="checkbox" value="Casadinho"> Casadinho</label>
+<label><input type="checkbox" value="Beijinho"> Beijinho</label>
+<label><input type="checkbox" value="Amendoim"> Amendoim</label>
+<label><input type="checkbox" value="Prestígio"> Prestígio</label>
+</div>
+
+<p id="limite-msg" class="limite-msg"></p>
+
+<button class="botao-acao pedir-whats" onclick="pedirWhats()">
+<i class="fab fa-whatsapp"></i> Pedir no WhatsApp
+</button>
+
+<a class="botao-acao instagram" href="https://instagram.com/_docesdaanalu_" target="_blank">
+<i class="fab fa-instagram"></i> Instagram
+</a>
+
+</div>
+</div>
+
+<div class="busca-final">
+<h3>Busque no nosso instagram ou procure outras ideias 💗</h3>
+<input type="text" id="pesquisa" placeholder="Ex: chá de casa nova, flores..." onkeyup="filtrarLinks()">
+
+<div class="galeria-links">
+
+<a href="https://www.instagram.com/reel/DNvrp8gQAmZ/" target="_blank" class="pin-card btn-casamento" data-tags="casamento">💍 Casamento</a>
+
+
+<a href="https://pin.it/4dRJuIWF4" target="_blank" class="pin-card btn-aniversario" data-tags="aniversário festa bolo">🎉 Aniversário</a>
+<a href="https://pin.it/7wKmMgmer" target="_blank" class="pin-card btn-produções" data-tags="outras opcoes outras ideia opções tradicional Beijinho">👩🏻‍🍳🥄 Produções</a>
+
+<!-- ESCONDIDOS -->
+<a href="https://www.instagram.com/reel/DRdLQcqAJPZ/?igsh=MWxmejlwcnV6cGE0cA==" class="pin-card btn-personalizado escondido" data-tags="casa nova novo lar cha xa ">🏠 Casa Nova</a>
+<a href="https://www.instagram.com/reel/DRYVtQUgKLY/?igsh=NDB3d3ZzcXZkcTU1" class="pin-card btn-praia escondido" data-tags="praia verão tropical mar piscina">🌞 Praia</a>
+<a href="https://pin.it/6Kia3s9BI" class="pin-card btn-flores escondido" data-tags="flores rosas ">🌸flores</a>
+<a href="https://pin.it/76OG20vfj" class="pin-card btn-futebol escondido" data-tags="futebol esporte time copa neymar flamengo bola">⚽ Futebol</a>
+<a href="https://pin.it/4m4yQpWGs" class="pin-card btn-safari escondido" data-tags="animais safari bicho criança personagens fundo do mar disney 1 ano 2 anos ">👧🏻🧒🏽infantil</a>
+<a href="https://pin.it/14eiFPe0p" class="pin-card btn-morango escondido" data-tags="morango morango do amor morango recheado ">🍓 morango do amor</a>
+<a href="https://pin.it/4QfRNYQbI" class="pin-card btn-flores escondido" data-tags="morango recheado chocolate">🍫🍓 coxinha de morango</a>
+</div>
+</div>
+
+<footer>Encomendas abertas 💗</footer>
+</div>
+
+<script>
+const comboSelect = document.getElementById("combo");
+const checkboxes = document.querySelectorAll(".sabores-check input");
+const msgLimite = document.getElementById("limite-msg");
+
+let limiteSabores = 0;
+
+comboSelect.addEventListener("change", () => {
+  const combo = comboSelect.value;
+
+  if (combo.includes("Caixinha")) limiteSabores = 4;
+  else if (combo.includes("25")) limiteSabores = 2;
+  else if (combo.includes("50")) limiteSabores = 2;
+  else if (combo.includes("100")) limiteSabores = 4;
+  else limiteSabores = 0;
+
+  checkboxes.forEach(cb => {
+    cb.checked = false;
+    cb.disabled = false;
+  });
+
+  msgLimite.innerText = limiteSabores
+    ? `Você pode escolher até ${limiteSabores} sabores 💗`
+    : "";
+});
+
+checkboxes.forEach(cb => {
+  cb.addEventListener("change", () => {
+    const selecionados = document.querySelectorAll(".sabores-check input:checked");
+
+    if (selecionados.length >= limiteSabores) {
+      checkboxes.forEach(box => {
+        if (!box.checked) box.disabled = true;
+      });
+    } else {
+      checkboxes.forEach(box => box.disabled = false);
+    }
+  });
+});
+
+function pedirWhats(){
+  const combo = comboSelect.value;
+  const sabores = [...document.querySelectorAll(".sabores-check input:checked")]
+    .map(s => s.value).join(", ");
+
+  if(!combo || !sabores) return;
+
+  const msg = `Oi! 💕 Gostaria de saber o valor do ${combo} com os sabores: ${sabores}`;
+  window.open(`https://wa.me/558396905025?text=${encodeURIComponent(msg)}`,"_blank");
+}
+
+function filtrarLinks(){
+  const texto = document.getElementById("pesquisa").value.toLowerCase();
+  const cards = document.querySelectorAll(".pin-card");
+
+  cards.forEach(card=>{
+    const tags = card.getAttribute("data-tags").toLowerCase();
+    const nome = card.innerText.toLowerCase();
+
+    if(texto === ""){
+      card.style.display = card.classList.contains("escondido") ? "none" : "flex";
+      return;
+    }
+
+    card.style.display =
+      (tags.includes(texto) || nome.includes(texto)) ? "flex" : "none";
+  });
+}
+</script>
+
+</body>
+</html>
