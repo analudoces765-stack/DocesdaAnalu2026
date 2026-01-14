@@ -32,7 +32,7 @@ body{margin:0;min-height:100vh;font-family:'Poppins',sans-serif;background:linea
 .botao-acao{display:flex;align-items:center;justify-content:center;gap:10px;padding:14px;border-radius:26px;color:#ffffff;font-weight:700;text-decoration:none;width:100%;border:none;margin-top:14px;cursor:pointer;}
 .pedir-whats{background:var(--whatsapp);}
 .instagram{background:linear-gradient(45deg,#0f4ca8,#dc2743,#bc1888);}
-footer{margin-top:16px;color:#ffffff;font-weight:600;}
+footer{margin-top:16px;color:#ebece4;font-weight:600;}
 .busca-final{background:#e0edee;margin-top:28px;padding:22px;border-radius:26px;box-shadow:0 12px 30px rgba(0,0,0,0.18);}
 .busca-final h3{color:#e91e63;font-size:16px;margin-bottom:12px;}
 .busca-final input{width:100%;padding:14px;border-radius:18px;border:1px solid #e3cde6;margin-bottom:16px;}
@@ -49,6 +49,14 @@ footer{margin-top:16px;color:#ffffff;font-weight:600;}
 .btn-produções{background:linear-gradient(135deg,#89f7fe,#66a6ff); color:#1e1e1e;}
 .btn-morango{background:linear-gradient(135deg,#fbc7c7,#e40c0c); color:#b33a3a;}
 .btn-morango-recheado{background:linear-gradient(135deg,#d12831,#da3434); color:#c23434}
+
+.info-profissional-final p,
+.info-profissional-final strong{ 
+  color:#4a1f2c;   
+  font-weight:700;
+}
+
+
 </style>
 </head>
 
@@ -125,7 +133,13 @@ footer{margin-top:16px;color:#ffffff;font-weight:600;}
 </div>
 </div>
 
-<footer>Encomendas abertas 💗</footer>
+<div class="info-profissional-final">
+  <p>📍 <strong>JOÃO PESSOA/CABEDELO-PB</strong></p>
+  <p>⏰ Pedidos com <strong>24h de antecedência</strong></p>
+  <p>💳 Pagamento via <strong>Pix, cartão e dinheiro</strong></p>
+</div>
+
+<footer>Obrigado por visitar! Aguardo suas encomendas💗</footer>
 
 <script>
 const comboSelect = document.getElementById("combo");
