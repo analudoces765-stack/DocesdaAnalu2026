@@ -4,10 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Doces Da Analu</title>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
 <style>
 :root{--rosa:#e91e63;--texto:#4a1f2c;--whatsapp:#25D366;}
 *{box-sizing:border-box}
@@ -49,14 +51,17 @@ footer{margin-top:16px;color:#ffffff;font-weight:600;}
 .btn-morango-recheado{background:linear-gradient(135deg,#d12831,#da3434); color:#c23434}
 </style>
 </head>
+
 <body>
 <div class="container">
 <span class="doces">DOCES</span>
 <span class="analu">da Analu</span>
 <div class="subtitulo">cardápio digital 💗</div>
+
 <div class="video-container">
-<iframe src="https://www.youtube.com/embed/MfYpWyL2XSA" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/PIB7hCQYKjI" allowfullscreen></iframe>
 </div>
+
 <div class="card">
 <ul class="lista">
 <li>Brigadeiro ao Leite</li>
@@ -69,6 +74,7 @@ footer{margin-top:16px;color:#ffffff;font-weight:600;}
 <li>Amendoim</li>
 <li>Prestígio</li>
 </ul>
+
 <div class="pedido">
 <h3>Monte seu pedido</h3>
 <select id="combo">
@@ -78,6 +84,7 @@ footer{margin-top:16px;color:#ffffff;font-weight:600;}
 <option value="Meio cento (50 doces)">Meio cento (50 doces)</option>
 <option value="Cento (100 doces)">Cento (100 doces)</option>
 </select>
+
 <div class="sabores-check">
 <label><input type="checkbox" value="Brigadeiro ao Leite"> Brigadeiro ao Leite</label>
 <label><input type="checkbox" value="Meio Amargo"> Meio Amargo</label>
@@ -89,7 +96,9 @@ footer{margin-top:16px;color:#ffffff;font-weight:600;}
 <label><input type="checkbox" value="Amendoim"> Amendoim</label>
 <label><input type="checkbox" value="Prestígio"> Prestígio</label>
 </div>
+
 <p id="limite-msg" class="limite-msg"></p>
+
 <a href="#" class="botao-acao pedir-whats" onclick="pedirWhats(event)">
 <i class="fab fa-whatsapp"></i> Pedir no WhatsApp
 </a>
@@ -98,6 +107,7 @@ footer{margin-top:16px;color:#ffffff;font-weight:600;}
 </a>
 </div>
 </div>
+
 <div class="busca-final">
 <h3>Busque no nosso instagram ou procure outras ideias 💗</h3>
 <input type="text" id="pesquisa" placeholder="Ex: chá de casa nova,infantil,flores..." onkeyup="filtrarLinks()">
@@ -105,22 +115,24 @@ footer{margin-top:16px;color:#ffffff;font-weight:600;}
 <a href="https://www.instagram.com/reel/DNvrp8gQAmZ/" target="_blank" class="pin-card btn-casamento" data-tags="casamento">💍 Casamento</a>
 <a href="https://pin.it/4dRJuIWF4" target="_blank" class="pin-card btn-aniversario" data-tags="aniversário festa bolo">🎉 Aniversário</a>
 <a href="https://pin.it/7wKmMgmer" target="_blank" class="pin-card btn-produções" data-tags="outras opcoes outras ideia opções tradicional Beijinho">👩🏻‍🍳🥄 Produções</a>
-<a href="https://www.instagram.com/reel/DRdLQcqAJPZ/" class="pin-card btn-personalizado escondido" data-tags="casa nova novo lar cha xa ">🏠 Casa Nova</a>
+<a href="https://www.instagram.com/reel/DRdLQcqAJPZ/" class="pin-card btn-personalizado escondido" data-tags="casa nova novo lar cha xa chá  ">🏠 Casa Nova</a>
 <a href="https://www.instagram.com/reel/DRYVtQUgKLY/" class="pin-card btn-praia escondido" data-tags="praia verão tropical mar piscina">🌞 Praia</a>
-<a href="https://pin.it/6Kia3s9BI" class="pin-card btn-flores escondido" data-tags="flores rosas ">🌸flores</a>
+<a href="https://pin.it/6Kia3s9BI" class="pin-card btn-flores escondido" data-tags="flores rosas ">🌸 flores</a>
 <a href="https://pin.it/76OG20vfj" class="pin-card btn-futebol escondido" data-tags="futebol esporte time copa neymar flamengo bola">⚽ Futebol</a>
-<a href="https://pin.it/4m4yQpWGs" class="pin-card btn-safari escondido" data-tags="animais safari bicho criança personagens fundo do mar disney 1 ano 2 anos ">👧🏻🧒🏽infantil</a>
-<a href="https://pin.it/14eiFPe0p" class="pin-card btn-morango escondido" data-tags="morango morango do amor morango recheado ">🍓 morango do amor</a>
-<a href="https://pin.it/4QfRNYQbI" class="pin-card btn-flores escondido" data-tags="morango recheado chocolate">🍫🍓 coxinha de morango</a>
+<a href="https://pin.it/4m4yQpWGs" class="pin-card btn-safari escondido" data-tags="animais safari bicho criança personagens fundo do mar disney um ano dois anos 3 anos 4 anos 5 anos bebê">👧🏻🧒🏽 Infantil</a>
+<a href="https://pin.it/14eiFPe0p" class="pin-card btn-morango escondido" data-tags="morango morango do amor morango recheado">🍓 Morango do Amor</a>
+<a href="https://pin.it/4QfRNYQbI" class="pin-card btn-flores escondido" data-tags="morango recheado chocolate">🍫🍓 Coxinha de Morango</a>
 </div>
 </div>
+
 <footer>Encomendas abertas 💗</footer>
-</div>
+
 <script>
 const comboSelect = document.getElementById("combo");
 const checkboxes = document.querySelectorAll(".sabores-check input");
 const msgLimite = document.getElementById("limite-msg");
 let limiteSabores = 0;
+
 comboSelect.addEventListener("change", () => {
   const combo = comboSelect.value;
   if (combo.includes("Caixinha")) limiteSabores = 4;
@@ -128,9 +140,11 @@ comboSelect.addEventListener("change", () => {
   else if (combo.includes("50")) limiteSabores = 2;
   else if (combo.includes("100")) limiteSabores = 4;
   else limiteSabores = 0;
+
   checkboxes.forEach(cb => {cb.checked = false; cb.disabled = false;});
   msgLimite.innerText = limiteSabores ? `Você pode escolher até ${limiteSabores} sabores 💗` : "";
 });
+
 checkboxes.forEach(cb => {
   cb.addEventListener("change", () => {
     const selecionados = document.querySelectorAll(".sabores-check input:checked");
@@ -141,25 +155,30 @@ checkboxes.forEach(cb => {
     }
   });
 });
+
 function pedirWhats(event){
   event.preventDefault();
   const combo = comboSelect.value;
   const selecionados = document.querySelectorAll(".sabores-check input:checked");
   const sabores = [...selecionados].map(s => s.value).join(", ");
-  if(!combo || selecionados.length === 0) {
+
+  if(!combo || selecionados.length === 0){
     alert("Escolha o combo e os sabores! 💕");
     return;
   }
+
   let artigo = "de";
   if (combo.includes("Caixinha")) artigo = "da";
+
   const msg = `Oii!Analuu Gostaria de saber o valor ${artigo} ${combo} com os sabores: ${sabores}`;
   window.location.href = `https://api.whatsapp.com/send?phone=558396905025&text=${encodeURIComponent(msg)}`;
 }
+
 function filtrarLinks(){
   const texto = document.getElementById("pesquisa").value.toLowerCase();
   const cards = document.querySelectorAll(".pin-card");
   cards.forEach(card=>{
-    const tags = card.getAttribute("data-tags") ? card.getAttribute("data-tags").toLowerCase() : "";
+    const tags = card.getAttribute("data-tags")?.toLowerCase() || "";
     const nome = card.innerText.toLowerCase();
     if(texto === ""){
       card.style.display = card.classList.contains("escondido") ? "none" : "flex";
@@ -169,6 +188,6 @@ function filtrarLinks(){
   });
 }
 </script>
+
 </body>
 </html>
-
