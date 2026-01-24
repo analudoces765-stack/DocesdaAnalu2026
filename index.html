@@ -49,12 +49,31 @@ footer{margin-top:16px;color:#ebece4;font-weight:600;}
 .btn-produções{background:linear-gradient(135deg,#89f7fe,#66a6ff); color:#1e1e1e;}
 .btn-morango{background:linear-gradient(135deg,#fbc7c7,#e40c0c); color:#b33a3a;}
 .btn-morango-recheado{background:linear-gradient(135deg,#d12831,#da3434); color:#c23434}
+.btn-docesfinos{background:linear-gradient(135deg,#60cde9,#2b73ad); color:#85b17c}
 
 .info-profissional-final p,
 .info-profissional-final strong{ 
   color:#4a1f2c;   
   font-weight:700;
 }
+
+/* ===== MELHORIA SUTIL DO TEXTO DOS SABORES ===== */
+.sabores-check label {
+  font-size: 15px;
+  font-weight: 600;
+  color: #5a2a3a;
+  letter-spacing: 0.3px;
+}
+
+.sabores-check label:hover {
+  color: #e91e63;
+}
+
+.sabores-check input:checked + span,
+.sabores-check input:checked {
+  accent-color: #e91e63;
+}
+
 
 
 </style>
@@ -86,11 +105,21 @@ footer{margin-top:16px;color:#ebece4;font-weight:600;}
 <div class="pedido">
 <h3>Monte seu pedido</h3>
 <select id="combo">
-<option value="">Escolha o combo</option>
-<option value="Caixinha da Felicidade (4 brigadeiros)">Caixinha da Felicidade (4 brigadeiros)</option>
-<option value="25 Brigadeiros">25 Brigadeiros</option>
-<option value="Meio cento (50 doces)">Meio cento (50 doces)</option>
-<option value="Cento (100 doces)">Cento (100 doces)</option>
+  <option value=""> Escolha seu combo </option>
+  <option value="Caixinha da Felicidade (4 brigadeiros)">
+     Caixinha da Felicidade — 4 brigadeiros
+  </option>
+  <option value="25 Brigadeiros">
+     Caixa com 25 brigadeiros
+  </option>
+  <option value="Meio cento (50 doces)">
+     Meio cento — 50 brigadeiros
+  </option>
+  <option value="Cento (100 doces)">
+     Cento completo — 100 brigadeiros
+  </option>
+  <option
+  value="orcamento_whatsapp">Fazer um orçamento diferente no WhatsApp</option>
 </select>
 
 <div class="sabores-check">
@@ -130,6 +159,7 @@ footer{margin-top:16px;color:#ebece4;font-weight:600;}
 <a href="https://pin.it/4m4yQpWGs" class="pin-card btn-safari escondido" data-tags="animais safari bicho criança personagens fundo do mar disney um ano dois anos 3 anos 4 anos 5 anos bebê">👧🏻🧒🏽 Infantil</a>
 <a href="https://pin.it/14eiFPe0p" class="pin-card btn-morango escondido" data-tags="morango morango do amor morango recheado">🍓 Morango do Amor</a>
 <a href="https://pin.it/4QfRNYQbI" class="pin-card btn-flores escondido" data-tags="morango recheado chocolate">🍫🍓 Coxinha de Morango</a>
+<a href="https://pin.it/5fqthBdLu" class="pin-card btn-docesfinos escondido" data-tags="doces finos doces casamento finos bonito chique">🧸doces finos</a>
 </div>
 </div>
 
@@ -175,6 +205,12 @@ function pedirWhats(event){
   const selecionados = document.querySelectorAll(".sabores-check input:checked");
   const sabores = [...selecionados].map(s => s.value).join(", ");
 
+  if(combo === "orcamento_whatsapp"){
+    const msgPersonalizada = "Oi,AnaLu, quero fazer um orçamento!";
+    window.location.href = `https://api.whatsapp.com/send?phone=558396905025&text=${encodeURIComponent(msgPersonalizada)}`;
+    return;
+  }
+
   if(!combo || selecionados.length === 0){
     alert("Escolha o combo e os sabores! 💕");
     return;
@@ -204,4 +240,3 @@ function filtrarLinks(){
 
 </body>
 </html>
-
