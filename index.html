@@ -20,7 +20,7 @@ body{margin:0;min-height:100vh;font-family:'Poppins',sans-serif;background-image
 .subtitulo{margin-top:10px;color:#fff;font-size:19px;}
 .video-container { width: 200px; margin: 20px auto; border: 6px solid #000; border-radius: 30px; overflow: hidden; aspect-ratio: 9/16; box-shadow: 0 15px 35px rgba(0,0,0,0.2); }
 .video-container iframe { width: 100%; height: 100%; border: none; }
-.card{background:#fff;border-radius:28px;padding:26px 22px;box-shadow:0 18px 40px rgba(0,0,0,.18);}
+.card{background:#fff;border-radius:28px;padding:26px 22px;box-shadow:0 18px 40px rgba(0,0,0,.18); margin-bottom: 20px;}
 .lista{list-style:none;padding:0;margin:0 0 18px;}
 .lista li{padding:12px;margin-bottom:10px;background:#e6eaf0;border-radius:16px;font-weight:600;color:var(--texto);}
 .pedido{text-align:left;margin-top:22px;}
@@ -32,33 +32,38 @@ body{margin:0;min-height:100vh;font-family:'Poppins',sans-serif;background-image
 .botao-acao{display:flex;align-items:center;justify-content:center;gap:10px;padding:14px;border-radius:26px;color:#ffffff;font-weight:700;text-decoration:none;width:100%;border:none;margin-top:14px;cursor:pointer;}
 .pedir-whats{background:var(--whatsapp);}
 .instagram{background:linear-gradient(45deg,#0f4ca8,#dc2743,#bc1888);}
-footer{margin-top:16px;color:#ebece4;font-weight:600;}
+footer{margin-top:16px;color:#ebece4;font-weight:600; text-align: center;}
 .busca-final{background:#e0edee;margin-top:28px;padding:22px;border-radius:26px;box-shadow:0 12px 30px rgba(0,0,0,0.18);}
 .busca-final h3{color:#e91e63;font-size:16px;margin-bottom:12px;}
 .busca-final input{width:100%;padding:14px;border-radius:18px;border:1px solid #e3cde6;margin-bottom:16px;}
 .galeria-links{display:grid;gap:12px;}
 .pin-card{padding:16px;border-radius:18px;font-weight:700;text-decoration:none;display:flex;justify-content:center;color:#7e9757;}
 .escondido{display:none;}
-.btn-casamento{background:linear-gradient(135deg,#e075e0,#a51c87);}
+.btn-casamento{background:linear-gradient(135deg,#e075e0,#a51c87); color:#fff;}
 .btn-flores{background:linear-gradient(135deg,#ff9a9e,#fecfef); color:#d63384;}
-.btn-safari{background:linear-gradient(135deg,#f6d365,#fda085);}
-.btn-personalizado{background:linear-gradient(135deg,#b7c2f5,#d8d3dd);}
+.btn-safari{background:linear-gradient(135deg,#f6d365,#fda085); color:#fff;}
+.btn-personalizado{background:linear-gradient(135deg,#b7c2f5,#d8d3dd); color:#4a1f2c;}
 .btn-aniversario{background:linear-gradient(135deg,#fbc2eb,#a6c1ee); color:#6f42c1;}
 .btn-futebol{background:linear-gradient(135deg,#43e97b,#38f9d7); color:#44202a;}
 .btn-praia{background:linear-gradient(135deg,#7cc26a,#bae597); color:#111814;}
 .btn-produções{background:linear-gradient(135deg,#89f7fe,#66a6ff); color:#1e1e1e;}
-.btn-morango{background:linear-gradient(135deg,#fbc7c7,#e40c0c); color:#b33a3a;}
-.btn-morango-recheado{background:linear-gradient(135deg,#d12831,#da3434); color:#c23434}
-.btn-docesfinos{background:linear-gradient(135deg,#60cde9,#2b73ad); color:#85b17c}
+.btn-morango{background:linear-gradient(135deg,#fbc7c7,#e40c0c); color:#fff;}
+.btn-docesfinos{background:linear-gradient(135deg,#60cde9,#2b73ad); color:#fff;}
 
-.info-profissional-final p, .info-profissional-final strong{ color:#4a1f2c; font-weight:700; }
+.info-profissional-final {text-align: center; margin-top: 20px;}
+.info-profissional-final p, .info-profissional-final strong{ color:#4a1f2c; font-weight:700; margin: 5px 0;}
+
+
+.btn-morango-amor{ background: linear-gradient(135deg,#e7bcbf,#f0c0c0); }
+.btn-cone-trufado{ background: linear-gradient(135deg,#e7bcbf,#f0c0c0); }
+.btn-caixa-felicidade{ background:linear-gradient(135deg,#e7bcbf,#f0c0c0); }
+.btn-trufa{ background: linear-gradient(135deg,#e7bcbf,#f0c0c0); }
+
 #alerta-carnaval {
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  
-  
   z-index: 10000;
   text-align: center;
   pointer-events: none;
@@ -71,11 +76,14 @@ footer{margin-top:16px;color:#ebece4;font-weight:600;}
   font-size: 28px;
   white-space: nowrap;
 }
+
 @keyframes aparecerESumir {
   0% { opacity: 0; transform: translate(-50%, -40%); }
   15% { opacity: 1; transform: translate(-50%, -50%); }
   80% { opacity: 1; }
   100% { opacity: 0; transform: translate(-50%, -60%); visibility: hidden; }
+
+  
 }
 </style>
 </head>
@@ -84,7 +92,7 @@ footer{margin-top:16px;color:#ebece4;font-weight:600;}
 <div class="container">
 <span class="doces">DOCES</span>
 <span class="analu">da Analu</span>
-<span class="🎉🎭🎊">🎉🎭🎊</span>
+<span class="emoji-topo">🎉🎭🎊</span>
 <div class="subtitulo">cardápio digital 💗</div>
 
 <div class="video-container">
@@ -92,6 +100,32 @@ footer{margin-top:16px;color:#ebece4;font-weight:600;}
 </div>
 
 <div class="card">
+  <h3 style="color:#e91e63;margin-bottom:14px; font-synthesis-style: 'Pacifico', cursive; font-weight: 800;">
+    🎭 Novidades do Domingo 🎭
+  </h3>
+  </style> clique abaixo para pedir pelo WhatsApp:
+
+  <a href="#" class="botao-acao btn-morango-amor" onclick="pedirNovidade('Morango do Amor')">
+    🍓 Morango do Amor
+  </a>
+
+  <a href="#" class="botao-acao btn-cone-trufado" onclick="pedirNovidade('Cone Trufado')">
+    🍫 Cone Trufado
+  </a>
+
+  <a href="#" class="botao-acao btn-caixa-felicidade" onclick="pedirNovidade('Caixa da Felicidade')">
+    🎁 Caixa da Felicidade
+  </a>
+
+  <a href="#" class="botao-acao btn-trufa" onclick="pedirNovidade('Trufa')">
+    🍬 Trufa
+
+    
+  </a>
+</div>
+
+<div class="card">
+  </h3><h3 style="color:#e91e63;margin-bottom:14px; font-weight: 800;">Sabores Disponíveis 💗</h3>
 <ul class="lista">
 <li>Brigadeiro ao Leite</li>
 <li>Brigadeiro Meio Amargo</li>
@@ -105,7 +139,7 @@ footer{margin-top:16px;color:#ebece4;font-weight:600;}
 </ul>
 
 <div class="pedido">
-<h3>Monte seu pedido</h3>
+<h3>Monte seu combo e escolha os sabores</h3>
 <select id="combo">
   <option value=""> Escolha seu combo </option>
   <option value="Caixinha da Felicidade (4 brigadeiros)">Caixinha da Felicidade — 4 brigadeiros</option>
@@ -161,7 +195,8 @@ footer{margin-top:16px;color:#ebece4;font-weight:600;}
   <p>💳 Pagamento via <strong>Pix, cartão e dinheiro</strong></p>
 </div>
 
-<footer>Obrigado por visitar! Aguardo suas encomendas💗</footer>
+<footer>Obrigado por visitar! Aguardo suas encomendas 💗</footer>
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
@@ -172,7 +207,7 @@ window.addEventListener('load', () => {
   msg.innerHTML = '<h2>🎭🎊</h2>';
   document.body.appendChild(msg);
 
-  const duration = 3 * 1000;
+  const duration = 3 * 500;
   const end = Date.now() + duration;
 
   (function frame() {
@@ -217,7 +252,7 @@ comboSelect.addEventListener("change", () => {
 checkboxes.forEach(cb => {
   cb.addEventListener("change", () => {
     const selecionados = document.querySelectorAll(".sabores-check input:checked");
-    if (selecionados.length >= limiteSabores) {
+    if (limiteSabores > 0 && selecionados.length >= limiteSabores) {
       checkboxes.forEach(box => {if (!box.checked) box.disabled = true;});
     } else {
       checkboxes.forEach(box => box.disabled = false);
@@ -232,7 +267,7 @@ function pedirWhats(event){
   const sabores = [...selecionados].map(s => s.value).join(", ");
 
   if(combo === "orcamento_whatsapp"){
-    const msgPersonalizada = "Oii,Analu!♡.Quero fazer um orçamento!";
+    const msgPersonalizada = "Oii, Analu! ♡ Quero fazer um orçamento!";
     window.location.href = `https://api.whatsapp.com/send?phone=558396905025&text=${encodeURIComponent(msgPersonalizada)}`;
     return;
   }
@@ -261,6 +296,11 @@ function filtrarLinks(){
     }
     card.style.display = (tags.includes(texto) || nome.includes(texto)) ? "flex" : "none";
   });
+}
+
+function pedirNovidade(produto){
+  const msg = `Oii,Analuu.Gostaria de encomendar *${produto}*. Pode me passar valores e disponibilidade?`;
+  window.location.href =`https://api.whatsapp.com/send?phone=558396905025&text=${encodeURIComponent(msg)}`;
 }
 </script>
 
