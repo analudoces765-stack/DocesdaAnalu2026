@@ -53,37 +53,25 @@ footer{margin-top:16px;color:#ebece4;font-weight:600; text-align: center;}
 .info-profissional-final {text-align: center; margin-top: 20px;}
 .info-profissional-final p, .info-profissional-final strong{ color:#4a1f2c; font-weight:700; margin: 5px 0;}
 
+/* ESTILOS DO SLIDER CORRIGIDOS */
+.producao-semana{ margin-top:30px; text-align:center; }
+.producao-semana h3{ color:#e91e63; font-weight:800; margin-bottom:14px; }
+.slider{ position:relative; width:100%; overflow:hidden; border-radius:22px; box-shadow:0 15px 35px rgba(0,0,0,0.18); }
+.slides{ display:flex; transition:transform 0.5s ease-in-out; }
+.slides img{ width:100%; flex-shrink:0; border-radius:22px; display: block; }
+.prev, .next{ position:absolute; top:50%; transform:translateY(-50%); background:rgba(0,0,0,0.5); color:#fff; border:none; padding:12px; font-size:20px; cursor:pointer; border-radius:50%; z-index: 10; transition: 0.3s; }
+.prev:hover, .next:hover { background: var(--rosa); }
+.prev{ left:10px; }
+.next{ right:10px; }
 
-.btn-morango-amor{ background: linear-gradient(135deg,#e7bcbf,#f0c0c0); }
-.btn-cone-trufado{ background: linear-gradient(135deg,#e7bcbf,#f0c0c0); }
-.btn-caixa-felicidade{ background:linear-gradient(135deg,#e7bcbf,#f0c0c0); }
-.btn-trufa{ background: linear-gradient(135deg,#e7bcbf,#f0c0c0); }
-
-#alerta-carnaval {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 10000;
-  text-align: center;
-  pointer-events: none;
-  animation: aparecerESumir 4s forwards;
-}
-#alerta-carnaval h2 {
-  font-family: 'Pacifico', cursive;
-  color: #ffffff;
-  margin: 0;
-  font-size: 28px;
-  white-space: nowrap;
-}
-
+/* ANIMAÇÃO CARNAVAL */
+#alerta-carnaval { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 10000; text-align: center; pointer-events: none; animation: aparecerESumir 4s forwards; }
+#alerta-carnaval h2 { font-family: 'Pacifico', cursive; color: #ffffff; margin: 0; font-size: 28px; white-space: nowrap; }
 @keyframes aparecerESumir {
   0% { opacity: 0; transform: translate(-50%, -40%); }
   15% { opacity: 1; transform: translate(-50%, -50%); }
   80% { opacity: 1; }
   100% { opacity: 0; transform: translate(-50%, -60%); visibility: hidden; }
-
-  
 }
 </style>
 </head>
@@ -100,27 +88,7 @@ footer{margin-top:16px;color:#ebece4;font-weight:600; text-align: center;}
 </div>
 
 <div class="card">
-  <h3 style="color:#e91e63;margin-bottom:14px; font-synthesis-style: 'Pacifico', cursive; font-weight: 800;">
-    🎭 novidades 🎭
-  </h3>
-  </style> clique abaixo para pedir pelo WhatsApp:
-
-  <a href="#" class="botao-acao btn-cone-trufado" onclick="pedirNovidade('Cone Trufado')">
-    🍫 Cone Trufado
-  </a>
-
-  <a href="#" class="botao-acao btn-caixa-felicidade" onclick="pedirNovidade('Caixa da Felicidade')">
-    🎁 Caixa da Felicidade
-  </a>
-
-  
-
-    
-  </a>
-</div>
-
-<div class="card">
-  </h3><h3 style="color:#e91e63;margin-bottom:14px; font-weight: 800;">Sabores de brigadeiros Disponíveis 💗</h3>
+<h3 style="color:#e91e63;margin-bottom:14px; font-weight: 800;">Sabores de brigadeiros Disponíveis 💗</h3>
 <ul class="lista">
 <li>Brigadeiro branco</li>
 <li>Brigadeiro ao Leite</li>
@@ -132,6 +100,7 @@ footer{margin-top:16px;color:#ebece4;font-weight:600; text-align: center;}
 <li>Beijinho</li>
 <li>Amendoim</li>
 <li>Prestígio</li>
+<li>Confete</li>
 </ul>
 
 <div class="pedido">
@@ -156,6 +125,7 @@ footer{margin-top:16px;color:#ebece4;font-weight:600; text-align: center;}
 <label><input type="checkbox" value="Beijinho"> Beijinho</label>
 <label><input type="checkbox" value="Amendoim"> Amendoim</label>
 <label><input type="checkbox" value="Prestígio"> Prestígio</label>
+<label><input type="checkbox" value="Confete"> Confete</label>
 </div>
 
 <p id="limite-msg" class="limite-msg"></p>
@@ -166,6 +136,21 @@ footer{margin-top:16px;color:#ebece4;font-weight:600; text-align: center;}
 <a class="botao-acao instagram" href="https://instagram.com/_docesdaanalu_" target="_blank">
 <i class="fab fa-instagram"></i> Instagram
 </a>
+</div>
+
+<div class="producao-semana">
+  <h3>Produções do mês👩🏻‍🍳💗</h3>
+  <div class="slider">
+    <div class="slides" id="slides-box">
+      <img src="https://i.ibb.co/r2rtbbvy/IMG-20260213-180019-267.jpg">
+      <img src="https://i.ibb.co/m5FKdXs9/IMG-20260213-WA0088.jpg">
+      <img src="https://i.ibb.co/chsZZs7N/IMG-20260213-WA0087.jpg">
+      <img src="https://i.ibb.co/JRQy8HgJ/IMG-20260213-WA0086.jpg">
+      <img src="https://i.ibb.co/dwRcw6Fv/IMG-20260213-WA0085.jpg">
+    </div>
+    <button class="prev" onclick="prevSlide()">&#10094;</button>
+    <button class="next" onclick="nextSlide()">&#10095;</button>
+  </div>
 </div>
 </div>
 
@@ -198,34 +183,41 @@ footer{margin-top:16px;color:#ebece4;font-weight:600; text-align: center;}
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
 <script>
+
+let index = 0;
+function updateSlide(){
+  const slidesContainer = document.getElementById("slides-box");
+  const slideImages = document.querySelectorAll("#slides-box img");
+  if(index >= slideImages.length) index = 0;
+  if(index < 0) index = slideImages.length - 1;
+  slidesContainer.style.transform = `translateX(-${index * 100}%)`;
+}
+
+function nextSlide(){
+  index++;
+  updateSlide();
+}
+
+function prevSlide(){
+  index--;
+  updateSlide();
+}
+
+setInterval(nextSlide, 4000);
+
 window.addEventListener('load', () => {
   const msg = document.createElement('div');
   msg.id = 'alerta-carnaval';
   msg.innerHTML = '<h2>🎭🎊</h2>';
   document.body.appendChild(msg);
 
-  const duration = 3 * 500;
+  const duration = 1500;
   const end = Date.now() + duration;
 
   (function frame() {
-    confetti({
-      particleCount: 4,
-      angle: 60,
-      spread: 55,
-      origin: { x: 0, y: 0.8 },
-      colors: ['#e91e63', '#b356a6', '#74ebd5']
-    });
-    confetti({
-      particleCount: 4,
-      angle: 120,
-      spread: 55,
-      origin: { x: 1, y: 0.8 },
-      colors: ['#e91e63', '#b356a6', '#74ebd5']
-    });
-
-    if (Date.now() < end) {
-      requestAnimationFrame(frame);
-    }
+    confetti({ particleCount: 4, angle: 60, spread: 55, origin: { x: 0, y: 0.8 }, colors: ['#e91e63', '#b356a6', '#74ebd5'] });
+    confetti({ particleCount: 4, angle: 120, spread: 55, origin: { x: 1, y: 0.8 }, colors: ['#e91e63', '#b356a6', '#74ebd5'] });
+    if (Date.now() < end) requestAnimationFrame(frame);
   }());
 });
 
@@ -264,19 +256,14 @@ function pedirWhats(event){
   const sabores = [...selecionados].map(s => s.value).join(", ");
 
   if(combo === "orcamento_whatsapp"){
-    const msgPersonalizada = "Oii, Analu! ♡ Quero fazer um orçamento!";
-    window.location.href = `https://api.whatsapp.com/send?phone=558396905025&text=${encodeURIComponent(msgPersonalizada)}`;
+    window.location.href = `https://api.whatsapp.com/send?phone=558396905025&text=${encodeURIComponent("Oii, Analu! ♡ Quero fazer um orçamento!")}`;
     return;
   }
-
   if(!combo || selecionados.length === 0){
     alert("Escolha o combo e os sabores! 💕");
     return;
   }
-
-  let artigo = "de";
-  if (combo.includes("Caixinha")) artigo = "da";
-
+  let artigo = combo.includes("Caixinha") ? "da" : "de";
   const msg = `Oii! Analuu Gostaria de saber o valor ${artigo} ${combo} com os sabores: ${sabores}`;
   window.location.href = `https://api.whatsapp.com/send?phone=558396905025&text=${encodeURIComponent(msg)}`;
 }
@@ -294,12 +281,6 @@ function filtrarLinks(){
     card.style.display = (tags.includes(texto) || nome.includes(texto)) ? "flex" : "none";
   });
 }
-
-function pedirNovidade(produto){
-  const msg = `Oii,Analuu.Gostaria de encomendar *${produto}*. Pode me passar valores e disponibilidade?`;
-  window.location.href =`https://api.whatsapp.com/send?phone=558396905025&text=${encodeURIComponent(msg)}`;
-}
 </script>
-
 </body>
 </html>
