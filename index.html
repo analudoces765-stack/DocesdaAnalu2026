@@ -1,3 +1,39 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Doces Da Analu</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<style>
+:root{--rosa:#e91e63;--texto:#4a1f2c;--whatsapp:#25D366;}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;font-family:'Poppins',sans-serif;background-image: linear-gradient(45deg, #f5c8f7 0%, #74ebd5 100%);display:flex;justify-content:center;padding:24px;}
+.container{width:100%;max-width:420px;text-align:center;}
+.doces { font-size: 30px; font-weight: 800; letter-spacing: 6px; color: #fff; text-transform: uppercase; }
+.analu{font-family:'Pacifico',cursive;font-size:60px;color:#b356a6;display:block;margin-top:-6px;}
+.subtitulo{margin-top:10px;color:#fff;font-size:19px;}
+.video-container { width: 200px; margin: 20px auto; border: 6px solid #000; border-radius: 30px; overflow: hidden; aspect-ratio: 9/16; box-shadow: 0 15px 35px rgba(0,0,0,0.2); }
+.video-container iframe { width: 100%; height: 100%; border: none; }
+.card{background:#fff;border-radius:28px;padding:26px 22px;box-shadow:0 18px 40px rgba(0,0,0,.18); margin-bottom: 20px;}
+.lista{list-style:none;padding:0;margin:0 0 18px;}
+.lista li{padding:12px;margin-bottom:10px;background:#e6eaf0;border-radius:16px;font-weight:600;color:var(--texto);}
+.pedido{text-align:left;margin-top:22px;}
+.pedido h3{color:var(--rosa);font-size:16px;margin-bottom:8px;}
+.pedido select{width:100%;padding:10px;border-radius:12px;border:1px solid #cfa1b8;margin-bottom:10px;}
+.sabores-check label{display:block;font-size:14px;margin-bottom:6px; font-weight: 600; color: #5a2a3a;}
+.sabores-check input:disabled{opacity:0.5;}
+.limite-msg{font-size:13px;color:#e91e63;margin-top:8px;font-weight:600;}
+.botao-acao{display:flex;align-items:center;justify-content:center;gap:10px;padding:14px;border-radius:26px;color:#ffffff;font-weight:700;text-decoration:none;width:100%;border:none;margin-top:14px;cursor:pointer;}
+.pedir-whats{background:var(--whatsapp);}
+.instagram{background:linear-gradient(45deg,#0f4ca8,#dc2743,#bc1888);}
+footer{margin-top:16px;color:#ebece4;font-weight:600; text-align: center;}
+.busca-final{background:#e0edee;margin-top:28px;padding:22px;border-radius:26px;box-shadow:0 12px 30px rgba(0,0,0,0.18);}
 .busca-final h3{color:#e91e63;font-size:16px;margin-bottom:12px;}
 .busca-final input{width:100%;padding:14px;border-radius:18px;border:1px solid #e3cde6;margin-bottom:16px;}
 .galeria-links{display:grid;gap:12px;}
@@ -28,15 +64,8 @@
 .prev{ left:10px; }
 .next{ right:10px; }
 
-/* ANIMAÇÃO CARNAVAL */
-#alerta-carnaval { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 10000; text-align: center; pointer-events: none; animation: aparecerESumir 4s forwards; }
-#alerta-carnaval h2 { font-family: 'Pacifico', cursive; color: #ffffff; margin: 0; font-size: 28px; white-space: nowrap; }
-@keyframes aparecerESumir {
-  0% { opacity: 0; transform: translate(-50%, -40%); }
-  15% { opacity: 1; transform: translate(-50%, -50%); }
-  80% { opacity: 1; }
-  100% { opacity: 0; transform: translate(-50%, -60%); visibility: hidden; }
-}
+
+
 </style>
 </head>
 
@@ -44,7 +73,6 @@
 <div class="container">
 <span class="doces">DOCES</span>
 <span class="analu">da Analu</span>
-<span class="emoji-topo">🎉🎭🎊</span>
 <div class="subtitulo">cardápio digital 💗</div>
 
 <div class="video-container">
@@ -78,6 +106,8 @@
   <option value="orcamento_whatsapp">Fazer um orçamento diferente no WhatsApp</option>
 </select>
 
+<p id="limite-msg" class="limite-msg"></p>
+
 <div class="sabores-check">
 <label><input type="checkbox" value="Brigadeiro branco"> Brigadeiro branco</label>
 <label><input type="checkbox" value="Brigadeiro ao Leite"> Brigadeiro ao Leite</label>
@@ -103,7 +133,7 @@
 </div>
 
 <div class="producao-semana">
-  <h3>Produções do mês👩🏻‍🍳💗</h3>
+  <h3>Produções do mês 👩🏻‍🍳💗</h3>
   <div class="slider">
     <div class="slides" id="slides-box">
       <img src="https://i.ibb.co/r2rtbbvy/IMG-20260213-180019-267.jpg">
@@ -111,6 +141,8 @@
       <img src="https://i.ibb.co/chsZZs7N/IMG-20260213-WA0087.jpg">
       <img src="https://i.ibb.co/JRQy8HgJ/IMG-20260213-WA0086.jpg">
       <img src="https://i.ibb.co/dwRcw6Fv/IMG-20260213-WA0085.jpg">
+      <img src="https://i.ibb.co/twhhvNbC/Whats-App-Image-2026-02-18-at-11-23-09.jpg">
+>
     </div>
     <button class="prev" onclick="prevSlide()">&#10094;</button>
     <button class="next" onclick="nextSlide()">&#10095;</button>
@@ -167,20 +199,18 @@ function prevSlide(){
   updateSlide();
 }
 
-setInterval(nextSlide, 4000);
+setInterval(nextSlide, 20000);
 
 window.addEventListener('load', () => {
   const msg = document.createElement('div');
-  msg.id = 'alerta-carnaval';
-  msg.innerHTML = '<h2>🎭🎊</h2>';
+  
   document.body.appendChild(msg);
 
   const duration = 1500;
   const end = Date.now() + duration;
 
   (function frame() {
-    confetti({ particleCount: 4, angle: 60, spread: 55, origin: { x: 0, y: 0.8 }, colors: ['#e91e63', '#b356a6', '#74ebd5'] });
-    confetti({ particleCount: 4, angle: 120, spread: 55, origin: { x: 1, y: 0.8 }, colors: ['#e91e63', '#b356a6', '#74ebd5'] });
+   
     if (Date.now() < end) requestAnimationFrame(frame);
   }());
 });
@@ -189,6 +219,7 @@ const comboSelect = document.getElementById("combo");
 const checkboxes = document.querySelectorAll(".sabores-check input");
 const msgLimite = document.getElementById("limite-msg");
 let limiteSabores = 0;
+
 
 comboSelect.addEventListener("change", () => {
   const combo = comboSelect.value;
@@ -248,4 +279,3 @@ function filtrarLinks(){
 </script>
 </body>
 </html>
-
