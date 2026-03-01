@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Doces Da Analu</title>
+<title>Doces Da Analu - Páscoa</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,99 +11,263 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
 <style>
-:root{--rosa:#e91e63;--texto:#4a1f2c;--whatsapp:#25D366;}
+:root{--rosa:#e91e63;--texto:#e4500c;--whatsapp:#25D366;--pascoa-rosa:#f5a7a7;--pascoa-amarelo:#ffd89b;--pascoa-verde:#a8d8b8;--pascoa-lilás:#d4b5e8;}
 *{box-sizing:border-box}
-body{margin:0;min-height:100vh;font-family:'Poppins',sans-serif;background-image: linear-gradient(45deg, #f5c8f7 0%, #74ebd5 100%);display:flex;justify-content:center;padding:24px;}
-.container{width:100%;max-width:420px;text-align:center;}
-.doces { font-size: 30px; font-weight: 800; letter-spacing: 6px; color: #fff; text-transform: uppercase; }
-.analu{font-family:'Pacifico',cursive;font-size:60px;color:#b356a6;display:block;margin-top:-6px;}
-.subtitulo{margin-top:10px;color:#fff;font-size:19px;}
-.video-container { width: 200px; margin: 20px auto; border: 6px solid #000; border-radius: 30px; overflow: hidden; aspect-ratio: 9/16; box-shadow: 0 15px 35px rgba(0,0,0,0.2); }
+body{margin:0;min-height:100vh;font-family:'Poppins',sans-serif;background: linear-gradient(135deg, #fff4e6 0%, #ffe8f5 25%, #f0e8ff 50%, #e8f8f5 75%, #fff4e6 100%);display:flex;justify-content:center;padding:24px;position:relative;overflow-x:hidden;}
+
+  
+.container{width:100%;max-width:420px;text-align:center;position:relative;z-index:1;}
+.doces { font-size: 30px; font-weight: 800; letter-spacing: 6px; background: linear-gradient(135deg, #f5a7d4, #a8d8b8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; text-transform: uppercase; }
+.analu{font-family:'Pacifico',cursive;font-size:60px;background: linear-gradient(135deg, #d4a5f5, #f5a7d4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;display:block;margin-top:-6px;}
+.subtitulo{margin-top:10px;color:#4c8f4a;font-size:19px;font-weight:600;}
+.video-container { width: 200px; margin: 20px auto; border: 6px solid #e4500c; border-radius: 30px; overflow: hidden; aspect-ratio: 9/16; box-shadow: 0 15px 35px rgba(245, 167, 212, 0.3); }
 .video-container iframe { width: 100%; height: 100%; border: none; }
-.card{background:#fff;border-radius:28px;padding:26px 22px;box-shadow:0 18px 40px rgba(0,0,0,.18); margin-bottom: 20px;}
+.card{background:linear-gradient(135deg, #fef8f3, #f8f3ff);border-radius:28px;padding:26px 22px;box-shadow:0 18px 40px rgba(212, 181, 232, 0.2); margin-bottom: 20px;border: 2px solid #ffe8f5;}
 .lista{list-style:none;padding:0;margin:0 0 18px;}
-.lista li{padding:12px;margin-bottom:10px;background:#e6eaf0;border-radius:16px;font-weight:600;color:var(--texto);}
+.lista li{padding:12px;margin-bottom:10px;background: linear-gradient(135deg, #ffe8f5, #f0e8ff);border-radius:16px;font-weight:600;color:var(--texto);border-left: 4px solid #c2397d;}
 .pedido{text-align:left;margin-top:22px;}
-.pedido h3{color:var(--rosa);font-size:16px;margin-bottom:8px;}
-.pedido select{width:100%;padding:10px;border-radius:12px;border:1px solid #cfa1b8;margin-bottom:10px;}
+.pedido h3{background: linear-gradient(135deg, #e4500c, #e4500c); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;font-size:16px;margin-bottom:8px;}
+.pedido select{width:100%;padding:10px;border-radius:12px;border:2px solid #d4b5e8;margin-bottom:10px;background:#fff;color:var(--texto);font-weight:600;}
 .sabores-check label{display:block;font-size:14px;margin-bottom:6px; font-weight: 600; color: #5a2a3a;}
+.sabores-check input{accent-color:#f5a7d4;}
 .sabores-check input:disabled{opacity:0.5;}
-.limite-msg{font-size:13px;color:#e91e63;margin-top:8px;font-weight:600;}
-.botao-acao{display:flex;align-items:center;justify-content:center;gap:10px;padding:14px;border-radius:26px;color:#ffffff;font-weight:700;text-decoration:none;width:100%;border:none;margin-top:14px;cursor:pointer;}
-.pedir-whats{background:var(--whatsapp);}
-.instagram{background:linear-gradient(45deg,#0f4ca8,#dc2743,#bc1888);}
-footer{margin-top:16px;color:#ebece4;font-weight:600; text-align: center;}
-.busca-final{background:#e0edee;margin-top:28px;padding:22px;border-radius:26px;box-shadow:0 12px 30px rgba(0,0,0,0.18);}
-.busca-final h3{color:#e91e63;font-size:16px;margin-bottom:12px;}
-.busca-final input{width:100%;padding:14px;border-radius:18px;border:1px solid #e3cde6;margin-bottom:16px;}
+.limite-msg{font-size:13px;color:#f5a7d4;margin-top:8px;font-weight:600;}
+.botao-acao{display:flex;align-items:center;justify-content:center;gap:10px;padding:14px;border-radius:26px;color:#ffffff;font-weight:700;text-decoration:none;width:100%;border:none;margin-top:14px;cursor:pointer;transition:all 0.3s ease;}
+.pedir-whats{background:var(--whatsapp);box-shadow:0 8px 20px rgba(37, 211, 102, 0.3);}
+.pedir-whats:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(37, 211, 102, 0.4);}
+.instagram{background:linear-gradient(135deg,#f5a7d4,#d4a5f5);box-shadow:0 8px 20px rgba(212, 165, 245, 0.3);}
+.instagram:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(96, 201, 64, 0.4);}
+footer{margin-top:16px;color:#8b4a8f;font-weight:600; text-align: center;}
+.busca-final{background: linear-gradient(135deg, #f0e8ff, #e8f8f5);margin-top:28px;padding:22px;border-radius:26px;box-shadow:0 12px 30px rgba(212, 181, 232, 0.2);border:2px solid #d4b5e8;}
+.busca-final h3{background: linear-gradient(135deg, #000000, #000000); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;font-size:16px;margin-bottom:12px;}
+.busca-final input{width:100%;padding:14px;border-radius:18px;border:2px solid #d4b5e8;margin-bottom:16px;background:#fff;color:var(--texto);}
+.busca-final input::placeholder{color:#c4a8d4;}
 .galeria-links{display:grid;gap:12px;}
-.pin-card{padding:16px;border-radius:18px;font-weight:700;text-decoration:none;display:flex;justify-content:center;color:#7e9757;}
+.pin-card{padding:16px;border-radius:18px;font-weight:700;text-decoration:none;display:flex;justify-content:center;color:#fff;transition:all 0.3s ease;}
+.pin-card:hover{transform:translateY(-4px);box-shadow:0 12px 25px rgba(0,0,0,0.15);}
 .escondido{display:none;}
-.btn-casamento{background:linear-gradient(135deg,#e075e0,#a51c87); color:#fff;}
-.btn-flores{background:linear-gradient(135deg,#ff9a9e,#fecfef); color:#d63384;}
-.btn-safari{background:linear-gradient(135deg,#f6d365,#fda085); color:#fff;}
-.btn-personalizado{background:linear-gradient(135deg,#b7c2f5,#d8d3dd); color:#4a1f2c;}
-.btn-aniversario{background:linear-gradient(135deg,#fbc2eb,#a6c1ee); color:#6f42c1;}
-.btn-futebol{background:linear-gradient(135deg,#43e97b,#38f9d7); color:#44202a;}
-.btn-praia{background:linear-gradient(135deg,#7cc26a,#bae597); color:#111814;}
-.btn-produções{background:linear-gradient(135deg,#89f7fe,#66a6ff); color:#1e1e1e;}
-.btn-morango{background:linear-gradient(135deg,#fbc7c7,#e40c0c); color:#fff;}
-.btn-docesfinos{background:linear-gradient(135deg,#60cde9,#2b73ad); color:#fff;}
+.btn-casamento{background:linear-gradient(135deg,#f5a7d4,#d4a5f5); color:#fff;}
+.btn-flores{background:linear-gradient(135deg,#ffd89b,#f5a7d4); color:#fff;}
+.btn-safari{background:linear-gradient(135deg,#a8d8b8,#ffd89b); color:#fff;}
+.btn-personalizado{background:linear-gradient(135deg,#d4b5e8,#f0e8ff); color:#4a1f2c;}
+.btn-aniversario{background:linear-gradient(135deg,#f5a7d4,#a8d8b8); color:#fff;}
+.btn-futebol{background:linear-gradient(135deg,#a8d8b8,#d4b5e8); color:#fff;}
+.btn-praia{background:linear-gradient(135deg,#ffd89b,#a8d8b8); color:#fff;}
+.btn-produções{background:linear-gradient(135deg,#d4a5f5,#f5a7d4); color:#fff;}
+.btn-morango{background:linear-gradient(135deg,#f5a7d4,#ffd89b); color:#fff;}
+.btn-docesfinos{background:linear-gradient(135deg,#d4b5e8,#a8d8b8); color:#fff;}
 
 .info-profissional-final {text-align: center; margin-top: 20px;}
-.info-profissional-final p, .info-profissional-final strong{ color:#4a1f2c; font-weight:700; margin: 5px 0;}
+.info-profissional-final p, .info-profissional-final strong{ color:#8b4a8f; font-weight:700; margin: 5px 0;}
 
 /*SLIDER*/
 .producao-semana{ margin-top:30px; text-align:center; }
-.producao-semana h3{ color:#e91e63; font-weight:800; margin-bottom:14px; }
-.slider{ position:relative; width:100%; overflow:hidden; border-radius:22px; box-shadow:0 15px 35px rgba(0,0,0,0.18); }
+.producao-semana h3{ background: linear-gradient(135deg, #e4500c, #e4500c); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight:800; margin-bottom:14px; }
+.slider{ position:relative; width:100%; overflow:hidden; border-radius:22px; box-shadow:0 15px 35px rgb(156, 128, 150);border: 3px solid #e4500c; }
 .slides{ display:flex; transition:transform 0.5s ease-in-out; }
-.slides img{ width:100%; flex-shrink:0; border-radius:22px; display: block; }
-.prev, .next{ position:absolute; top:50%; transform:translateY(-50%); background:rgba(0,0,0,0.5); color:#fff; border:none; padding:12px; font-size:20px; cursor:pointer; border-radius:50%; z-index: 10; transition: 0.3s; }
-.prev:hover, .next:hover { background: var(--rosa); }
+.slides img{ width:100%; flex-shrink:0; border-radius:20px; display: block; }
+.prev, .next{ position:absolute; top:50%; transform:translateY(-50%); background:linear-gradient(135deg, #ffffff, #ffffff); color:#e4500c; border:none; padding:12px; font-size:20px; cursor:pointer; border-radius:50%; z-index: 10; transition: 0.3s; box-shadow:0 5px 15px rgba(212, 181, 232, 0.4); }
+.prev:hover, .next:hover { transform:translateY(-50%) scale(1.1); box-shadow: 0 8px 20px rgba(116, 201, 48, 0.6); }
 .prev{ left:10px; }
 .next{ right:10px; }
 
+/* entrada */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.container {
+  animation: slideInUp 0.6s ease-out;
+}
+
+/* dctv */
+.egg-decoration {
+  display: inline-block;
+  animation: bounce 2s infinite;
+  margin: 0 5px;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+/* rds pgmts*/
+
+.pagamento-social {
+  background: transparent;
+  text-align: center;
+  padding: 40px 20px;
+  margin-top: 40px;
+}
+
+.pagamento-social h2 {
+  font-weight: 800;
+  margin-bottom: 20px;
+  background: linear-gradient(135deg, #d4a5f5, #f5a7d4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.redes {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  margin-bottom: 30px;
+}
+
+.redes a {
+  background: linear-gradient(135deg, #f5a7d4, #d4a5f5);
+  color: white;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(212, 165, 245, 0.3);
+}
+
+.redes a:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(212, 165, 245, 0.5);
+}
+
+
+.pagamentos {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin: 20px 0;
+}
+
+.pagamentos img {
+  width: 55px;
+  background: linear-gradient(135deg, #ffffff, #f8f3ff);
+  padding: 10px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(212, 181, 232, 0.25);
+}
+
+
+.pix {
+  margin-top: 25px;
+}
+
+.pix img {
+  width: 55px;
+}
+
+.pix p {
+  margin-top: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #8b4a8f;
+}
+.pix {
+  margin-top: 25px;
+}
+
+.pix-icon {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, hsl(169, 24%, 40%), #64a790);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  box-shadow: 0 10px 25px #fcfffe;
+}
+
+.pix-icon i {
+  font-size: 28px;
+  color: white;
+}
+
+.pix p {
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #64a790;
+}
+body:after{
+  content:"🐰";
+  position:fixed;
+  bottom:10px;
+  right:5px;
+  font-size:60px;
+  opacity:0.7;
+  pointer-events:none;
+}
+body::after{
+  content:"🥕";
+  position:absolute;
+  top:20px;
+  left:20px;
+  font-size:40px;
+  opacity:0.8;
+  pointer-events:none;
+  animation: flutuar 4s ease-in-out infinite;
+}
+
+@keyframes flutuar{
+  0%{ transform: translateY(0px); }
+  50%{ transform: translateY(-6px); }
+  100%{ transform: translateY(0px); }
+}
 
 
 </style>
 </head>
 
 <body>
+  
 <div class="container">
 <span class="doces">DOCES</span>
 <span class="analu">da Analu</span>
-<div class="subtitulo">cardápio digital 💗</div>
+<div class="subtitulo">cardápio digital 🐰🥚</div>
 
 <div class="video-container">
 <iframe src="https://www.youtube.com/embed/Tkm_Eo7IyD0?feature=share" allowfullscreen></iframe>
 </div>
 
 <div class="card">
-<h3 style="color:#e91e63;margin-bottom:14px; font-weight: 800;">Sabores de brigadeiros Disponíveis 💗</h3>
+<h3 style="background: linear-gradient(135deg, #e4500c, #e4500c); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom:14px; font-weight: 800;">Sabores de Brigadeiros Disponíveis</h3>
 <ul class="lista">
-<li>Brigadeiro branco</li>
-<li>Brigadeiro ao Leite</li>
-<li>Brigadeiro Meio Amargo</li>
-<li>Ninho</li>
-<li>Ninho Colorido</li>
-<li>Surpresa de Uva</li>
-<li>Casadinho</li>
-<li>Beijinho</li>
-<li>Amendoim</li>
-<li>Prestígio</li>
-<li>Confete</li>
+<li> Brigadeiro branco</li>
+<li> Brigadeiro ao Leite</li>
+<li> Brigadeiro Meio Amargo</li>
+<li> Ninho</li>
+<li> Ninho Colorido</li>
+<li> Surpresa de Uva</li>
+<li> Casadinho</li>
+<li> Beijinho</li>
+<li> Amendoim</li>
+<li> Prestígio</li>
+<li> Confete</li>
 </ul>
 
 <div class="pedido">
-<h3>Monte seu combo e escolha os sabores</h3>
+<h3>Monte seu combo e escolha os sabores 🥕 </h3>
 <select id="combo">
   <option value=""> Escolha seu combo </option>
   <option value="Caixinha da Felicidade (4 brigadeiros)">Caixinha da Felicidade — 4 brigadeiros</option>
   <option value="25 Brigadeiros">Caixa com 25 brigadeiros</option>
   <option value="Meio cento (50 doces)">Meio cento — 50 brigadeiros</option>
   <option value="Cento (100 doces)">Cento completo — 100 brigadeiros</option>
-  <option value="orcamento_whatsapp">Fazer um orçamento diferente no WhatsApp</option>
+  <option value="orcamento_whatsapp">Fazer um orçamento diferente no WhatsApp🥕</option>
 </select>
 
 <p id="limite-msg" class="limite-msg"></p>
@@ -133,7 +297,7 @@ footer{margin-top:16px;color:#ebece4;font-weight:600; text-align: center;}
 </div>
 
 <div class="producao-semana">
-  <h3>Produções do mês 👩🏻‍🍳💗</h3>
+  <h3>Produções do mês🐰</h3>
   <div class="slider">
     <div class="slides" id="slides-box">
       <img src="https://i.ibb.co/39s9xddX/IMG-20260224-WA0141.jpg">
@@ -148,29 +312,27 @@ footer{margin-top:16px;color:#ebece4;font-weight:600; text-align: center;}
       <img src="https://i.ibb.co/dwRcw6Fv/IMG-20260213-WA0085.jpg">
       <img src="https://i.ibb.co/twhhvNbC/Whats-App-Image-2026-02-18-at-11-23-09.jpg">
       
->
     </div>
     <button class="prev" onclick="prevSlide()">&#10094;</button>
     <button class="next" onclick="nextSlide()">&#10095;</button>
   </div>
 </div>
-</div>
 
 <div class="busca-final">
-<h3>Busque no nosso instagram ou procure outras ideias 💗</h3>
+<h3>Busque no nosso instagram ou procure outras ideias</h3>
 <input type="text" id="pesquisa" placeholder="Ex: chá de casa nova,infantil,flores..." onkeyup="filtrarLinks()">
 <div class="galeria-links">
 <a href="https://www.instagram.com/reel/DNvrp8gQAmZ/" target="_blank" class="pin-card btn-casamento" data-tags="casamento">💍 Casamento</a>
-<a href="https://pin.it/4dRJuIWF4" target="_blank" class="pin-card btn-aniversario" data-tags="aniversário festa bolo">🎉 Aniversário</a>
+<a href="https://pin.it/7wKmMgmer" target="_blank" class="pin-card btn-aniversario" data-tags="aniversário festa bolo">🎉 Aniversário</a>
 <a href="https://pin.it/7wKmMgmer" target="_blank" class="pin-card btn-produções" data-tags="outras opcoes outras ideia opções tradicional Beijinho">👩🏻‍🍳🥄 Produções</a>
 <a href="https://www.instagram.com/reel/DRdLQcqAJPZ/" class="pin-card btn-personalizado escondido" data-tags="casa nova novo lar cha xa chá  ">🏠 Casa Nova</a>
 <a href="https://www.instagram.com/reel/DRYVtQUgKLY/" class="pin-card btn-praia escondido" data-tags="praia verão tropical mar piscina">🌞 Praia</a>
-<a href="https://pin.it/6Kia3s9BI" class="pin-card btn-flores escondido" data-tags="flores rosas ">🌸 flores</a>
+<a href="https://pin.it/6Kia3s9BI" class="pin-card btn-flores escondido" data-tags="flores rosas ">🌸 Flores</a>
 <a href="https://pin.it/76OG20vfj" class="pin-card btn-futebol escondido" data-tags="futebol esporte time copa neymar flamengo bola">⚽ Futebol</a>
 <a href="https://pin.it/4m4yQpWGs" class="pin-card btn-safari escondido" data-tags="animais safari bicho criança personagens fundo do mar disney um ano dois anos 3 anos 4 anos 5 anos bebê">👧🏻🧒🏽 Infantil</a>
 <a href="https://pin.it/14eiFPe0p" class="pin-card btn-morango escondido" data-tags="morango morango do amor morango recheado">🍓 Morango do Amor</a>
 <a href="https://pin.it/4QfRNYQbI" class="pin-card btn-flores escondido" data-tags="morango recheado chocolate">🍫🍓 Coxinha de Morango</a>
-<a href="https://pin.it/5fqthBdLu" class="pin-card btn-docesfinos escondido" data-tags="doces finos doces casamento finos bonito chique">🧸doces finos</a>
+<a href="https://pin.it/5fqthBdLu" class="pin-card btn-docesfinos escondido" data-tags="doces finos doces casamento finos bonito chique">🧸Doces Finos</a>
 </div>
 </div>
 
@@ -179,9 +341,40 @@ footer{margin-top:16px;color:#ebece4;font-weight:600; text-align: center;}
   <p>💳 Pagamento via <strong>Pix, cartão e dinheiro</strong></p>
 </div>
 
-<footer>Obrigado por visitar! Aguardo suas encomendas 💗</footer>
+<footer>Obrigada por visitar! Aguardo suas encomendas🐰💗</footer>
+<p style="text-align:center;font-size:12px;color:#c4a8d4;margin-top:8px;"><a href="https://www.instagram.com/luanapereira.dev/" target="_blank" style="color:#c4a8d4;text-decoration:none;font-weight:600;"></a></p>
 </div>
+ <section class="pagamento-social">
 
+  <!-- Redes Sociais -->
+  <div class="redes">
+    <a href="https://instagram.com/_docesdaanalu_" target="_blank">
+      <i class="fab fa-instagram"></i>
+    </a>
+    <a href="https://wa.me/558396905025" target="_blank">
+  <i class="fab fa-whatsapp"></i>
+</a>
+    
+  </div>
+
+  <!-- Título -->
+  <h2>Formas de pagamento</h2>
+
+  <!-- Cartões -->
+  <div class="pagamentos">
+    <img src="https://cdn-icons-png.flaticon.com/512/196/196578.png" alt="Visa">
+    <img src="https://cdn-icons-png.flaticon.com/512/196/196561.png" alt="Mastercard">
+  </div>
+
+  <div class="pix">
+  <div class="pix-icon">
+    <i class="fa-brands fa-pix"></i>
+  </div>
+  <p>Pix</p>
+</div>
+<p style="text-align:center;font-size:12px;color:#c4a8d4;margin-top:8px;">feito por Analuizazevedo<a href="https://www.instagram.com/_analuizazevedo/" target="_blank" style="color:#c4a8d4;text-decoration:none;font-weight:600;"></a></p>
+
+</section>
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
 <script>
@@ -236,7 +429,7 @@ comboSelect.addEventListener("change", () => {
   else limiteSabores = 0;
 
   checkboxes.forEach(cb => {cb.checked = false; cb.disabled = false;});
-  msgLimite.innerText = limiteSabores ? `Você pode escolher até ${limiteSabores} sabores 💗` : "";
+  msgLimite.innerText = limiteSabores ? `Você pode escolher até ${limiteSabores} sabores 🐰🌷` : "";
 });
 
 checkboxes.forEach(cb => {
@@ -257,15 +450,15 @@ function pedirWhats(event){
   const sabores = [...selecionados].map(s => s.value).join(", ");
 
   if(combo === "orcamento_whatsapp"){
-    window.location.href = `https://api.whatsapp.com/send?phone=558396905025&text=${encodeURIComponent("Oii, Analu! ♡ Quero fazer um orçamento!")}`;
+    window.location.href = `https://api.whatsapp.com/send?phone=558396905025&text=${encodeURIComponent("Oii, Analu! ♡ Quero fazer um orçamento!🐰")}`;
     return;
   }
   if(!combo || selecionados.length === 0){
-    alert("Escolha o combo e os sabores! 💕");
+    alert("Escolha o combo e os sabores! 🐰💕");
     return;
   }
   let artigo = combo.includes("Caixinha") ? "da" : "de";
-  const msg = `Oii! Analuu Gostaria de saber o valor ${artigo} ${combo} com os sabores: ${sabores}`;
+  const msg = `Oii! Analuu 🐰 Gostaria de saber o valor ${artigo} ${combo} com os sabores: ${sabores}`;
   window.location.href = `https://api.whatsapp.com/send?phone=558396905025&text=${encodeURIComponent(msg)}`;
 }
 
@@ -285,4 +478,3 @@ function filtrarLinks(){
 </script>
 </body>
 </html>
-
