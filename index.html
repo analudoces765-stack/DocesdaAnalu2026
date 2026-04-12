@@ -18,14 +18,14 @@
 }
 *{box-sizing:border-box;margin:0;padding:0;}
 
-/* ── TOPO (integrado, mesmo visual do resto) ── */
+
 .hero{
   width:100%;
   padding: 40px 24px 36px;
   text-align:center;
 }
 
-/* Florzinha decorativa SVG no topo */
+
 .hero-flor{
   display:block;
   margin:0 auto 18px;
@@ -33,7 +33,7 @@
   height:64px;
 }
 
-/* Tag "DIA DAS MÃES" */
+
 .hero-tag{
   display:inline-block;
   background: linear-gradient(135deg,#f9a8d4,#f472b6);
@@ -52,7 +52,7 @@
 .hero-tag::before{ content:'✦  '; }
 .hero-tag::after{  content:'  ✦'; }
 
-/* "DOCES" em maiúsculas bold */
+
 .hero-doces{
   display:block;
   font-family:'Nunito',sans-serif;
@@ -64,7 +64,7 @@
   margin-bottom:0px;
 }
 
-/* "da Analu" cursiva grande */
+
 .hero-analu{
   display:block;
   font-family:'Pacifico',cursive;
@@ -74,7 +74,7 @@
   margin-bottom:18px;
 }
 
-/* Linha divisória com florzinha */
+
 .hero-divisor{
   display:flex;
   align-items:center;
@@ -89,7 +89,6 @@
 }
 .hero-divisor-icon{ font-size:20px; }
 
-/* "cardápio especial para mamãe" */
 .hero-sub{
   font-family:'Pacifico',cursive;
   font-size:22px;
@@ -97,7 +96,7 @@
   opacity:.9;
 }
 
-/* ── RESTO DA PÁGINA ── */
+
 body{
   min-height:100vh;font-family:'Nunito',sans-serif;background:#fff5fb;
   background-image:
@@ -110,7 +109,7 @@ body{
 .container{width:100%;max-width:430px;text-align:center;animation:fadeUp .7s ease-out;}
 @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 
-/* ── SEÇÃO ABAIXO DO HERO ── */
+
 .below-hero{ padding:24px 16px 0; }
 
 .video-container{width:185px;margin:0 auto 24px;border:5px solid #000;border-radius:28px;overflow:hidden;aspect-ratio:9/16;box-shadow:0 12px 32px rgba(0,0,0,.35);}
@@ -187,10 +186,10 @@ footer{margin-top:20px;font-size:15px;font-weight:700;color:var(--texto-soft);fo
 <body>
 <div class="container">
 
-  <!-- ══ TOPO HERO (igual à imagem) ══ -->
+ 
   <div class="hero">
 
-    <!-- Florzinha decorativa SVG (igual à foto: pétalas + centro) -->
+
     <svg class="hero-flor" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
       <!-- pétalas laterais (traços finos) -->
       <ellipse cx="10" cy="32" rx="9" ry="4" fill="none" stroke="#e8448a" stroke-width="1.8" opacity=".6"/>
@@ -227,7 +226,7 @@ footer{margin-top:20px;font-size:15px;font-weight:700;color:var(--texto-soft);fo
 
     <div class="hero-sub">cardápio especial para mamãe 💕</div>
   </div>
-  <!-- ══ FIM TOPO HERO ══ -->
+  
 
   <div class="below-hero">
 
@@ -320,7 +319,7 @@ footer{margin-top:20px;font-size:15px;font-weight:700;color:var(--texto-soft);fo
     </div>
 
     <div class="info-local">📍 João Pessoa / Cabedelo — PB</div>
-    <footer>Obrigada pela visita! Com amor 💗</footer>
+    <footer>Obrigada pela visita!💗</footer>
 
     <div class="pagamento-social">
       <div class="titulo-pag"><i class="fas fa-heart"></i> Nossas Redes</div>
@@ -335,7 +334,7 @@ footer{margin-top:20px;font-size:15px;font-weight:700;color:var(--texto-soft);fo
       </div>
       <div class="pix-wrap">
         <div class="pix-icon">
-          <!-- SVG do Pix (substitui fa-pix que não existe no FA gratuito) -->
+        
           <svg class="pix-svg" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-label="Pix">
             <path d="M14.5 32 L32 14.5 L49.5 32 L32 49.5 Z" stroke="#fff" stroke-width="3" fill="none"/>
             <line x1="32" y1="14.5" x2="32" y2="49.5" stroke="#fff" stroke-width="2.5"/>
@@ -347,12 +346,12 @@ footer{margin-top:20px;font-size:15px;font-weight:700;color:var(--texto-soft);fo
       <div class="credito">feito por Ana Luiza Azevedo 🌸</div>
     </div>
 
-  </div><!-- /below-hero -->
-</div><!-- /container -->
+  </div>
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 <script>
-// ── SLIDER (sem bugs) ──
+
 (function(){
   const box = document.getElementById("slides-box");
   const dotsC = document.getElementById("dots-container");
@@ -392,7 +391,7 @@ footer{margin-top:20px;font-size:15px;font-weight:700;color:var(--texto-soft);fo
   startTimer();
 })();
 
-// ── COMBO + SABORES ──
+
 const comboSelect=document.getElementById("combo");
 const checkboxes=document.querySelectorAll(".sabores-check input");
 const msgLimite=document.getElementById("limite-msg");
@@ -420,11 +419,11 @@ checkboxes.forEach(cb=>{
   });
 });
 
-// ── WHATSAPP (bug corrigido) ──
+
 function pedirWhats(e){
   e.preventDefault();
   const combo=comboSelect.value;
-  // orçamento especial — redireciona direto, sem precisar de sabores
+  
   if(combo==="orcamento_whatsapp"){
     window.location.href=`https://api.whatsapp.com/send?phone=558396905025&text=${encodeURIComponent("Oii, Analu! 🌸 Quero fazer um orçamento especial para o Dia das Mães!")}`;
     return;
@@ -439,7 +438,7 @@ function pedirWhats(e){
   setTimeout(()=>{window.location.href=`https://api.whatsapp.com/send?phone=558396905025&text=${encodeURIComponent(msg)}`;},800);
 }
 
-// ── BUSCA ──
+
 function filtrarLinks(){
   const texto=document.getElementById("pesquisa").value.toLowerCase().trim();
   document.querySelectorAll(".pin-card").forEach(card=>{
