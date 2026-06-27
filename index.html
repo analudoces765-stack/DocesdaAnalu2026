@@ -3,964 +3,1017 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Doces da Analu — cardápio especial de São João. Brigadeiros artesanais em João Pessoa/Cabedelo PB.">
-<title>Doces Da Analu - Arraiá 🌽</title>
+<meta name="description" content="Doces da Analu — brigadeiros gourmet em João Pessoa e Cabedelo, PB.">
+<title>Doces da Analu</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
-:root{
-  --amarelo:#f5a623;
-  --laranja:#e8650a;
-  --vermelho:#c0392b;
-  --marrom:#6b3a1f;
-  --marrom-escuro:#3d1f0a;
-  --palha:#f2e0a0;
-  --palha-clara:#fdf5dc;
-  --verde:#2e7d32;
-  --verde-claro:#66bb6a;
-  --texto:#3d1f0a;
-  --borda:#d4a03a;
-  --whatsapp:#25D366;
-}
-*{box-sizing:border-box;margin:0;padding:0;}
+:root {
+  --bg: #FEF6F9;
+  --white: #FFFFFF;
+  --pink: #D81B6A;
+  --pink-dark: #A8144F;
+  --pink-mid: #E8559A;
+  --pink-soft: #F9D0E4;
+  --pink-pale: #FDE8F2;
+  --ink: #2A0F1E;
+  --ink-mid: #6B3352;
+  --ink-soft: #A07088;
+  --line: #F0D8E8;
+  --green: #25D366;
+  --green-dark: #1DA851;
 
-body{
-  min-height:100vh;
-  font-family:'Nunito',sans-serif;
-  background-color:#12163d;
-  background-image:
-    radial-gradient(ellipse at 50% 0%, rgba(245,166,35,.22) 0%, transparent 60%),
-    radial-gradient(ellipse at 10% 100%, rgba(232,101,10,.14) 0%, transparent 50%),
-    radial-gradient(ellipse at 90% 100%, rgba(192,57,43,.14) 0%, transparent 50%),
-    radial-gradient(ellipse at 50% 50%, rgba(30,40,100,.4) 0%, transparent 80%);
-  display:flex;justify-content:center;
-  padding:0 0 60px;overflow-x:hidden;
-  position:relative;
+  --pd-bg: #1E0A15;
+  --pd-surface: rgba(255,240,247,.045);
+  --pd-border: rgba(249,208,228,.11);
+  --pd-text: rgba(255,235,245,.92);
+  --pd-muted: rgba(249,208,228,.42);
+  --pd-pink-glow: rgba(216,27,106,.22);
 }
 
-#stars-bg{
-  position:fixed;top:0;left:0;width:100%;height:100%;
-  pointer-events:none;z-index:0;overflow:hidden;
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--ink); -webkit-font-smoothing: antialiased; }
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+
+.wrap { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+section { scroll-margin-top: 110px; }
+
+.topbar {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(255,255,255,.96);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+}
+.topbar-inner {
+  max-width: 1100px; margin: 0 auto;
+  padding: 10px 24px;
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+}
+.brand-logo { height: 46px; width: auto; object-fit: contain; display: block; }
+.topbar-cta {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--pink); color: #fff;
+  padding: 10px 20px; border-radius: 999px;
+  font-weight: 700; font-size: 13.5px;
+  transition: background .2s;
+  box-shadow: 0 4px 14px rgba(216,27,106,.28);
+  flex-shrink: 0;
+}
+.topbar-cta:hover { background: var(--pink-dark); }
+.topbar-cta .label { display: inline; }
+
+.subnav {
+  display: flex; gap: 6px; overflow-x: auto;
+  padding: 0 24px 11px;
+  scrollbar-width: none;
+}
+.subnav::-webkit-scrollbar { display: none; }
+.subnav a {
+  flex-shrink: 0; padding: 7px 15px; border-radius: 999px;
+  font-size: 13px; font-weight: 600; color: var(--ink-mid);
+  white-space: nowrap;
+  border: 1px solid var(--line); background: var(--white);
+  transition: all .18s;
+}
+.subnav a:hover { border-color: var(--pink); color: var(--pink); }
+
+.hero { padding: 56px 0 64px; }
+.hero-grid { display: grid; grid-template-columns: 1fr; gap: 48px; align-items: center; }
+.hero-logo { display: block; width: min(200px, 52vw); margin: 0 auto 20px; }
+.eyebrow {
+  font-size: 11.5px; font-weight: 700; letter-spacing: .16em;
+  text-transform: uppercase; color: var(--pink); margin-bottom: 10px;
+}
+h1, h2, h3 { font-family: 'Cormorant Garamond', serif; font-weight: 600; line-height: 1.15; color: var(--ink); }
+h1 { font-size: clamp(30px, 5.5vw, 50px); margin-bottom: 16px; font-style: italic; }
+h2 { font-size: clamp(24px, 4vw, 34px); margin-bottom: 28px; }
+.hero-sub { font-size: 15.5px; line-height: 1.72; color: var(--ink-mid); max-width: 460px; margin-bottom: 30px; }
+.ctas { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 38px; }
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 9px;
+  padding: 14px 28px; border-radius: 999px;
+  font-weight: 700; font-size: 14.5px; border: none; cursor: pointer;
+  transition: all .2s ease;
+}
+.btn-pink { background: var(--pink); color: #fff; box-shadow: 0 6px 18px rgba(216,27,106,.3); }
+.btn-pink:hover { background: var(--pink-dark); transform: translateY(-1px); }
+.btn-outline { background: transparent; color: var(--pink); border: 2px solid var(--pink); }
+.btn-outline:hover { background: var(--pink); color: #fff; }
+
+.numeros { display: flex; gap: 0; list-style: none; }
+.numeros li { display: flex; flex-direction: column; gap: 3px; padding: 0 22px; border-left: 1px solid var(--line); }
+.numeros li:first-child { padding-left: 0; border-left: none; }
+.numeros strong { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600; color: var(--pink); }
+.numeros span { font-size: 11px; color: var(--ink-soft); text-transform: uppercase; letter-spacing: .07em; }
+
+.video-wrap { display: flex; justify-content: center; }
+.video-box {
+  width: 100%; max-width: 255px; aspect-ratio: 9/16;
+  border-radius: 22px; overflow: hidden;
+  border: 3px solid var(--pink-soft);
+  box-shadow: 0 28px 56px rgba(216,27,106,.14);
+}
+.video-box iframe { width: 100%; height: 100%; border: none; display: block; }
+
+.s-alt { background: var(--white); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.section { padding: 62px 0; }
+
+.sabores-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 8px; }
+.sabor-item {
+  display: flex; align-items: center; gap: 10px;
+  background: var(--white); border: 1px solid var(--line); border-radius: 12px;
+  padding: 12px 14px; transition: all .18s;
+}
+.sabor-item:hover { border-color: var(--pink); box-shadow: 0 2px 10px rgba(216,27,106,.07); }
+.sabor-n { font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 12px; color: var(--ink-soft); min-width: 18px; flex-shrink: 0; }
+.sabor-item span:last-child { font-weight: 500; font-size: 13.5px; color: var(--ink); }
+
+
+.section-pedido {
+  padding: 72px 0;
+  background: linear-gradient(160deg, #fce8f3 0%, #fdf2f8 50%, #f8e0ef 100%);
+  position: relative; overflow: hidden;
+}
+.section-pedido::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(216,27,106,.07) 0%, transparent 65%);
+  pointer-events: none;
+}
+.pd-wrap { max-width: 620px; margin: 0 auto; padding: 0 24px; position: relative; }
+
+.pd-header { text-align: center; margin-bottom: 44px; }
+.pd-eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 10.5px; font-weight: 700; letter-spacing: .2em;
+  text-transform: uppercase; color: var(--pink);
+  background: rgba(216,27,106,.08); border: 1px solid rgba(216,27,106,.2);
+  padding: 6px 16px; border-radius: 999px; margin-bottom: 16px;
+}
+.pd-title {
+  font-family: 'Cormorant Garamond', serif; font-weight: 600;
+  font-size: clamp(28px, 5vw, 42px); color: var(--ink);
+  line-height: 1.15; font-style: italic;
+}
+.pd-subtitle { font-size: 13.5px; color: var(--ink-soft); margin-top: 10px; letter-spacing: .01em; }
+
+.pd-progress {
+  display: flex; align-items: center; gap: 0;
+  margin-bottom: 36px; padding: 0 4px;
+}
+.pd-prog-step {
+  display: flex; flex-direction: column; align-items: center; gap: 6px;
+  flex: 1; cursor: pointer;
+}
+.pd-prog-circle {
+  width: 36px; height: 36px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: 13px;
+  border: 1.5px solid var(--line);
+  color: var(--ink-soft);
+  background: var(--white);
+  transition: all .3s;
+  position: relative; z-index: 1;
+}
+.pd-prog-circle.done { background: var(--pink); border-color: var(--pink); color: #fff; box-shadow: 0 0 0 4px rgba(216,27,106,.15); }
+.pd-prog-circle.active { background: var(--white); border-color: var(--pink); color: var(--pink); box-shadow: 0 0 0 4px rgba(216,27,106,.1); }
+.pd-prog-label { font-size: 10px; font-weight: 600; color: var(--ink-soft); text-align: center; white-space: nowrap; transition: color .3s; opacity: .5; }
+.pd-prog-label.active { color: var(--pink); opacity: 1; }
+.pd-prog-line { flex: 1; height: 1px; background: var(--line); margin: 0 -2px; margin-bottom: 20px; position: relative; }
+.pd-prog-line-fill { height: 100%; background: var(--pink); width: 0%; transition: width .45s ease; }
+
+.pd-step-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 20px; padding: 28px 24px;
+  box-shadow: 0 4px 24px rgba(216,27,106,.07);
+  display: none;
+  animation: fadeUp .35s ease;
+}
+.pd-step-card.active { display: block; }
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-.bandeirinhas{
-  width:100%;overflow:hidden;
-  position:relative;z-index:10;
-  padding:0;
-  display:flex;justify-content:center;
+.pd-card-label {
+  font-size: 10.5px; font-weight: 700; letter-spacing: .15em;
+  text-transform: uppercase; color: var(--pink); margin-bottom: 6px;
 }
-.bandeirinhas svg{width:100%;max-width:430px;height:110px;}
-
-.container{
-  width:100%;max-width:430px;text-align:center;
-  animation:fadeUp .75s ease-out;
-  position:relative;z-index:1;
-}
-@keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
-
-.hero{
-  width:100%;padding:30px 24px 36px;
-  text-align:center;position:relative;
+.pd-card-title {
+  font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 600;
+  color: var(--ink); margin-bottom: 22px; font-style: italic;
 }
 
-.chapeu-hero{
-  display:block;
-  margin:0 auto 14px;
-  width:130px;height:auto;
-  animation:balanca 2.5s ease-in-out infinite;
-  filter:drop-shadow(0 6px 18px rgba(245,166,35,.55));
+.pd-combos { display: flex; flex-direction: column; gap: 9px; }
+
+.pd-combo-option {
+  display: flex; align-items: center; gap: 14px;
+  padding: 14px 18px; border-radius: 14px;
+  border: 1px solid var(--line);
+  background: var(--bg);
+  cursor: pointer; transition: border-color .2s, background .2s; position: relative;
 }
-@keyframes balanca{
-  0%,100%{transform:rotate(-4deg)}
-  50%{transform:rotate(4deg)}
+.pd-combo-option:hover {
+  border-color: var(--pink-mid);
+  background: var(--pink-pale);
+}
+.pd-combo-option.selected {
+  border-color: var(--pink);
+  background: var(--pink-pale);
+}
+.pd-combo-option input { position: absolute; opacity: 0; width: 0; height: 0; }
+.pd-combo-radio {
+  width: 18px; height: 18px; border-radius: 50%; flex-shrink: 0;
+  border: 1.5px solid var(--line);
+  display: flex; align-items: center; justify-content: center;
+  transition: all .2s;
+}
+.pd-combo-option.selected .pd-combo-radio {
+  border-color: var(--pink); background: var(--pink);
+}
+.pd-combo-option.selected .pd-combo-radio::after {
+  content: ''; width: 7px; height: 7px; border-radius: 50%; background: #fff;
+}
+.pd-combo-info { flex: 1; min-width: 0; }
+.pd-combo-name { font-weight: 600; font-size: 14px; color: var(--ink); }
+.pd-combo-desc { font-size: 12px; color: var(--ink-soft); margin-top: 2px; }
+.pd-combo-badge {
+  font-size: 11px; font-weight: 600;
+  color: var(--ink-mid);
+  background: var(--white);
+  border: 1px solid var(--line);
+  padding: 4px 10px; border-radius: 999px; flex-shrink: 0;
+  white-space: nowrap;
+}
+.pd-combo-option.selected .pd-combo-badge {
+  background: var(--pink); border-color: var(--pink); color: #fff;
 }
 
-.hero-tag{
-  display:inline-block;
-  background:linear-gradient(135deg,#e8650a,#f5a623);
-  color:#fff;
-  font-family:'Fredoka One',cursive;
-  font-size:13px;
-  letter-spacing:2px;
-  text-transform:uppercase;
-  padding:8px 28px;
-  border-radius:999px;
-  margin-bottom:16px;
-  box-shadow:0 4px 20px rgba(245,166,35,.45);
-  border:2px solid rgba(255,255,255,.25);
+
+.pd-aviso-max {
+  display: none;
+  align-items: center; gap: 10px;
+  padding: 11px 15px; border-radius: 10px;
+  background: var(--pink-pale);
+  border: 1px solid var(--pink-soft);
+  color: var(--pink-dark);
+  font-size: 12.5px; font-weight: 600;
+  margin-bottom: 18px;
+}
+.pd-aviso-max.on { display: flex; }
+.pd-aviso-max i { color: var(--pink); font-size: 13px; flex-shrink: 0; }
+
+.pd-flavors { display: flex; flex-wrap: wrap; gap: 8px; }
+.pd-flavor {
+  position: relative;
+  padding: 9px 17px; border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--white);
+  font-size: 13px; font-weight: 600; color: var(--ink-mid);
+  cursor: pointer; transition: border-color .18s, background .18s, color .18s, transform .18s, box-shadow .18s;
+  user-select: none;
+}
+.pd-flavor input { position: absolute; opacity: 0; width: 0; height: 0; }
+.pd-flavor:has(input:checked) {
+  background: var(--pink);
+  border-color: var(--pink);
+  color: #fff;
+  box-shadow: 0 4px 14px rgba(216,27,106,.28);
+  transform: scale(1.04);
+}
+.pd-flavor:has(input:not(:disabled)):hover {
+  border-color: var(--pink-mid);
+  color: var(--pink);
+  background: var(--pink-pale);
+}
+.pd-flavor:has(input:disabled):not(:has(input:checked)) {
+  opacity: .3; cursor: not-allowed; transform: none;
 }
 
-.hero-nome-wrap{
-  display:flex;align-items:center;justify-content:center;gap:10px;
-  margin-bottom:14px;flex-wrap:nowrap;
-  text-align:center;
+.pd-resumo {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 14px; padding: 18px 20px; margin-bottom: 20px;
 }
-.milho-lateral{
-  font-size:28px;line-height:1;
-  animation:balanca 2s ease-in-out infinite;
-  display:inline-block;
-  flex-shrink:0;
+.pd-resumo-linha {
+  display: flex; justify-content: space-between; align-items: flex-start;
+  gap: 12px; padding: 8px 0;
+  border-bottom: 1px solid var(--line);
 }
-.milho-lateral.inv{animation-delay:.4s;display:inline-block;flex-shrink:0;}
-.hero-doces{
-  display:block;
-  font-family:'Fredoka One',cursive;
-  font-size:24px;
-  letter-spacing:5px;
-  text-transform:uppercase;
-  color:var(--palha);
-  text-shadow:0 2px 12px rgba(245,166,35,.6);
-  margin-bottom:0;line-height:1.1;
+.pd-resumo-linha:last-child { border-bottom: none; }
+.pd-resumo-key {
+  color: var(--ink-soft);
+  font-size: 10.5px; font-weight: 700;
+  letter-spacing: .12em; text-transform: uppercase;
+  flex-shrink: 0;
 }
-.hero-analu{
-  display:block;
-  font-family:'Fredoka One',cursive;
-  font-size:50px;
-  letter-spacing:3px;
-  text-transform:uppercase;
-  color:var(--amarelo);
-  line-height:1;
-  text-shadow:0 4px 24px rgba(245,166,35,.7),0 0 60px rgba(245,166,35,.3);
-}
+.pd-resumo-val { color: var(--ink); font-weight: 600; font-size: 13.5px; text-align: right; }
 
-.hero-divisor{
-  display:flex;align-items:center;justify-content:center;
-  gap:10px;margin-bottom:12px;
+.pd-btn-whats {
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  width: 100%; padding: 16px; border-radius: 14px;
+  background: #25D366; color: #fff;
+  font-weight: 700; font-size: 15px; border: none; cursor: pointer;
+  transition: all .22s;
+  box-shadow: 0 8px 24px rgba(37,211,102,.25);
+  text-decoration: none; margin-bottom: 10px;
 }
-.hero-divisor-linha{
-  width:70px;height:2px;
-  background:linear-gradient(90deg,transparent,var(--amarelo),transparent);
-}
-.hero-divisor-icon{font-size:22px;}
+.pd-btn-whats:hover { background: #1DA851; transform: translateY(-2px); box-shadow: 0 14px 32px rgba(37,211,102,.34); }
 
-.hero-sub{
-  font-family:'Fredoka One',cursive;
-  font-size:20px;
-  color:var(--palha);
-  opacity:.9;
-  text-shadow:0 2px 8px rgba(0,0,0,.4);
+.pd-btn-insta {
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  width: 100%; padding: 13px; border-radius: 14px;
+  background: transparent; color: var(--ink-soft);
+  border: 1px solid var(--line);
+  font-weight: 600; font-size: 14px; cursor: pointer;
+  transition: all .2s; text-decoration: none;
 }
+.pd-btn-insta:hover { border-color: var(--pink-mid); color: var(--pink); }
 
-.fogueira-wrap{
-  display:flex;justify-content:center;margin:-10px 0 4px;
+.pd-nav { display: flex; gap: 10px; margin-top: 22px; }
+.pd-btn-back {
+  display: flex; align-items: center; gap: 8px;
+  padding: 12px 20px; border-radius: 12px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  color: var(--ink-soft);
+  font-weight: 600; font-size: 13px;
+  cursor: pointer; transition: all .2s; flex-shrink: 0;
 }
-.fogueira-wrap svg{width:90px;height:80px;}
+.pd-btn-back:hover { border-color: var(--pink-mid); color: var(--ink); }
+.pd-btn-next {
+  flex: 1; display: flex; align-items: center; justify-content: center; gap: 9px;
+  padding: 13px 20px; border-radius: 12px;
+  background: var(--pink); color: #fff;
+  font-weight: 700; font-size: 14px; border: none;
+  cursor: pointer; transition: all .2s;
+  box-shadow: 0 6px 20px rgba(216,27,106,.3);
+}
+.pd-btn-next:hover:not(:disabled) { background: var(--pink-dark); transform: translateY(-1px); }
+.pd-btn-next:disabled { opacity: .28; cursor: not-allowed; transform: none !important; box-shadow: none; }
 
-.below-hero{padding:24px 16px 0;}
+.galeria-frame {
+  max-width: 300px; margin: 0 auto; border-radius: 20px; overflow: hidden;
+  border: 1px solid var(--line); box-shadow: 0 20px 48px rgba(216,27,106,.1);
+}
+.slider { position: relative; overflow: hidden; }
+.slides { display: flex; transition: transform .5s cubic-bezier(.4,0,.2,1); }
+.slide { width: 100%; flex-shrink: 0; aspect-ratio: 4/5; overflow: hidden; }
+.slide img { width: 100%; height: 100%; object-fit: cover; background: var(--pink-pale); }
+.arr {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  background: rgba(255,255,255,.88); color: var(--pink);
+  border: none; width: 28px; height: 28px; border-radius: 50%;
+  cursor: pointer; z-index: 5;
+  display: flex; align-items: center; justify-content: center; font-size: 10px;
+  transition: all .2s; box-shadow: 0 2px 8px rgba(0,0,0,.15);
+}
+.arr:hover { background: var(--pink); color: #fff; transform: translateY(-50%) scale(1.08); }
+.arr-prev { left: 8px; } .arr-next { right: 8px; }
+.dots { display: flex; justify-content: center; gap: 6px; padding-top: 16px; }
+.dot { width: 6px; height: 6px; border-radius: 50%; background: var(--pink-soft); cursor: pointer; transition: all .3s; }
+.dot.on { background: var(--pink); width: 20px; border-radius: 3px; }
 
-.video-container{
-  width:185px;margin:0 auto 24px;
-  border:5px solid var(--amarelo);
-  border-radius:28px;overflow:hidden;
-  aspect-ratio:9/16;
-  box-shadow:0 12px 40px rgba(245,166,35,.45),0 0 0 2px rgba(255,255,255,.1);
+.temas-intro { max-width: 520px; margin: 0 auto 32px; text-align: center; }
+.temas-intro p { font-size: 14.5px; color: var(--ink-mid); line-height: 1.68; }
+.temas-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 14px; }
+.tema {
+  background: var(--white); border: 1px solid var(--line); border-radius: 16px;
+  overflow: hidden; cursor: pointer;
+  transition: transform .2s, border-color .2s, box-shadow .2s;
 }
-.video-container iframe{width:100%;height:100%;border:none;display:block;}
+.tema:hover { transform: translateY(-4px); border-color: var(--pink-mid); box-shadow: 0 10px 28px rgba(216,27,106,.13); }
 
-.card{
-  background:rgba(253,245,220,.95);
-  border-radius:28px;padding:26px 22px;margin-bottom:18px;
-  border:2.5px solid var(--borda);
-  box-shadow:0 10px 40px rgba(0,0,0,.4),0 0 0 1px rgba(255,220,100,.15);
-  position:relative;overflow:hidden;
-  backdrop-filter:blur(4px);
+/* ── TEMAS: imagens maiores ── */
+.tema-img-wrap {
+  width: 100%;
+  aspect-ratio: 3/4;   /* retrato, bem mais alto */
+  overflow: hidden;
+  background: var(--pink-pale);
 }
+.tema-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* preenche sem barras brancas */
+  object-position: center top;
+  transition: transform .35s ease;
+}
+.tema:hover .tema-img-wrap img { transform: scale(1.04); }
 
-.card::before{
-  content:'';position:absolute;top:0;left:0;right:0;height:6px;
-  background:repeating-linear-gradient(90deg,
-    var(--marrom) 0px,var(--marrom) 6px,
-    var(--amarelo) 6px,var(--amarelo) 12px,
-    var(--vermelho) 12px,var(--vermelho) 18px,
-    var(--verde) 18px,var(--verde) 24px);
-  opacity:.9;
-}
+.tema-nome { padding: 12px 10px; text-align: center; font-weight: 700; font-size: 13px; }
 
-.card-titulo{
-  font-family:'Fredoka One',cursive;
-  font-size:19px;
-  color:var(--marrom);
-  margin-bottom:16px;
-  display:flex;align-items:center;justify-content:center;gap:8px;
-  letter-spacing:.5px;
+.modal-bg {
+  display: none; position: fixed; inset: 0;
+  background: rgba(42,15,30,.84); z-index: 9998;
+  align-items: center; justify-content: center; padding: 20px;
 }
+.modal-bg.on { display: flex; }
+.modal-box {
+  background: var(--white); border-radius: 20px;
+  max-width: 220px; width: 100%; padding: 22px;
+  border: 1px solid var(--line); position: relative;
+  max-height: 90vh; overflow-y: auto;
+}
+.modal-close {
+  position: absolute; top: 14px; right: 14px;
+  background: var(--pink); color: #fff; border: none;
+  width: 30px; height: 30px; border-radius: 50%; font-size: 18px;
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+}
+.modal-title {
+  font-family: 'Cormorant Garamond', serif; font-weight: 600;
+  font-size: 18px; text-align: center; margin-bottom: 14px; padding-right: 28px;
+}
+.modal-slider { position: relative; overflow: hidden; border-radius: 14px; border: 1px solid var(--line); }
+.modal-slides { display: flex; transition: transform .4s ease; }
+.modal-slides .slide { width: 100%; flex-shrink: 0; aspect-ratio: 4/5; overflow: hidden; }
+.modal-slides .slide img { width: 100%; height: 100%; object-fit: cover; }
+.modal-dots { display: flex; justify-content: center; gap: 6px; padding-top: 14px; }
 
-.lista{list-style:none;padding:0;margin:0 0 18px;}
-.lista li{
-  padding:11px 14px;margin-bottom:8px;
-  background:linear-gradient(135deg,rgba(245,166,35,.18),rgba(242,224,160,.4));
-  border-radius:14px;font-weight:700;color:var(--marrom-escuro);
-  border-left:5px solid var(--amarelo);
-  font-size:14px;
+.contato-grid { display: grid; grid-template-columns: 1fr; gap: 32px; }
+.c-bloco h3 { font-family: 'Cormorant Garamond', serif; font-size: 18px; margin-bottom: 12px; }
+.c-bloco p { font-size: 14px; color: var(--ink-mid); display: flex; align-items: center; gap: 9px; }
+.c-bloco p i { color: var(--pink); width: 16px; }
+.social-links { display: flex; gap: 12px; }
+.social-links a {
+  width: 44px; height: 44px; border-radius: 50%;
+  border: 1.5px solid var(--pink-soft); color: var(--pink);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 19px; transition: all .2s;
 }
-.lista li::before{content:'🌽 ';}
+.social-links a:hover { background: var(--pink); color: #fff; border-color: var(--pink); }
+.pagtos { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+.pagtos img { width: 38px; background: var(--white); padding: 7px; border-radius: 8px; border: 1px solid var(--line); }
+.pix-tag {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--white); border: 1px solid var(--line); border-radius: 8px; padding: 7px 12px;
+}
+.pix-tag svg { width: 18px; height: 18px; }
+.pix-tag span { font-size: 13px; font-weight: 700; }
 
-.pedido{text-align:left;}
-.label-campo{
-  display:block;font-size:14px;font-weight:800;
-  color:var(--marrom);margin-bottom:6px;
+.rodape { background: var(--ink); color: #fff; padding: 40px 0 28px; }
+.rodape-inner {
+  max-width: 1100px; margin: 0 auto; padding: 0 24px;
+  display: flex; flex-direction: column; align-items: center; gap: 14px; text-align: center;
 }
-.pedido select{
-  width:100%;padding:12px 14px;border-radius:14px;
-  border:2px solid var(--borda);margin-bottom:14px;
-  background:var(--palha-clara);color:var(--marrom);
-  font-family:'Nunito',sans-serif;font-weight:700;font-size:14px;
-  cursor:pointer;outline:none;appearance:none;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23e8650a' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
-  background-repeat:no-repeat;background-position:right 14px center;
-}
-.pedido select:focus{border-color:var(--laranja);}
+.rodape-logo { height: 52px; width: auto; opacity: .9; border-radius: 8px; }
+.rodape-copy { font-size: 12px; color: rgba(255,255,255,.42); }
 
-.sabores-check{display:block;margin-bottom:10px;}
-.sabores-check label{
-  display:block;font-size:14px;margin-bottom:7px;
-  font-weight:700;color:var(--marrom);
-  transition:color .2s;
-  padding:7px 10px;border-radius:10px;
-  background:rgba(245,166,35,.08);
-}
-.sabores-check label:has(input:checked){
-  color:var(--laranja);
-  background:rgba(245,166,35,.22);
-}
-.sabores-check input{accent-color:var(--laranja);width:14px;height:14px;}
-.sabores-check input:disabled{opacity:.4;}
-.sabores-check label:has(input:disabled){opacity:.5;}
-.limite-msg{
-  font-size:13px;font-weight:800;color:var(--laranja);
-  margin:6px 0 12px;font-style:italic;
-}
 
-.botao-acao{
-  display:flex;align-items:center;justify-content:center;gap:10px;
-  padding:15px;border-radius:999px;color:#fff;
-  font-family:'Fredoka One',cursive;font-weight:400;font-size:17px;
-  text-decoration:none;width:100%;border:none;margin-top:12px;
-  cursor:pointer;transition:all .3s ease;letter-spacing:.5px;
-}
-.pedir-whats{
-  background:linear-gradient(135deg,#1fad56,var(--whatsapp));
-  box-shadow:0 8px 20px rgba(37,211,102,.35);
-}
-.pedir-whats:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(37,211,102,.5);}
-.btn-instagram{
-  background:linear-gradient(135deg,#e8650a,#c0392b);
-  box-shadow:0 8px 20px rgba(232,101,10,.4);
-}
-.btn-instagram:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(232,101,10,.55);}
 
-.card-slider{
-  background:rgba(253,245,220,.95);
-  border-radius:28px;padding:26px 22px 22px;margin-bottom:18px;
-  border:2.5px solid var(--borda);
-  box-shadow:0 10px 40px rgba(0,0,0,.4),0 0 0 1px rgba(255,220,100,.15);
-  position:relative;
-  backdrop-filter:blur(4px);
-  overflow:visible;
+@media (min-width: 680px) {
+  .sabores-grid { grid-template-columns: repeat(3,1fr); }
+  .temas-grid   { grid-template-columns: repeat(3,1fr); }
 }
-.card-slider::before{
-  content:'';position:absolute;top:0;left:0;right:0;height:6px;
-  background:repeating-linear-gradient(90deg,
-    var(--marrom) 0px,var(--marrom) 6px,
-    var(--amarelo) 6px,var(--amarelo) 12px,
-    var(--vermelho) 12px,var(--vermelho) 18px,
-    var(--verde) 18px,var(--verde) 24px);
-  opacity:.9;border-radius:28px 28px 0 0;
-  z-index:1;
+@media (min-width: 800px) { .contato-grid { grid-template-columns: repeat(3,1fr); } }
+@media (min-width: 900px) {
+  .hero-grid { grid-template-columns: 1fr 1fr; align-items: center; }
+  .hero-logo { margin: 0 0 20px; }
+  .video-wrap { justify-content: flex-end; }
+  .subnav { justify-content: center; overflow-x: visible; }
 }
-
-.janela-wrapper{
-  position:relative;
-  margin-bottom:4px;
-  padding-top:62px;
+@media (min-width: 1000px) {
+  .sabores-grid { grid-template-columns: repeat(4,1fr); }
+  .temas-grid   { grid-template-columns: repeat(4,1fr); }
 }
-
-.janela-frame{
-  position:relative;
-  border-radius:14px;
-  overflow:hidden;
-  border:6px solid #6b3a1f;
-  box-shadow:
-    0 0 0 3px #d4a03a,
-    0 0 0 5px #6b3a1f,
-    0 14px 40px rgba(0,0,0,.6),
-    inset 0 2px 6px rgba(255,220,100,.15);
-  background:#3d1f0a;
-}
-
-.janela-frame::before{
-  content:'';
-  position:absolute;inset:0;
-  background:linear-gradient(
-    135deg,
-    rgba(255,240,180,.08) 0%,
-    transparent 50%,
-    rgba(0,0,0,.06) 100%
-  );
-  pointer-events:none;
-  z-index:10;
-}
-
-.slider{
-  position:relative;width:100%;overflow:hidden;
-}
-.slides{display:flex;transition:transform .5s cubic-bezier(.4,0,.2,1);}
-
-.slide-item{
-  position:relative;
-  width:100%;
-  flex-shrink:0;
-  display:block;
-  overflow:hidden;
-  aspect-ratio:4/5;
-}
-
-.slides img{
-  width:100%;display:block;
-  height:100%;object-fit:cover;
-  background:var(--palha);
-}
-
-.prev,.next{
-  position:absolute;top:50%;transform:translateY(-50%);
-  background:rgba(253,245,220,.93);
-  color:var(--laranja);
-  border:1.5px solid var(--borda);
-  width:36px;height:36px;font-size:15px;
-  cursor:pointer;border-radius:50%;z-index:25;
-  transition:all .25s;
-  display:flex;align-items:center;justify-content:center;
-  box-shadow:0 4px 12px rgba(0,0,0,.25);
-}
-.prev:hover,.next:hover{background:var(--palha);transform:translateY(-50%) scale(1.1);}
-.prev{left:10px;}.next{right:10px;}
-.slide-dots{display:flex;justify-content:center;gap:6px;padding:10px 0 0;}
-.dot{width:6px;height:6px;border-radius:50%;background:var(--borda);transition:all .3s;cursor:pointer;}
-.dot.ativo{background:var(--laranja);width:18px;border-radius:3px;}
-
-.janela-cortina-topo{
-  position:absolute;
-  top:-4px;
-  left:-10px;right:-10px;
-  z-index:40;
-  pointer-events:none;
-  height:82px;
-}
-.janela-cortina-topo svg{
-  width:100%;height:82px;display:block;
-}
-
-.cortina-esq,.cortina-dir{
-  position:absolute;
-  top:0;
-  width:32px;
-  height:100%;
-  z-index:22;
-  pointer-events:none;
-}
-.cortina-esq{left:0;}
-.cortina-dir{right:0;}
-.cortina-esq svg,.cortina-dir svg{
-  width:32px;
-  height:100%;
-  display:block;
-}
-
-.busca-final{
-  background:rgba(253,245,220,.95);padding:26px 22px;
-  border-radius:28px;border:2.5px solid var(--borda);
-  box-shadow:0 10px 40px rgba(0,0,0,.35);
-  margin-top:18px;position:relative;overflow:hidden;
-}
-.busca-final::before{
-  content:'';position:absolute;top:0;left:0;right:0;height:6px;
-  background:repeating-linear-gradient(90deg,
-    var(--marrom) 0px,var(--marrom) 6px,
-    var(--amarelo) 6px,var(--amarelo) 12px,
-    var(--vermelho) 12px,var(--vermelho) 18px,
-    var(--verde) 18px,var(--verde) 24px);
-}
-.busca-final input{
-  width:100%;padding:12px 16px;border-radius:14px;
-  border:2px solid var(--borda);margin:12px 0 16px;
-  background:var(--palha-clara);color:var(--marrom);
-  font-family:'Nunito',sans-serif;font-size:14px;font-weight:600;outline:none;
-}
-.busca-final input:focus{border-color:var(--laranja);}
-.busca-final input::placeholder{color:var(--marrom);opacity:.5;}
-.galeria-links{display:grid;gap:10px;}
-.pin-card{
-  padding:13px 18px;border-radius:16px;
-  font-family:'Fredoka One',cursive;font-weight:400;font-size:16px;
-  text-decoration:none;display:flex;align-items:center;gap:10px;
-  color:#fff;transition:all .25s;letter-spacing:.3px;
-}
-.pin-card:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(0,0,0,.25);}
-.escondido{display:none;}
-
-.btn-casamento{background:linear-gradient(135deg,#f472b6,#ec4899);}
-.btn-aniversario{background:linear-gradient(135deg,#fb923c,#f97316);}
-.btn-produções{background:linear-gradient(135deg,#e8650a,#c0392b);}
-.btn-personalizado{background:linear-gradient(135deg,#fbbf24,#f59e0b);}
-.btn-praia{background:linear-gradient(135deg,#34d399,#059669);}
-.btn-flores{background:linear-gradient(135deg,#f9a8d4,#f472b6);}
-.btn-futebol{background:linear-gradient(135deg,#4ade80,#16a34a);}
-.btn-safari{background:linear-gradient(135deg,#fcd34d,#d97706);}
-.btn-morango{background:linear-gradient(135deg,#f87171,#dc2626);}
-.btn-docesfinos{background:linear-gradient(135deg,#c084fc,#9333ea);}
-
-.info-local{
-  margin-top:18px;padding:14px 20px;
-  background:rgba(253,245,220,.9);border-radius:18px;
-  border:1.5px solid var(--borda);
-  font-weight:800;font-size:14px;color:var(--marrom);
-}
-footer{
-  margin-top:20px;font-size:15px;font-weight:700;
-  color:var(--palha);font-style:italic;
-  text-shadow:0 2px 8px rgba(0,0,0,.5);
-}
-
-.pagamento-social{margin-top:28px;padding:20px 0 10px;text-align:center;}
-.titulo-pag{
-  font-family:'Fredoka One',cursive;
-  font-size:20px;
-  color:var(--palha);
-  margin-bottom:16px;
-  display:flex;align-items:center;justify-content:center;gap:8px;
-  text-shadow:0 2px 8px rgba(0,0,0,.4);
-}
-.titulo-pag i{color:var(--amarelo);}
-.redes{display:flex;justify-content:center;gap:14px;margin-bottom:24px;}
-.redes a{
-  background:linear-gradient(135deg,#e8650a,#c0392b);
-  color:#fff;width:52px;height:52px;border-radius:50%;
-  display:flex;align-items:center;justify-content:center;
-  font-size:22px;text-decoration:none;
-  transition:all .3s;
-  box-shadow:0 6px 20px rgba(232,101,10,.45);
-}
-.redes a:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(232,101,10,.6);}
-.pagamentos{
-  display:flex;justify-content:center;gap:14px;
-  flex-wrap:wrap;align-items:center;margin-bottom:18px;
-}
-.pagamentos img{
-  width:48px;background:var(--palha);padding:8px;
-  border-radius:12px;border:1.5px solid var(--borda);
-  box-shadow:0 4px 10px rgba(0,0,0,.2);
-}
-.pix-wrap{display:flex;flex-direction:column;align-items:center;gap:6px;}
-.pix-icon{
-  width:54px;height:54px;
-  background:linear-gradient(135deg,#34d399,#059669);
-  border-radius:14px;display:flex;align-items:center;justify-content:center;
-  box-shadow:0 8px 20px rgba(5,150,105,.35);
-}
-.pix-svg{width:28px;height:28px;fill:#fff;}
-.pix-label{font-size:14px;font-weight:800;color:#4ade80;}
-.credito{
-  text-align:center;font-size:11px;color:rgba(255,220,100,.5);
-  margin-top:18px;font-weight:700;
-}
-.credito a{color:inherit;text-decoration:none;}
-
-.btn-float-whats{
-  position:fixed;bottom:22px;right:18px;z-index:9999;
-  display:flex;align-items:center;gap:10px;
-  background:linear-gradient(135deg,#e8650a,#f5a623);
-  color:#fff;
-  font-family:'Fredoka One',cursive;font-size:15px;
-  padding:13px 18px 13px 14px;
-  border-radius:999px;
-  text-decoration:none;
-  box-shadow:0 8px 30px rgba(232,101,10,.65);
-  border:2px solid rgba(255,255,255,.25);
-  transition:transform .25s,box-shadow .25s;
-  animation:floatBtn 3s ease-in-out infinite;
-}
-.btn-float-whats i{font-size:22px;}
-.btn-float-whats:hover{
-  transform:translateY(-4px) scale(1.05) !important;
-  box-shadow:0 16px 40px rgba(232,101,10,.75);
-}
-@keyframes floatBtn{
-  0%,100%{transform:translateY(0)}
-  50%{transform:translateY(-8px)}
-}
-
-.milho-row{
-  display:flex;justify-content:center;gap:18px;
-  margin:6px 0 18px;font-size:26px;
-  animation:pulaMillho 2s ease-in-out infinite alternate;
-}
-@keyframes pulaMillho{
-  from{transform:translateY(0)}
-  to{transform:translateY(-6px)}
+@media (max-width: 380px) {
+  .topbar-cta .label { display: none; }
+  .topbar-cta { padding: 10px 14px; }
 }
 </style>
 </head>
 <body>
 
-<canvas id="stars-bg"></canvas>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a href="#topo">
+      <img class="brand-logo" src="https://i.ibb.co/jkCF4Xhv/logo-set.jpg" alt="Doces da Analu">
+    </a>
 
-<div class="container">
-
-  <div class="bandeirinhas">
-    <svg viewBox="0 0 430 110" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <linearGradient id="gVerm" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stop-color="#e8453c"/>
-          <stop offset="40%" stop-color="#c0392b"/>
-          <stop offset="100%" stop-color="#8e1a14"/>
-        </linearGradient>
-        <linearGradient id="gAmar" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stop-color="#fcd34d"/>
-          <stop offset="40%" stop-color="#f5a623"/>
-          <stop offset="100%" stop-color="#b97a0a"/>
-        </linearGradient>
-        <linearGradient id="gVerd" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stop-color="#4ade80"/>
-          <stop offset="40%" stop-color="#2e7d32"/>
-          <stop offset="100%" stop-color="#1a4d1e"/>
-        </linearGradient>
-        <linearGradient id="gAzul" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stop-color="#60a5fa"/>
-          <stop offset="40%" stop-color="#2563eb"/>
-          <stop offset="100%" stop-color="#1e3a8a"/>
-        </linearGradient>
-        <linearGradient id="gRosa" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stop-color="#f9a8d4"/>
-          <stop offset="40%" stop-color="#ec4899"/>
-          <stop offset="100%" stop-color="#9d174d"/>
-        </linearGradient>
-        <filter id="sombra" x="-10%" y="-10%" width="130%" height="160%">
-          <feDropShadow dx="0" dy="3" stdDeviation="2.5" flood-color="rgba(0,0,0,0.45)"/>
-        </filter>
-        <pattern id="listras" patternUnits="userSpaceOnUse" width="5" height="40">
-          <line x1="2.5" y1="0" x2="2.5" y2="40" stroke="rgba(255,255,255,0.12)" stroke-width="1.5"/>
-        </pattern>
-      </defs>
-      <path d="M0,14 C30,20 70,8 107,16 C145,24 175,10 215,16 C255,22 290,8 323,16 C356,24 395,10 430,16" fill="none" stroke="#8B5E3C" stroke-width="4.5" stroke-linecap="round" opacity=".9"/>
-      <path d="M0,14 C30,20 70,8 107,16 C145,24 175,10 215,16 C255,22 290,8 323,16 C356,24 395,10 430,16" fill="none" stroke="rgba(0,0,0,0.3)" stroke-width="2" stroke-linecap="round" transform="translate(0,3)"/>
-      <path d="M0,14 C30,20 70,8 107,16 C145,24 175,10 215,16 C255,22 290,8 323,16 C356,24 395,10 430,16" fill="none" stroke="rgba(255,220,150,0.25)" stroke-width="1.2" stroke-linecap="round" stroke-dasharray="3,4"/>
-      <g filter="url(#sombra)" transform="translate(5,14)"><path d="M0,0 L24,0 L28,46 L12,58 L-4,46 Z" fill="url(#gVerm)"/><path d="M0,0 L24,0 L28,46 L12,58 L-4,46 Z" fill="url(#listras)"/><path d="M0,0 L24,0 L28,46 L12,58 L-4,46 Z" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="1.2"/><rect x="0" y="0" width="24" height="6" rx="1" fill="rgba(0,0,0,0.18)"/></g>
-      <g filter="url(#sombra)" transform="translate(34,8)"><path d="M0,0 L24,0 L28,46 L12,58 L-4,46 Z" fill="url(#gAmar)"/><path d="M0,0 L24,0 L28,46 L12,58 L-4,46 Z" fill="url(#listras)"/><path d="M0,0 L24,0 L28,46 L12,58 L-4,46 Z" fill="none" stroke="rgba(255,255,255,0.22)" stroke-width="1.2"/><rect x="0" y="0" width="24" height="6" rx="1" fill="rgba(0,0,0,0.18)"/></g>
-      <g filter="url(#sombra)" transform="translate(63,14)"><path d="M0,0 L24,0 L28,46 L12,58 L-4,46 Z" fill="url(#gVerd)"/><path d="M0,0 L24,0 L28,46 L12,58 L-4,46 Z" fill="url(#listras)"/><path d="M0,0 L24,0 L28,46 L12,58 L-4,46 Z" fill="none" stroke="rgba(255,255,255,0.22)" stroke-width="1.2"/><rect x="0" y="0" width="24" height="6" rx="1" fill="rgba(0,0,0,0.18)"/></g>
-      <g filter="url(#sombra)" transform="translate(92,8)"><path d="M0,0 L24,0 L28,46 L12,58 L-4,46 Z" fill="url(#gAzul)"/><path d="M0,0 L24,0 L28,46 L12,58 L-4,46 Z" fill="url(#listras)"/><path d="M0,0 L24,0 L28,46 L12,58 L-4,46 Z" fill="none" stroke="rgba(255,255,255,0.22)" stroke-width="1.2"/><rect x="0" y="0" width="24" height="6" rx="1" fill="rgba(0,0,0,0.18)"/></g>
-      <g filter="url(#sombra)" transform="translate(121,14)"><path d="M0,0 L24,0 L28,46 L12,58 L-4,46 Z" fill="url(#gRosa)"/><path d="M0,0 L24,0 L28,46 L12,58 L-4,46 Z" fill="url(#listras)"/><path d="M0,0 L24,0 L28,46 L12,58 L-4,46 Z" fill="none" stroke="rgba(255,255,255,0.22)" stroke-width="1.2"/><rect x="0" y="0" width="24" height="6" rx="1" fill="rgba(0,0,0,0.18)"/></g>
-      <g filter="url(#sombra)" transform="translate(150,8)"><path d="M0,0 L24,0 L28,46 L12,58 L-4,46 Z" fill="url(#gVerm)"/><path d="M0,0 L24,0 L28,46 L12,58 L-4,46 Z" fill="url(#listras)"/><path d="M0,0 L24,0 L28,46 L12,58 L-4,46 Z" fill="none" stroke="rgba(255,255,255,0.22)" stroke-width="1.2"/><rect x="0" y="0" width="24" height="6" rx="1" fill="rgba(0,0,0,0.18)"/></g>
-      <g filter="url(#sombra)" transform="translate(179,14)"><path d="M0,0 L24,0 L28,46 L12,58 L-4,46 Z" fill="url(#gAmar)"/><path d="M0,0 L24,0 L28,46 L12,58 L-4,46 Z" fill="url(#listras)"/><path d="M0,0 L24,0 L28,46 L12,58 L-4,46 Z" fill="none" stroke="rgba(255,255,255,0.22)" stroke-width="1.2"/><rect x="0" y="0" width="24" height="6" rx="1" fill="rgba(0,0,0,0.18)"/></g>
-      <g filter="url(#sombra)" transform="translate(208,8)"><path d="M0,0 L24,0 L28,46 L12,58 L-4,46 Z" fill="url(#gVerd)"/><path d="M0,0 L24,0 L28,46 L12,58 L-4,46 Z" fill="url(#listras)"/><path d="M0,0 L24,0 L28,46 L12,58 L-4,46 Z" fill="none" stroke="rgba(255,255,255,0.22)" stroke-width="1.2"/><rect x="0" y="0" width="24" height="6" rx="1" fill="rgba(0,0,0,0.18)"/></g>
-      <g filter="url(#sombra)" transform="translate(237,14)"><path d="M0,0 L24,0 L28,46 L12,58 L-4,46 Z" fill="url(#gAzul)"/><path d="M0,0 L24,0 L28,46 L12,58 L-4,46 Z" fill="url(#listras)"/><path d="M0,0 L24,0 L28,46 L12,58 L-4,46 Z" fill="none" stroke="rgba(255,255,255,0.22)" stroke-width="1.2"/><rect x="0" y="0" width="24" height="6" rx="1" fill="rgba(0,0,0,0.18)"/></g>
-      <g filter="url(#sombra)" transform="translate(266,8)"><path d="M0,0 L24,0 L28,46 L12,58 L-4,46 Z" fill="url(#gRosa)"/><path d="M0,0 L24,0 L28,46 L12,58 L-4,46 Z" fill="url(#listras)"/><path d="M0,0 L24,0 L28,46 L12,58 L-4,46 Z" fill="none" stroke="rgba(255,255,255,0.22)" stroke-width="1.2"/><rect x="0" y="0" width="24" height="6" rx="1" fill="rgba(0,0,0,0.18)"/></g>
-      <g filter="url(#sombra)" transform="translate(295,14)"><path d="M0,0 L24,0 L28,46 L12,58 L-4,46 Z" fill="url(#gVerm)"/><path d="M0,0 L24,0 L28,46 L12,58 L-4,46 Z" fill="url(#listras)"/><path d="M0,0 L24,0 L28,46 L12,58 L-4,46 Z" fill="none" stroke="rgba(255,255,255,0.22)" stroke-width="1.2"/><rect x="0" y="0" width="24" height="6" rx="1" fill="rgba(0,0,0,0.18)"/></g>
-      <g filter="url(#sombra)" transform="translate(324,8)"><path d="M0,0 L24,0 L28,46 L12,58 L-4,46 Z" fill="url(#gAmar)"/><path d="M0,0 L24,0 L28,46 L12,58 L-4,46 Z" fill="url(#listras)"/><path d="M0,0 L24,0 L28,46 L12,58 L-4,46 Z" fill="none" stroke="rgba(255,255,255,0.22)" stroke-width="1.2"/><rect x="0" y="0" width="24" height="6" rx="1" fill="rgba(0,0,0,0.18)"/></g>
-      <g filter="url(#sombra)" transform="translate(353,14)"><path d="M0,0 L24,0 L28,46 L12,58 L-4,46 Z" fill="url(#gVerd)"/><path d="M0,0 L24,0 L28,46 L12,58 L-4,46 Z" fill="url(#listras)"/><path d="M0,0 L24,0 L28,46 L12,58 L-4,46 Z" fill="none" stroke="rgba(255,255,255,0.22)" stroke-width="1.2"/><rect x="0" y="0" width="24" height="6" rx="1" fill="rgba(0,0,0,0.18)"/></g>
-      <g filter="url(#sombra)" transform="translate(382,8)"><path d="M0,0 L24,0 L28,46 L12,58 L-4,46 Z" fill="url(#gAzul)"/><path d="M0,0 L24,0 L28,46 L12,58 L-4,46 Z" fill="url(#listras)"/><path d="M0,0 L24,0 L28,46 L12,58 L-4,46 Z" fill="none" stroke="rgba(255,255,255,0.22)" stroke-width="1.2"/><rect x="0" y="0" width="24" height="6" rx="1" fill="rgba(0,0,0,0.18)"/></g>
-      <circle cx="17" cy="14" r="3.5" fill="#6b3a1f" stroke="#f5a623" stroke-width="1.2"/>
-      <circle cx="46" cy="8"  r="3.5" fill="#6b3a1f" stroke="#f5a623" stroke-width="1.2"/>
-      <circle cx="75" cy="14" r="3.5" fill="#6b3a1f" stroke="#f5a623" stroke-width="1.2"/>
-      <circle cx="104" cy="8" r="3.5" fill="#6b3a1f" stroke="#f5a623" stroke-width="1.2"/>
-      <circle cx="133" cy="14" r="3.5" fill="#6b3a1f" stroke="#f5a623" stroke-width="1.2"/>
-      <circle cx="162" cy="8" r="3.5" fill="#6b3a1f" stroke="#f5a623" stroke-width="1.2"/>
-      <circle cx="191" cy="14" r="3.5" fill="#6b3a1f" stroke="#f5a623" stroke-width="1.2"/>
-      <circle cx="220" cy="8" r="3.5" fill="#6b3a1f" stroke="#f5a623" stroke-width="1.2"/>
-      <circle cx="249" cy="14" r="3.5" fill="#6b3a1f" stroke="#f5a623" stroke-width="1.2"/>
-      <circle cx="278" cy="8" r="3.5" fill="#6b3a1f" stroke="#f5a623" stroke-width="1.2"/>
-      <circle cx="307" cy="14" r="3.5" fill="#6b3a1f" stroke="#f5a623" stroke-width="1.2"/>
-      <circle cx="336" cy="8" r="3.5" fill="#6b3a1f" stroke="#f5a623" stroke-width="1.2"/>
-      <circle cx="365" cy="14" r="3.5" fill="#6b3a1f" stroke="#f5a623" stroke-width="1.2"/>
-      <circle cx="394" cy="8" r="3.5" fill="#6b3a1f" stroke="#f5a623" stroke-width="1.2"/>
-    </svg>
   </div>
+  <nav class="subnav">
+    <a href="#cardapio">Cardápio</a>
+    <a href="#pedido">Fazer pedido</a>
+    <a href="#galeria">Galeria</a>
+    <a href="#temas">Temas</a>
+    <a href="#contato">Contato</a>
+  </nav>
+</header>
 
-  <div class="hero">
-    <svg class="chapeu-hero" viewBox="0 0 140 100" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <linearGradient id="palha1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#f5c842"/><stop offset="60%" stop-color="#d4a017"/><stop offset="100%" stop-color="#9a6b0a"/></linearGradient>
-        <linearGradient id="palha2" x1="0%" y1="0%" x2="10%" y2="100%"><stop offset="0%" stop-color="#e8c030"/><stop offset="100%" stop-color="#7a4f08"/></linearGradient>
-        <linearGradient id="palha3" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#c8900e"/><stop offset="40%" stop-color="#f5c842"/><stop offset="100%" stop-color="#c8900e"/></linearGradient>
-        <linearGradient id="fita" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#a02010"/><stop offset="30%" stop-color="#e8650a"/><stop offset="70%" stop-color="#c0392b"/><stop offset="100%" stop-color="#a02010"/></linearGradient>
-        <filter id="chapSombra" x="-15%" y="-15%" width="140%" height="160%"><feDropShadow dx="0" dy="5" stdDeviation="5" flood-color="rgba(0,0,0,0.55)"/></filter>
-        <pattern id="tramas" patternUnits="userSpaceOnUse" width="4" height="4" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="4" stroke="rgba(0,0,0,0.07)" stroke-width="1.5"/></pattern>
-      </defs>
-      <g filter="url(#chapSombra)">
-        <ellipse cx="70" cy="78" rx="68" ry="15" fill="url(#palha1)"/>
-        <ellipse cx="70" cy="78" rx="68" ry="15" fill="url(#tramas)"/>
-        <ellipse cx="52" cy="72" rx="30" ry="5" fill="rgba(255,240,160,0.22)"/>
-        <ellipse cx="70" cy="78" rx="68" ry="15" fill="none" stroke="rgba(100,60,5,0.55)" stroke-width="2"/>
-        <line x1="70" y1="63" x2="5"  y2="80" stroke="rgba(0,0,0,0.10)" stroke-width="1.2"/>
-        <line x1="70" y1="63" x2="28" y2="68" stroke="rgba(0,0,0,0.10)" stroke-width="1.2"/>
-        <line x1="70" y1="63" x2="135" y2="80" stroke="rgba(0,0,0,0.10)" stroke-width="1.2"/>
-        <line x1="70" y1="63" x2="112" y2="68" stroke="rgba(0,0,0,0.10)" stroke-width="1.2"/>
-        <path d="M 34,76 C 32,65 30,45 36,28 C 40,16 52,10 70,10 C 88,10 100,16 104,28 C 110,45 108,65 106,76 Z" fill="url(#palha2)"/>
-        <path d="M 34,76 C 32,65 30,45 36,28 C 40,16 52,10 70,10 C 88,10 100,16 104,28 C 110,45 108,65 106,76 Z" fill="url(#tramas)" opacity=".6"/>
-        <path d="M 52,74 C 50,52 52,30 54,14" stroke="rgba(255,255,255,0.13)" stroke-width="1.8" fill="none"/>
-        <path d="M 70,75 C 70,52 70,28 70,11" stroke="rgba(255,255,255,0.13)" stroke-width="1.8" fill="none"/>
-        <path d="M 88,74 C 90,52 88,30 86,14" stroke="rgba(255,255,255,0.13)" stroke-width="1.8" fill="none"/>
-        <path d="M 36,70 C 34,55 35,35 40,20 C 43,13 50,10 56,11 C 46,13 40,22 38,36 C 35,50 36,65 37,72 Z" fill="rgba(255,240,150,0.18)"/>
-        <path d="M 46,13 C 50,6 60,4 70,4 C 80,4 90,6 94,13" stroke="rgba(100,60,5,0.4)" stroke-width="2" fill="none" stroke-linecap="round"/>
-        <ellipse cx="70" cy="10" rx="24" ry="7" fill="#b8820a"/>
-        <ellipse cx="70" cy="8"  rx="20" ry="5" fill="#d4a017"/>
-        <ellipse cx="70" cy="7"  rx="14" ry="3.5" fill="#e8c030"/>
-        <path d="M 36,60 C 50,65 90,65 104,60 L 104,52 C 90,57 50,57 36,52 Z" fill="url(#fita)"/>
-        <line x1="52"  y1="52" x2="52"  y2="65" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
-        <line x1="70"  y1="52" x2="70"  y2="65" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
-        <line x1="88"  y1="52" x2="88"  y2="65" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
-        <circle cx="52"  cy="58" r="2.2" fill="rgba(255,255,255,0.55)"/>
-        <circle cx="70"  cy="58" r="2.2" fill="rgba(255,255,255,0.55)"/>
-        <circle cx="88"  cy="58" r="2.2" fill="rgba(255,255,255,0.55)"/>
-        <path d="M 36,52 C 50,57 90,57 104,52" stroke="rgba(255,200,100,0.4)" stroke-width="1" fill="none"/>
-        <path d="M 36,65 C 50,70 90,70 104,65" stroke="rgba(80,30,5,0.4)"  stroke-width="1" fill="none"/>
-      </g>
-    </svg>
+<main>
 
-    <div class="hero-tag"> Arraiá </div>
-    <div class="hero-nome-wrap">
-      <span class="milho-lateral"></span>
-      <div style="text-align:center;line-height:1.1;">
-        <span class="hero-doces">Doces</span>
-        <span class="hero-analu">da Analu</span>
+<section class="hero" id="topo">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">Confeitaria artesanal</p>
+      <h1>Brigadeiros gourmet,<br></h1>
+      <p class="hero-sub">Doces artesanais feitos com ingredientes selecionados e receitas exclusivas para festas, eventos e momentos especiais. Faça seu pedido pelo WhatsApp..</p>
+      <div class="ctas">
+        <a class="btn btn-pink" href="#pedido">Fazer pedido</a>
+        <a class="btn btn-outline" href="#cardapio">Ver cardápio</a>
       </div>
-      <span class="milho-lateral inv"></span>
-    </div>
-    <div class="hero-divisor">
-      <div class="hero-divisor-linha"></div>
-      <span class="hero-divisor-icon">🌽</span>
-      <div class="hero-divisor-linha"></div>
-    </div>
-    <div class="hero-sub">Brigadeiros Caipiras</div>
-  </div>
-
-  <div class="fogueira-wrap">
-    <svg viewBox="0 0 90 80" xmlns="http://www.w3.org/2000/svg">
-      <rect x="20" y="58" width="50" height="7" rx="4" fill="#6b3a1f"/>
-      <rect x="10" y="62" width="70" height="8" rx="4" fill="#3d1f0a"/>
-      <line x1="20" y1="65" x2="45" y2="55" stroke="#3d1f0a" stroke-width="6" stroke-linecap="round"/>
-      <line x1="70" y1="65" x2="45" y2="55" stroke="#3d1f0a" stroke-width="6" stroke-linecap="round"/>
-      <ellipse cx="45" cy="42" rx="10" ry="18" fill="#c0392b" opacity=".9"><animate attributeName="ry" values="18;22;16;20;18" dur="1.2s" repeatCount="indefinite"/><animate attributeName="cy" values="42;38;44;40;42" dur="1.2s" repeatCount="indefinite"/></ellipse>
-      <ellipse cx="38" cy="46" rx="8" ry="14" fill="#e8650a" opacity=".85"><animate attributeName="ry" values="14;18;12;16;14" dur=".9s" repeatCount="indefinite"/><animate attributeName="cy" values="46;42;48;44;46" dur=".9s" repeatCount="indefinite"/></ellipse>
-      <ellipse cx="52" cy="46" rx="8" ry="14" fill="#e8650a" opacity=".85"><animate attributeName="ry" values="14;12;17;13;14" dur="1.1s" repeatCount="indefinite"/><animate attributeName="cy" values="46;50;42;47;46" dur="1.1s" repeatCount="indefinite"/></ellipse>
-      <ellipse cx="45" cy="38" rx="6" ry="12" fill="#f5a623" opacity=".9"><animate attributeName="ry" values="12;16;10;14;12" dur=".8s" repeatCount="indefinite"/><animate attributeName="cy" values="38;34;40;36;38" dur=".8s" repeatCount="indefinite"/></ellipse>
-      <ellipse cx="45" cy="32" rx="4" ry="9" fill="#fcd34d"><animate attributeName="ry" values="9;12;7;10;9" dur=".7s" repeatCount="indefinite"/><animate attributeName="cy" values="32;28;34;30;32" dur=".7s" repeatCount="indefinite"/></ellipse>
-      <circle cx="30" cy="66" r="3" fill="#f5a623" opacity=".7"/>
-      <circle cx="60" cy="66" r="2.5" fill="#e8650a" opacity=".7"/>
-      <circle cx="45" cy="67" r="2" fill="#fcd34d" opacity=".6"/>
-    </svg>
-  </div>
-
-  <div class="below-hero">
-
-    <div class="video-container">
-      <iframe src="https://www.youtube.com/embed/GDkoTHkSnRU" title="Vídeo Doces da Analu" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-    </div>
-
-    <div class="milho-row"></div>
-
-    <div class="card">
-      <div class="card-titulo">🌽 Sabores de Brigadeiros</div>
-      <ul class="lista">
-        <li>Brigadeiro branco</li>
-        <li>Brigadeiro ao Leite</li>
-        <li>Brigadeiro Meio Amargo</li>
-        <li>Ninho</li>
-        <li>Ninho Colorido</li>
-        <li>Surpresa de Uva</li>
-        <li>Casadinho</li>
-        <li>Beijinho</li>
-        <li>Amendoim</li>
-        <li>Prestígio</li>
-        <li>Confete</li>
+      <ul class="numeros">
+        <li><strong>11</strong><span>sabores</span></li>
+        <li><strong>+ DE</strong><span>30 TEMAS</span></li>
+        <li><strong>JP · Cabedelo</strong><span>entrega local</span></li>
       </ul>
-      <div class="pedido">
-        <span class="label-campo">🎀 Monte seu combo e escolha os sabores (e em seguida clique em "Pedir no WhatsApp")</span>
-        <select id="combo">
-          <option value="">Escolha seu combo 🤠</option>
-          <option value="Caixinha Caipira (4 brigadeiros)">Caixinha Caipira — 4 brigadeiros</option>
-          <option value="25 Brigadeiros">Caixa com 25 brigadeiros</option>
-          <option value="Meio cento (50 doces)">Meio cento — 50 brigadeiros</option>
-          <option value="Cento (100 doces)">Cento completo — 100 brigadeiros</option>
-          <option value="orcamento_whatsapp">Fazer um orçamento diferente no WhatsApp</option>
-        </select>
-        <p id="limite-msg" class="limite-msg"></p>
-        <div class="sabores-check">
-          <label><input type="checkbox" value="Brigadeiro branco"> Brigadeiro branco</label>
-          <label><input type="checkbox" value="Brigadeiro ao Leite"> Brigadeiro ao Leite</label>
-          <label><input type="checkbox" value="Meio Amargo"> Meio Amargo</label>
-          <label><input type="checkbox" value="Ninho"> Ninho</label>
-          <label><input type="checkbox" value="Ninho Colorido"> Ninho Colorido</label>
-          <label><input type="checkbox" value="Surpresa de Uva"> Surpresa de Uva</label>
-          <label><input type="checkbox" value="Casadinho"> Casadinho</label>
-          <label><input type="checkbox" value="Beijinho"> Beijinho</label>
-          <label><input type="checkbox" value="Amendoim"> Amendoim</label>
-          <label><input type="checkbox" value="Prestígio"> Prestígio</label>
-          <label><input type="checkbox" value="Confete"> Confete</label>
-        </div>
-        <a href="#" class="botao-acao pedir-whats" onclick="pedirWhats(event)">
-          <i class="fab fa-whatsapp"></i> Pedir no WhatsApp
-        </a>
-        <a class="botao-acao btn-instagram" href="https://instagram.com/_docesdaanalu_" target="_blank">
-          <i class="fab fa-instagram"></i> Nosso Instagram
-        </a>
+    </div>
+    <div class="video-wrap">
+      <div class="video-box">
+        <iframe src="https://www.youtube.com/embed/GDkoTHkSnRU" title="Vídeo Doces da Analu" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
       </div>
     </div>
+  </div>
+</section>
 
-    <div class="card-slider">
-      <div class="card-titulo">📸 Produções do Mês</div>
-
-      <div class="janela-wrapper">
-
-        <div class="janela-frame" id="janela-wrapper">
-
-          <div class="cortina-esq">
-            <svg viewBox="0 0 32 400" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <linearGradient id="cEsq" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stop-color="#6b0e0e"/>
-                  <stop offset="55%" stop-color="#c0392b"/>
-                  <stop offset="100%" stop-color="rgba(192,57,43,0)"/>
-                </linearGradient>
-                <pattern id="tecidoE" patternUnits="userSpaceOnUse" width="6" height="14">
-                  <line x1="0" y1="7" x2="6" y2="7" stroke="rgba(0,0,0,0.08)" stroke-width="1"/>
-                  <line x1="3" y1="0" x2="3" y2="14" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
-                </pattern>
-              </defs>
-              <path d="M0,0 C12,20 6,45 14,70 C18,95 8,120 14,150 C18,180 8,210 14,240 C18,270 8,300 14,330 C18,360 8,385 0,400 L0,0Z" fill="url(#cEsq)"/>
-              <path d="M0,0 C12,20 6,45 14,70 C18,95 8,120 14,150 C18,180 8,210 14,240 C18,270 8,300 14,330 C18,360 8,385 0,400 L0,0Z" fill="url(#tecidoE)" opacity="0.6"/>
-              <path d="M3,0 C8,25 4,55 8,85 C11,115 5,145 8,175 C11,205 5,235 8,265" stroke="rgba(255,200,180,0.18)" stroke-width="2" fill="none"/>
-              <path d="M10,0 C14,30 10,65 14,100 C16,130 12,165 14,200" stroke="rgba(255,200,180,0.10)" stroke-width="1.5" fill="none"/>
-            </svg>
-          </div>
-
-          <div class="cortina-dir">
-            <svg viewBox="0 0 32 400" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <linearGradient id="cDir" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stop-color="rgba(192,57,43,0)"/>
-                  <stop offset="45%" stop-color="#c0392b"/>
-                  <stop offset="100%" stop-color="#6b0e0e"/>
-                </linearGradient>
-                <pattern id="tecidoD" patternUnits="userSpaceOnUse" width="6" height="14">
-                  <line x1="0" y1="7" x2="6" y2="7" stroke="rgba(0,0,0,0.08)" stroke-width="1"/>
-                  <line x1="3" y1="0" x2="3" y2="14" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
-                </pattern>
-              </defs>
-              <path d="M32,0 C20,20 26,45 18,70 C14,95 24,120 18,150 C14,180 24,210 18,240 C14,270 24,300 18,330 C14,360 24,385 32,400 L32,0Z" fill="url(#cDir)"/>
-              <path d="M32,0 C20,20 26,45 18,70 C14,95 24,120 18,150 C14,180 24,210 18,240 C14,270 24,300 18,330 C14,360 24,385 32,400 L32,0Z" fill="url(#tecidoD)" opacity="0.6"/>
-              <path d="M29,0 C24,25 28,55 24,85 C21,115 27,145 24,175 C21,205 27,235 24,265" stroke="rgba(255,200,180,0.18)" stroke-width="2" fill="none"/>
-              <path d="M22,0 C18,30 22,65 18,100 C16,130 20,165 18,200" stroke="rgba(255,200,180,0.10)" stroke-width="1.5" fill="none"/>
-            </svg>
-          </div>
-
-          <div class="slider">
-            <div class="slides" id="slides-box">
-              <div class="slide-item">
-                <img src="https://i.ibb.co/tp3jc54k/file-00000000c240720e9902998306ffe30b.png" alt="Produção do Mês">
-              </div>
-            </div>
-          
-          </div>
-
-        </div>
-
-        <div class="janela-cortina-topo">
-          <svg viewBox="0 0 400 82" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-            <defs>
-              <linearGradient id="bfV" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#ff8070"/><stop offset="100%" stop-color="#8b1a10"/></linearGradient>
-              <linearGradient id="bfA" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#ffe566"/><stop offset="100%" stop-color="#9a6200"/></linearGradient>
-              <linearGradient id="bfVd" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#7cf08a"/><stop offset="100%" stop-color="#1a4d1e"/></linearGradient>
-              <linearGradient id="bfAz" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#80c8ff"/><stop offset="100%" stop-color="#1a3a8a"/></linearGradient>
-              <linearGradient id="bfR" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#ffb8d8"/><stop offset="100%" stop-color="#8b1050"/></linearGradient>
-              <filter id="bfs"><feDropShadow dx="0" dy="5" stdDeviation="3.5" flood-color="rgba(0,0,0,0.7)"/></filter>
-              <pattern id="blst" patternUnits="userSpaceOnUse" width="5" height="70"><line x1="2.5" y1="0" x2="2.5" y2="70" stroke="rgba(255,255,255,0.15)" stroke-width="1.5"/></pattern>
-            </defs>
-
-            <path d="M0,20 Q200,6 400,20" fill="none" stroke="rgba(0,0,0,0.5)" stroke-width="7" stroke-linecap="round" transform="translate(0,6)"/>
-            <path d="M0,20 Q200,6 400,20" fill="none" stroke="#5a2e08" stroke-width="9" stroke-linecap="round"/>
-            <path d="M0,20 Q200,6 400,20" fill="none" stroke="#8B5020" stroke-width="5" stroke-linecap="round"/>
-            <path d="M0,19 Q200,5 400,19" fill="none" stroke="rgba(255,215,120,0.5)" stroke-width="2" stroke-linecap="round" stroke-dasharray="8,9"/>
-
-            <g filter="url(#bfs)" transform="translate(12,20)"><path d="M-12,0 L12,0 L16,52 L0,66 L-16,52 Z" fill="url(#bfV)"/><path d="M-12,0 L12,0 L16,52 L0,66 L-16,52 Z" fill="url(#blst)"/><path d="M-12,0 L12,0 L16,52 L0,66 L-16,52 Z" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1.2"/><circle cx="0" cy="0" r="5" fill="#4a2008" stroke="#f5c842" stroke-width="2"/><circle cx="0" cy="0" r="2.5" fill="#f5c842"/></g>
-            <g filter="url(#bfs)" transform="translate(36,16)"><path d="M-12,0 L12,0 L16,52 L0,66 L-16,52 Z" fill="url(#bfA)"/><path d="M-12,0 L12,0 L16,52 L0,66 L-16,52 Z" fill="url(#blst)"/><path d="M-12,0 L12,0 L16,52 L0,66 L-16,52 Z" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1.2"/><circle cx="0" cy="0" r="5" fill="#4a2008" stroke="#f5c842" stroke-width="2"/><circle cx="0" cy="0" r="2.5" fill="#f5c842"/></g>
-            <g filter="url(#bfs)" transform="translate(60,13)"><path d="M-12,0 L12,0 L16,52 L0,66 L-16,52 Z" fill="url(#bfVd)"/><path d="M-12,0 L12,0 L16,52 L0,66 L-16,52 Z" fill="url(#blst)"/><path d="M-12,0 L12,0 L16,52 L0,66 L-16,52 Z" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1.2"/><circle cx="0" cy="0" r="5" fill="#4a2008" stroke="#f5c842" stroke-width="2"/><circle cx="0" cy="0" r="2.5" fill="#f5c842"/></g>
-            <g filter="url(#bfs)" transform="translate(84,11)"><path d="M-12,0 L12,0 L16,52 L0,66 L-16,52 Z" fill="url(#bfAz)"/><path d="M-12,0 L12,0 L16,52 L0,66 L-16,52 Z" fill="url(#blst)"/><path d="M-12,0 L12,0 L16,52 L0,66 L-16,52 Z" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1.2"/><circle cx="0" cy="0" r="5" fill="#4a2008" stroke="#f5c842" stroke-width="2"/><circle cx="0" cy="0" r="2.5" fill="#f5c842"/></g>
-            <g filter="url(#bfs)" transform="translate(108,9)"><path d="M-12,0 L12,0 L16,52 L0,66 L-16,52 Z" fill="url(#bfR)"/><path d="M-12,0 L12,0 L16,52 L0,66 L-16,52 Z" fill="url(#blst)"/><path d="M-12,0 L12,0 L16,52 L0,66 L-16,52 Z" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1.2"/><circle cx="0" cy="0" r="5" fill="#4a2008" stroke="#f5c842" stroke-width="2"/><circle cx="0" cy="0" r="2.5" fill="#f5c842"/></g>
-            <g filter="url(#bfs)" transform="translate(132,8)"><path d="M-12,0 L12,0 L16,52 L0,66 L-16,52 Z" fill="url(#bfV)"/><path d="M-12,0 L12,0 L16,52 L0,66 L-16,52 Z" fill="url(#blst)"/><path d="M-12,0 L12,0 L16,52 L0,66 L-16,52 Z" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1.2"/><circle cx="0" cy="0" r="5" fill="#4a2008" stroke="#f5c842" stroke-width="2"/><circle cx="0" cy="0" r="2.5" fill="#f5c842"/></g>
-            <g filter="url(#bfs)" transform="translate(156,8)"><path d="M-12,0 L12,0 L16,52 L0,66 L-16,52 Z" fill="url(#bfA)"/><path d="M-12,0 L12,0 L16,52 L0,66 L-16,52 Z" fill="url(#blst)"/><path d="M-12,0 L12,0 L16,52 L0,66 L-16,52 Z" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1.2"/><circle cx="0" cy="0" r="5" fill="#4a2008" stroke="#f5c842" stroke-width="2"/><circle cx="0" cy="0" r="2.5" fill="#f5c842"/></g>
-            <g filter="url(#bfs)" transform="translate(180,8)"><path d="M-12,0 L12,0 L16,52 L0,66 L-16,52 Z" fill="url(#bfVd)"/><path d="M-12,0 L12,0 L16,52 L0,66 L-16,52 Z" fill="url(#blst)"/><path d="M-12,0 L12,0 L16,52 L0,66 L-16,52 Z" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1.2"/><circle cx="0" cy="0" r="5" fill="#4a2008" stroke="#f5c842" stroke-width="2"/><circle cx="0" cy="0" r="2.5" fill="#f5c842"/></g>
-            <g filter="url(#bfs)" transform="translate(204,8)"><path d="M-12,0 L12,0 L16,52 L0,66 L-16,52 Z" fill="url(#bfAz)"/><path d="M-12,0 L12,0 L16,52 L0,66 L-16,52 Z" fill="url(#blst)"/><path d="M-12,0 L12,0 L16,52 L0,66 L-16,52 Z" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1.2"/><circle cx="0" cy="0" r="5" fill="#4a2008" stroke="#f5c842" stroke-width="2"/><circle cx="0" cy="0" r="2.5" fill="#f5c842"/></g>
-            <g filter="url(#bfs)" transform="translate(228,8)"><path d="M-12,0 L12,0 L16,52 L0,66 L-16,52 Z" fill="url(#bfR)"/><path d="M-12,0 L12,0 L16,52 L0,66 L-16,52 Z" fill="url(#blst)"/><path d="M-12,0 L12,0 L16,52 L0,66 L-16,52 Z" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1.2"/><circle cx="0" cy="0" r="5" fill="#4a2008" stroke="#f5c842" stroke-width="2"/><circle cx="0" cy="0" r="2.5" fill="#f5c842"/></g>
-            <g filter="url(#bfs)" transform="translate(252,8)"><path d="M-12,0 L12,0 L16,52 L0,66 L-16,52 Z" fill="url(#bfV)"/><path d="M-12,0 L12,0 L16,52 L0,66 L-16,52 Z" fill="url(#blst)"/><path d="M-12,0 L12,0 L16,52 L0,66 L-16,52 Z" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1.2"/><circle cx="0" cy="0" r="5" fill="#4a2008" stroke="#f5c842" stroke-width="2"/><circle cx="0" cy="0" r="2.5" fill="#f5c842"/></g>
-            <g filter="url(#bfs)" transform="translate(276,8)"><path d="M-12,0 L12,0 L16,52 L0,66 L-16,52 Z" fill="url(#bfA)"/><path d="M-12,0 L12,0 L16,52 L0,66 L-16,52 Z" fill="url(#blst)"/><path d="M-12,0 L12,0 L16,52 L0,66 L-16,52 Z" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1.2"/><circle cx="0" cy="0" r="5" fill="#4a2008" stroke="#f5c842" stroke-width="2"/><circle cx="0" cy="0" r="2.5" fill="#f5c842"/></g>
-            <g filter="url(#bfs)" transform="translate(300,9)"><path d="M-12,0 L12,0 L16,52 L0,66 L-16,52 Z" fill="url(#bfVd)"/><path d="M-12,0 L12,0 L16,52 L0,66 L-16,52 Z" fill="url(#blst)"/><path d="M-12,0 L12,0 L16,52 L0,66 L-16,52 Z" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1.2"/><circle cx="0" cy="0" r="5" fill="#4a2008" stroke="#f5c842" stroke-width="2"/><circle cx="0" cy="0" r="2.5" fill="#f5c842"/></g>
-            <g filter="url(#bfs)" transform="translate(324,11)"><path d="M-12,0 L12,0 L16,52 L0,66 L-16,52 Z" fill="url(#bfAz)"/><path d="M-12,0 L12,0 L16,52 L0,66 L-16,52 Z" fill="url(#blst)"/><path d="M-12,0 L12,0 L16,52 L0,66 L-16,52 Z" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1.2"/><circle cx="0" cy="0" r="5" fill="#4a2008" stroke="#f5c842" stroke-width="2"/><circle cx="0" cy="0" r="2.5" fill="#f5c842"/></g>
-            <g filter="url(#bfs)" transform="translate(348,13)"><path d="M-12,0 L12,0 L16,52 L0,66 L-16,52 Z" fill="url(#bfR)"/><path d="M-12,0 L12,0 L16,52 L0,66 L-16,52 Z" fill="url(#blst)"/><path d="M-12,0 L12,0 L16,52 L0,66 L-16,52 Z" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1.2"/><circle cx="0" cy="0" r="5" fill="#4a2008" stroke="#f5c842" stroke-width="2"/><circle cx="0" cy="0" r="2.5" fill="#f5c842"/></g>
-            <g filter="url(#bfs)" transform="translate(372,16)"><path d="M-12,0 L12,0 L16,52 L0,66 L-16,52 Z" fill="url(#bfV)"/><path d="M-12,0 L12,0 L16,52 L0,66 L-16,52 Z" fill="url(#blst)"/><path d="M-12,0 L12,0 L16,52 L0,66 L-16,52 Z" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1.2"/><circle cx="0" cy="0" r="5" fill="#4a2008" stroke="#f5c842" stroke-width="2"/><circle cx="0" cy="0" r="2.5" fill="#f5c842"/></g>
-          </svg>
-        </div>
-
-      </div>
-
-      <div class="slide-dots" id="dots-container"></div>
-    </div>
-
-    <div class="busca-final">
-      <div class="card-titulo">🔎 Outras Ideias</div>
-      <input type="text" id="pesquisa" placeholder="Ex: flores, aniversario, infantil..." onkeyup="filtrarLinks()">
-      <div class="galeria-links">
-        <a href="https://www.instagram.com/reel/DNvrp8gQAmZ/" target="_blank" class="pin-card btn-casamento" data-tags="casamento">💍 Casamento</a>
-        <a href="https://pin.it/7wKmMgmer" target="_blank" class="pin-card btn-aniversario" data-tags="aniversario festa bolo">🎉 Aniversário</a>
-        <a href="https://pin.it/7wKmMgmer" target="_blank" class="pin-card btn-produções" data-tags="outras opcoes ideia tradicional Beijinho">👩🏻‍🍳🥄 Produções</a>
-        <a href="https://www.instagram.com/reel/DRdLQcqAJPZ/" class="pin-card btn-personalizado escondido" data-tags="casa nova novo lar cha xa cha">🏠 Casa Nova</a>
-        <a href="https://www.instagram.com/reel/DRYVtQUgKLY/" class="pin-card btn-praia escondido" data-tags="praia verao tropical mar piscina">🌞 Praia</a>
-        <a href="https://pin.it/6Kia3s9BI" class="pin-card btn-flores escondido" data-tags="flores rosas">🌸 Flores</a>
-        <a href="https://pin.it/76OG20vfj" class="pin-card btn-futebol escondido" data-tags="futebol esporte time copa neymar flamengo bola">⚽ Futebol</a>
-        <a href="https://pin.it/4m4yQpWGs" class="pin-card btn-safari escondido" data-tags="animais safari bicho crianca personagens fundo do mar disney um ano dois anos bebe">👧🏻🧒🏽 Infantil</a>
-        <a href="https://pin.it/14eiFPe0p" class="pin-card btn-morango escondido" data-tags="morango morango do amor morango recheado">🍓 Morango do Amor</a>
-        <a href="https://pin.it/4QfRNYQbI" class="pin-card btn-flores escondido" data-tags="morango recheado chocolate">🍫🍓 Coxinha de Morango</a>
-        <a href="https://pin.it/5fqthBdLu" class="pin-card btn-docesfinos escondido" data-tags="doces finos casamento bonito chique">🧸 Doces Finos</a>
-      </div>
-    </div>
-
-    <div class="info-local">📍 João Pessoa / Cabedelo — PB</div>
-    <footer>Obrigada pela visita! 🌽</footer>
-
-    <div class="pagamento-social">
-      <div class="titulo-pag"><i class="fas fa-star"></i> Nossas Redes</div>
-      <div class="redes">
-        <a href="https://instagram.com/_docesdaanalu_" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://wa.me/558396905025" target="_blank"><i class="fab fa-whatsapp"></i></a>
-      </div>
-      <div class="titulo-pag"><i class="fas fa-credit-card"></i> Formas de Pagamento</div>
-      <div class="pagamentos">
-        <img src="https://cdn-icons-png.flaticon.com/512/196/196578.png" alt="Visa">
-        <img src="https://cdn-icons-png.flaticon.com/512/196/196561.png" alt="Mastercard">
-      </div>
-      <div class="pix-wrap">
-        <div class="pix-icon">
-          <svg class="pix-svg" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-label="Pix">
-            <path d="M14.5 32 L32 14.5 L49.5 32 L32 49.5 Z" stroke="#fff" stroke-width="3" fill="none"/>
-            <line x1="32" y1="14.5" x2="32" y2="49.5" stroke="#fff" stroke-width="2.5"/>
-            <line x1="14.5" y1="32" x2="49.5" y2="32" stroke="#fff" stroke-width="2.5"/>
-          </svg>
-        </div>
-        <span class="pix-label">Pix</span>
-      </div>
-      <div class="credito">feito por Ana Luiza Azevedo 🌸</div>
-    </div>
-
+<div style="background:var(--white); border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:16px 24px;">
+  <div style="max-width:1100px; margin:0 auto; display:flex; flex-wrap:wrap; gap:24px; justify-content:center; align-items:center;">
+    <span style="font-size:12.5px; font-weight:600; color:var(--ink-soft); display:flex; align-items:center; gap:7px;">
+      <i class="fas fa-leaf" style="color:var(--pink); font-size:11px;"></i> Ingredientes selecionados
+    </span>
+    <span style="font-size:12.5px; font-weight:600; color:var(--ink-soft); display:flex; align-items:center; gap:7px;">
+      <i class="fas fa-hand-sparkles" style="color:var(--pink); font-size:11px;"></i> 100% artesanal
+    </span>
+    <span style="font-size:12.5px; font-weight:600; color:var(--ink-soft); display:flex; align-items:center; gap:7px;">
+      <i class="fas fa-location-dot" style="color:var(--pink); font-size:11px;"></i> Entrega em JP e Cabedelo
+    </span>
+    <span style="font-size:12.5px; font-weight:600; color:var(--ink-soft); display:flex; align-items:center; gap:7px;">
+      <i class="fas fa-comment" style="color:var(--pink); font-size:11px;"></i> Atendimento pelo WhatsApp
+    </span>
   </div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+<section class="section s-alt" id="cardapio">
+  <div class="wrap">
+    <p class="eyebrow">Cardápio</p>
+    <h2>Nossos sabores</h2>
+    <div class="sabores-grid">
+      <div class="sabor-item"><span class="sabor-n">01</span><span>Brigadeiro branco</span></div>
+      <div class="sabor-item"><span class="sabor-n">02</span><span>Brigadeiro ao leite</span></div>
+      <div class="sabor-item"><span class="sabor-n">03</span><span>Meio amargo</span></div>
+      <div class="sabor-item"><span class="sabor-n">04</span><span>Ninho</span></div>
+      <div class="sabor-item"><span class="sabor-n">05</span><span>Ninho colorido</span></div>
+      <div class="sabor-item"><span class="sabor-n">06</span><span>Surpresa de uva</span></div>
+      <div class="sabor-item"><span class="sabor-n">07</span><span>Casadinho</span></div>
+      <div class="sabor-item"><span class="sabor-n">08</span><span>Beijinho</span></div>
+      <div class="sabor-item"><span class="sabor-n">09</span><span>Amendoim</span></div>
+      <div class="sabor-item"><span class="sabor-n">10</span><span>Prestígio</span></div>
+      <div class="sabor-item"><span class="sabor-n">11</span><span>Confete</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section-pedido" id="pedido">
+  <div class="pd-wrap">
+
+    <div class="pd-header">
+      <div class="pd-eyebrow">Peça agora</div>
+      <h2 class="pd-title">Monte seu pedido</h2>
+      <p class="pd-subtitle">Rápido, fácil e direto no seu WhatsApp</p>
+    </div>
+
+    <div class="pd-progress" id="pd-progress">
+      <div class="pd-prog-step" onclick="goStep(1)">
+        <div class="pd-prog-circle active" id="prog-1">1</div>
+        <span class="pd-prog-label active" id="prog-l1">Combo</span>
+      </div>
+      <div class="pd-prog-line"><div class="pd-prog-line-fill" id="line-1"></div></div>
+      <div class="pd-prog-step" onclick="goStep(2)">
+        <div class="pd-prog-circle" id="prog-2">2</div>
+        <span class="pd-prog-label" id="prog-l2">Sabores</span>
+      </div>
+      <div class="pd-prog-line"><div class="pd-prog-line-fill" id="line-2"></div></div>
+      <div class="pd-prog-step" onclick="goStep(3)">
+        <div class="pd-prog-circle" id="prog-3">3</div>
+        <span class="pd-prog-label" id="prog-l3">Confirmar</span>
+      </div>
+    </div>
+
+    <div class="pd-step-card active" id="step-1">
+      <div class="pd-card-label">Passo 1 de 3</div>
+      <div class="pd-card-title">Qual combo você quer?</div>
+
+      <div class="pd-combos" id="combo-list">
+        <label class="pd-combo-option" data-value="Caixinha (4 brigadeiros)" data-max="4" data-desc="4 brigadeiros">
+          <input type="radio" name="combo" value="Caixinha (4 brigadeiros)">
+          <div class="pd-combo-radio"></div>
+          <div class="pd-combo-info">
+            <div class="pd-combo-name">Caixinha</div>
+            <div class="pd-combo-desc">Ideal para presentear</div>
+          </div>
+          <span class="pd-combo-badge">4 unid.</span>
+        </label>
+        <label class="pd-combo-option" data-value="25 brigadeiros" data-max="2" data-desc="25 brigadeiros">
+          <input type="radio" name="combo" value="25 brigadeiros">
+          <div class="pd-combo-radio"></div>
+          <div class="pd-combo-info">
+            <div class="pd-combo-name">Mini festa</div>
+            <div class="pd-combo-desc">Perfeito para reuniões íntimas</div>
+          </div>
+          <span class="pd-combo-badge">25 unid.</span>
+        </label>
+        <label class="pd-combo-option" data-value="Meio cento — 50 brigadeiros" data-max="2" data-desc="50 brigadeiros">
+          <input type="radio" name="combo" value="Meio cento — 50 brigadeiros">
+          <div class="pd-combo-radio"></div>
+          <div class="pd-combo-info">
+            <div class="pd-combo-name">Meio cento</div>
+            <div class="pd-combo-desc">Para festas e eventos</div>
+          </div>
+          <span class="pd-combo-badge">50 unid.</span>
+        </label>
+        <label class="pd-combo-option" data-value="Cento completo — 100 brigadeiros" data-max="4" data-desc="100 brigadeiros">
+          <input type="radio" name="combo" value="Cento completo — 100 brigadeiros">
+          <div class="pd-combo-radio"></div>
+          <div class="pd-combo-info">
+            <div class="pd-combo-name">Cento completo</div>
+            <div class="pd-combo-desc">Para grandes celebrações</div>
+          </div>
+          <span class="pd-combo-badge">100 unid.</span>
+        </label>
+        <label class="pd-combo-option" data-value="orcamento" data-max="0" data-desc="Personalizado">
+          <input type="radio" name="combo" value="orcamento">
+          <div class="pd-combo-radio"></div>
+          <div class="pd-combo-info">
+            <div class="pd-combo-name">Orçamento personalizado</div>
+            <div class="pd-combo-desc">Quantidade e sabores à sua escolha</div>
+          </div>
+          <span class="pd-combo-badge">Custom</span>
+        </label>
+      </div>
+
+      <div class="pd-nav">
+        <button class="pd-btn-next" id="btn-next-1" onclick="goStep(2)" disabled>
+          Escolher sabores <i class="fas fa-arrow-right"></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="pd-step-card" id="step-2">
+      <div class="pd-card-label">Passo 2 de 3</div>
+      <div class="pd-card-title">Quais sabores?</div>
+      <div class="pd-aviso-max" id="aviso-max">
+        <i class="fas fa-circle-info"></i>
+        <span id="aviso-max-text"></span>
+      </div>
+      <div class="pd-flavors" id="flavor-list">
+        <label class="pd-flavor"><input type="checkbox" value="Brigadeiro Branco"><span>Branco</span></label>
+        <label class="pd-flavor"><input type="checkbox" value="Brigadeiro ao Leite"><span>Ao leite</span></label>
+        <label class="pd-flavor"><input type="checkbox" value="Meio Amargo"><span>Meio amargo</span></label>
+        <label class="pd-flavor"><input type="checkbox" value="Ninho"><span>Ninho</span></label>
+        <label class="pd-flavor"><input type="checkbox" value="Ninho Colorido"><span>Ninho colorido</span></label>
+        <label class="pd-flavor"><input type="checkbox" value="Surpresa de Uva"><span>Surpresa de uva</span></label>
+        <label class="pd-flavor"><input type="checkbox" value="Casadinho"><span>Casadinho</span></label>
+        <label class="pd-flavor"><input type="checkbox" value="Beijinho"><span>Beijinho</span></label>
+        <label class="pd-flavor"><input type="checkbox" value="Amendoim"><span>Amendoim</span></label>
+        <label class="pd-flavor"><input type="checkbox" value="Prestígio"><span>Prestígio</span></label>
+        <label class="pd-flavor"><input type="checkbox" value="Confete"><span>Confete</span></label>
+      </div>
+      <div class="pd-nav">
+        <button class="pd-btn-back" onclick="goStep(1)"><i class="fas fa-arrow-left"></i> Voltar</button>
+        <button class="pd-btn-next" id="btn-next-2" onclick="goStep(3)" disabled>
+          Revisar pedido <i class="fas fa-arrow-right"></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="pd-step-card" id="step-3">
+      <div class="pd-card-label">Passo 3 de 3</div>
+      <div class="pd-card-title">Confirme seu pedido</div>
+      <div class="pd-resumo" id="pd-resumo">
+        <div class="pd-resumo-linha">
+          <span class="pd-resumo-key">Combo</span>
+          <span class="pd-resumo-val" id="res-combo">—</span>
+        </div>
+        <div class="pd-resumo-linha">
+          <span class="pd-resumo-key">Sabores</span>
+          <span class="pd-resumo-val" id="res-sabores">—</span>
+        </div>
+      </div>
+      <a href="#" class="pd-btn-whats" id="btn-finalizar">
+        <i class="fa-brands fa-whatsapp" style="font-size:20px;"></i>
+        Enviar pedido no WhatsApp
+      </a>
+      <a href="https://instagram.com/_docesdaanalu_" target="_blank" class="pd-btn-insta">
+        <i class="fa-brands fa-instagram"></i> Ver no Instagram
+      </a>
+      <div class="pd-nav" style="margin-top:14px;">
+        <button class="pd-btn-back" onclick="goStep(2)"><i class="fas fa-arrow-left"></i> Alterar sabores</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="section s-alt" id="galeria">
+  <div class="wrap" style="max-width:680px;">
+    <p class="eyebrow">Galeria</p>
+    <h2>Trabalhos recentes</h2>
+    <div class="galeria-frame">
+      <div class="slider">
+        <div class="slides" id="slides">
+          <div class="slide"><img src="https://i.ibb.co/tp3jc54k/file-00000000c240720e9902998306ffe30b.png" alt="Produção"></div>
+        </div>
+      </div>
+    </div>
+    <div class="dots" id="galeria-dots"></div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     SEÇÃO TEMAS — imagens locais, cards maiores
+══════════════════════════════════════════════ -->
+<section class="section" id="temas">
+  <div class="wrap">
+    <p class="eyebrow">Temas</p>
+    <h2>Temas disponíveis</h2>
+    <div class="temas-intro">
+      <p>Cada tema é produzido com atenção aos detalhes para deixar sua festa ainda mais especial.</p>
+    </div>
+    <div class="temas-grid" id="temas-grid"></div>
+    <div style="margin-top:36px; text-align:center;">
+      <a href="https://br.pinterest.com/docesdaanalu2026/minhas-produ%C3%A7%C3%B5es/" target="_blank" style="
+        display:inline-flex; align-items:center; gap:16px;
+        background:#E60023; color:#fff;
+        padding:18px 30px; border-radius:16px;
+        text-decoration:none; transition:all .2s;
+        box-shadow:0 8px 24px rgba(230,0,35,.3);
+        max-width:400px; width:100%;
+      " onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 14px 32px rgba(230,0,35,.42)'"
+         onmouseout="this.style.transform='';this.style.boxShadow='0 8px 24px rgba(230,0,35,.3)'">
+        <i class="fa-brands fa-pinterest" style="font-size:32px; flex-shrink:0;"></i>
+        <div style="text-align:left;">
+          <div style="font-weight:700; font-size:15px; margin-bottom:3px;">Veja alguns dos meus temas no Pinterest</div>
+          <div style="font-size:12px; opacity:.85;">Clique para ver mais inspirações</div>
+        </div>
+        <i class="fas fa-arrow-right" style="margin-left:auto; font-size:13px; opacity:.75; flex-shrink:0;"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="section s-alt" id="contato">
+  <div class="wrap">
+    <p class="eyebrow">Contato</p>
+    <h2>Siga nossa página</h2>
+    <div class="contato-grid">
+      <div class="c-bloco">
+        <h3>Localização</h3>
+        <p><i class="fas fa-location-dot"></i> João Pessoa / Cabedelo — PB</p>
+      </div>
+      <div class="c-bloco">
+        <h3>Redes sociais</h3>
+        <div class="social-links">
+          <a href="https://instagram.com/_docesdaanalu_" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://wa.me/558396905025" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="https://br.pinterest.com/docesdaanalu2026/minhas-produ%C3%A7%C3%B5es/" target="_blank" aria-label="Pinterest"><i class="fa-brands fa-pinterest"></i></a>
+        </div>
+      </div>
+      <div class="c-bloco">
+        <h3>Formas de pagamento</h3>
+        <div class="pagtos">
+          <img src="https://cdn-icons-png.flaticon.com/512/196/196578.png" alt="Visa">
+          <img src="https://cdn-icons-png.flaticon.com/512/196/196561.png" alt="Mastercard">
+          <span class="pix-tag">
+            <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+              <path d="M14.5 32 L32 14.5 L49.5 32 L32 49.5 Z" stroke="#059669" stroke-width="4" fill="none"/>
+              <line x1="32" y1="14.5" x2="32" y2="49.5" stroke="#059669" stroke-width="3"/>
+              <line x1="14.5" y1="32" x2="49.5" y2="32" stroke="#059669" stroke-width="3"/>
+            </svg>
+            <span>Pix</span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="rodape">
+  <div class="rodape-inner">
+    <img class="rodape-logo" src="https://i.ibb.co/jkCF4Xhv/logo-set.jpg" alt="Doces da Analu">
+    <p class="rodape-copy">© <span id="ano"></span> Doces da Analu · Confeitaria artesanal ·</p>
+    <p class="rodape-copy" style="margin-top:4px;">Atendimento via WhatsApp · <a href="https://wa.me/558396905025" style="color:rgba(255,255,255,.5); text-decoration:underline;">(83) 9690-5025</a></p>
+  </div>
+</footer>
+
+<div class="modal-bg" id="modal">
+  <div class="modal-box">
+    <button class="modal-close" id="modal-fechar">&times;</button>
+    <h3 class="modal-title" id="modal-titulo"></h3>
+    <div class="modal-slider">
+      <div class="modal-slides" id="modal-slides"></div>
+      <button class="arr arr-prev" id="modal-prev"><i class="fas fa-chevron-left"></i></button>
+      <button class="arr arr-next" id="modal-next"><i class="fas fa-chevron-right"></i></button>
+    </div>
+    <div class="modal-dots" id="modal-dots"></div>
+  </div>
+</div>
+
+
+
 <script>
+document.getElementById("ano").textContent = new Date().getFullYear();
+
+
+var TEMAS = [
+  { nome: "São João",  fotos: ["imagens/sao joao.jfif"] },
+  { nome: "Copa",      fotos: ["imagens/copa.jfif"] },
+  { nome: "Flores",    fotos: ["imagens/flores.jfif"] },
+  { nome: "Crisma",   fotos: ["imagens/crisma.jfif"] }
+];
+
 (function(){
-  const canvas=document.getElementById("stars-bg");
-  const ctx=canvas.getContext("2d");
-  let W,H,stars=[],sparks=[];
-  function resize(){W=canvas.width=window.innerWidth;H=canvas.height=window.innerHeight;}
-  resize();window.addEventListener("resize",resize);
-  for(let i=0;i<120;i++){stars.push({x:Math.random(),y:Math.random(),r:Math.random()*1.5+.3,alpha:Math.random()*.6+.2,tw:Math.random()*Math.PI*2,twSpeed:.01+Math.random()*.03});}
-  function spawnSpark(){return{x:.5+(.5-Math.random())*.15,y:.58+Math.random()*.05,vx:(Math.random()-.5)*.003,vy:-(Math.random()*.006+.003),alpha:.8+Math.random()*.2,r:1.5+Math.random()*2,life:1};}
-  for(let i=0;i<30;i++){let s=spawnSpark();s.y-=Math.random()*.25;sparks.push(s);}
-  const sparkColors=['#f5a623','#e8650a','#fcd34d','#c0392b','#fff'];
-  function draw(){
-    ctx.clearRect(0,0,W,H);
-    stars.forEach(s=>{s.tw+=s.twSpeed;const a=s.alpha*(0.5+0.5*Math.sin(s.tw));ctx.beginPath();ctx.arc(s.x*W,s.y*H,s.r,0,Math.PI*2);ctx.fillStyle=`rgba(255,240,180,${a})`;ctx.fill();});
-    sparks.forEach((s,i)=>{s.x+=s.vx;s.y+=s.vy;s.alpha-=.007;s.life-=.007;if(s.life<=0||s.y<0)sparks[i]=spawnSpark();ctx.beginPath();ctx.arc(s.x*W,s.y*H,s.r,0,Math.PI*2);ctx.fillStyle=sparkColors[i%sparkColors.length];ctx.globalAlpha=Math.max(0,s.alpha);ctx.fill();ctx.globalAlpha=1;});
-    requestAnimationFrame(draw);
+  var g = document.getElementById("temas-grid");
+  TEMAS.forEach(function(t){
+    var c = document.createElement("div");
+    c.className = "tema";
+    /* wrapper com aspect-ratio para imagem grande */
+    c.innerHTML =
+      '<div class="tema-img-wrap">' +
+        '<img src="' + t.fotos[0] + '" alt="' + t.nome + '" loading="lazy">' +
+      '</div>' +
+      '<div class="tema-nome">' + t.nome + '</div>';
+    c.addEventListener("click", function(){ abrirModal(t); });
+    g.appendChild(c);
+  });
+})();
+
+(function(){
+  var slides = document.getElementById("slides");
+  var dotsEl = document.getElementById("galeria-dots");
+  var items = slides.querySelectorAll(".slide");
+  var total = items.length, cur = 0, timer;
+  function ir(n){
+    cur = (n + total) % total;
+    slides.style.transform = "translateX(-" + (cur * 100) + "%)";
+    dotsEl.querySelectorAll(".dot").forEach(function(d, i){ d.className = "dot" + (i === cur ? " on" : ""); });
   }
-  draw();
+  items.forEach(function(_, i){
+    var d = document.createElement("div");
+    d.className = "dot" + (i === 0 ? " on" : "");
+    d.addEventListener("click", function(){ ir(i); reset(); });
+    dotsEl.appendChild(d);
+  });
+  function reset(){ clearInterval(timer); timer = setInterval(function(){ ir(cur + 1); }, 5000); }
+  document.querySelector(".arr-prev").addEventListener("click", function(){ ir(cur - 1); reset(); });
+  document.querySelector(".arr-next").addEventListener("click", function(){ ir(cur + 1); reset(); });
+  var tx = 0;
+  slides.addEventListener("touchstart", function(e){ tx = e.touches[0].clientX; }, { passive: true });
+  slides.addEventListener("touchend", function(e){
+    var d = tx - e.changedTouches[0].clientX;
+    if(Math.abs(d) > 40){ ir(cur + (d > 0 ? 1 : -1)); reset(); }
+  }, { passive: true });
+  reset();
 })();
 
-(function(){
-  const box=document.getElementById("slides-box");
-  const dotsC=document.getElementById("dots-container");
-  const imgs=box.querySelectorAll(".slide-item");
-  const total=imgs.length;
-  let cur=0,timer=null;
-  function go(n){cur=(n+total)%total;box.style.transform=`translateX(-${cur*100}%)`;dotsC.querySelectorAll(".dot").forEach((d,i)=>d.className="dot"+(i===cur?" ativo":""));}
-  function startTimer(){timer=setInterval(()=>go(cur+1),5000);}
-  function resetTimer(){clearInterval(timer);startTimer();}
-  imgs.forEach((_,i)=>{const d=document.createElement("div");d.className="dot"+(i===0?" ativo":"");d.addEventListener("click",()=>{go(i);resetTimer();});dotsC.appendChild(d);});
-  const prevBtn=document.querySelector(".prev");
-  const nextBtn=document.querySelector(".next");
-  if(prevBtn) prevBtn.addEventListener("click",()=>{go(cur-1);resetTimer();});
-  if(nextBtn) nextBtn.addEventListener("click",()=>{go(cur+1);resetTimer();});
-  let tx=0;
-  box.addEventListener("touchstart",e=>{tx=e.touches[0].clientX;},{passive:true});
-  box.addEventListener("touchend",e=>{const diff=tx-e.changedTouches[0].clientX;if(Math.abs(diff)>40){go(cur+(diff>0?1:-1));resetTimer();}},{passive:true});
-  startTimer();
-})();
+var currentStep = 1;
+var selectedCombo = null;
+var selectedMax = 0;
+var flavorCbs = document.querySelectorAll("#flavor-list input");
 
-const comboSelect=document.getElementById("combo");
-const checkboxes=document.querySelectorAll(".sabores-check input");
-const msgLimite=document.getElementById("limite-msg");
-let limiteSabores=0;
-comboSelect.addEventListener("change",()=>{
-  const combo=comboSelect.value;
-  if(combo.includes("Caixinha"))limiteSabores=4;
-  else if(combo.includes("25"))limiteSabores=2;
-  else if(combo.includes("50"))limiteSabores=2;
-  else if(combo.includes("100"))limiteSabores=4;
-  else limiteSabores=0;
-  checkboxes.forEach(cb=>{cb.checked=false;cb.disabled=false;});
-  msgLimite.innerText=limiteSabores?`Você pode escolher até ${limiteSabores} sabores 🌽`:"";
-});
-checkboxes.forEach(cb=>{
-  cb.addEventListener("change",()=>{
-    const selecionados=document.querySelectorAll(".sabores-check input:checked");
-    if(limiteSabores>0&&selecionados.length>=limiteSabores){checkboxes.forEach(b=>{if(!b.checked)b.disabled=true;});}
-    else{checkboxes.forEach(b=>b.disabled=false);}
+var COMBO_MSGS = {
+  "Caixinha (4 brigadeiros)":             { emoji: "🎁", msg: "Caixinha selecionada! Escolha até 4 sabores diferentes." },
+  "25 brigadeiros":                        { emoji: "🎉", msg: "25 brigadeiros para animar qualquer encontro!" },
+  "Meio cento — 50 brigadeiros":           { emoji: "🥳", msg: "Meio cento! Para uma festa animada. Escolha até 2 sabores." },
+  "Cento completo — 100 brigadeiros":      { emoji: "✨", msg: "100 brigadeiros para uma celebração inesquecível!" },
+  "orcamento":                             { emoji: "💬", msg: "Ótimo! Vou te atender no WhatsApp para um orçamento especial." }
+};
+
+document.querySelectorAll(".pd-combo-option").forEach(function(opt){
+  opt.addEventListener("click", function(){
+    document.querySelectorAll(".pd-combo-option").forEach(function(o){ o.classList.remove("selected"); });
+    opt.classList.add("selected");
+    selectedCombo = opt.dataset.value;
+    selectedMax = parseInt(opt.dataset.max) || 0;
+    document.getElementById("btn-next-1").disabled = false;
+
+    if(selectedCombo === "orcamento"){
+      document.getElementById("btn-next-1").innerHTML = 'Solicitar orçamento <i class="fas fa-arrow-right"></i>';
+    } else {
+      document.getElementById("btn-next-1").innerHTML = 'Escolher sabores <i class="fas fa-arrow-right"></i>';
+    }
   });
 });
 
-function pedirWhats(e){
+flavorCbs.forEach(function(cb){
+  cb.addEventListener("change", function(){
+    var sel = document.querySelectorAll("#flavor-list input:checked");
+    var avisoEl = document.getElementById("aviso-max");
+    var avisoText = document.getElementById("aviso-max-text");
+    if(selectedMax > 0){
+      avisoEl.classList.add("on");
+      if(sel.length >= selectedMax){
+        flavorCbs.forEach(function(b){ if(!b.checked) b.disabled = true; });
+        avisoText.textContent = sel.length + " de " + selectedMax + " sabores selecionados";
+      } else {
+        flavorCbs.forEach(function(b){ b.disabled = false; });
+        avisoText.textContent = "Escolha " + selectedMax + " sabores — " + sel.length + " selecionado(s)";
+      }
+    }
+    document.getElementById("btn-next-2").disabled = (sel.length === 0);
+  });
+});
+
+function goStep(n){
+  if(n === 2 && selectedCombo === "orcamento"){
+    location.href = "https://api.whatsapp.com/send?phone=558396905025&text=" + encodeURIComponent("Olá, Analu! Gostaria de solicitar um orçamento personalizado.");
+    return;
+  }
+  if(n > currentStep){
+    if(currentStep === 1 && !selectedCombo) return;
+    if(currentStep === 2){
+      var sel = document.querySelectorAll("#flavor-list input:checked");
+      if(sel.length === 0) return;
+    }
+  }
+
+  if(n === 3){
+    var sel = document.querySelectorAll("#flavor-list input:checked");
+    document.getElementById("res-combo").textContent = selectedCombo || "—";
+    document.getElementById("res-sabores").textContent = Array.from(sel).map(function(s){ return s.value; }).join(", ") || "—";
+  }
+
+  if(n === 2 && selectedMax > 0){
+    var avisoEl = document.getElementById("aviso-max");
+    var avisoText = document.getElementById("aviso-max-text");
+    var sel = document.querySelectorAll("#flavor-list input:checked");
+    avisoEl.classList.add("on");
+    avisoText.textContent = "Escolha até " + selectedMax + " sabores" + (sel.length ? " — " + sel.length + " selecionado(s)" : "");
+    flavorCbs.forEach(function(b){ b.disabled = false; });
+  }
+
+  currentStep = n;
+  document.querySelectorAll(".pd-step-card").forEach(function(c){ c.classList.remove("active"); });
+  document.getElementById("step-" + n).classList.add("active");
+
+  for(var i = 1; i <= 3; i++){
+    var circ = document.getElementById("prog-" + i);
+    var lbl  = document.getElementById("prog-l" + i);
+    circ.classList.remove("active", "done");
+    lbl.classList.remove("active");
+    if(i < n){
+      circ.classList.add("done");
+      circ.innerHTML = '<i class="fas fa-check" style="font-size:11px;"></i>';
+    } else if(i === n){
+      circ.classList.add("active");
+      circ.textContent = i;
+      lbl.classList.add("active");
+    } else {
+      circ.textContent = i;
+    }
+  }
+
+  document.getElementById("line-1").style.width = n >= 2 ? "100%" : "0%";
+  document.getElementById("line-2").style.width = n >= 3 ? "100%" : "0%";
+}
+
+document.getElementById("btn-finalizar").addEventListener("click", function(e){
   e.preventDefault();
-  const combo=comboSelect.value;
-  if(combo==="orcamento_whatsapp"){window.location.href=`https://api.whatsapp.com/send?phone=558396905025&text=${encodeURIComponent("Oii, Analu! 🌽🤠 Quero fazer um orçamento para o Arraiá!")}`;return;}
-  if(!combo){alert("Escolha um combo primeiro! 🌽");return;}
-  const selecionados=document.querySelectorAll(".sabores-check input:checked");
-  if(selecionados.length===0){alert("Escolha pelo menos um sabor! 🍫");return;}
-  const sabores=[...selecionados].map(s=>s.value).join(", ");
-  const msg=`Oii, Analu! 🌽🤠 Quero encomendar pro Arraiá: ${combo}, com os sabores: ${sabores}. Pode me passar o valor?`;
-  confetti({particleCount:120,spread:80,origin:{y:.6},colors:['#c0392b','#f5a623','#e8650a','#2e7d32','#fcd34d','#6b3a1f'],shapes:['circle','square']});
-  setTimeout(()=>{window.location.href=`https://api.whatsapp.com/send?phone=558396905025&text=${encodeURIComponent(msg)}`;},900);
-}
+  var btn = document.getElementById("btn-finalizar");
+  var sel = document.querySelectorAll("#flavor-list input:checked");
+  var sabores = Array.from(sel).map(function(s){ return s.value; }).join(", ");
+  var msg = "Olá, Analu! Gostaria de fazer o seguinte pedido:\n\n• Combo: " + selectedCombo + "\n• Sabores: " + sabores + "\n\nPoderia me passar o valor?";
+  var orig = btn.innerHTML;
+  btn.innerHTML = '<i class="fa-brands fa-whatsapp" style="font-size:20px;"></i> Abrindo WhatsApp…';
+  setTimeout(function(){
+    location.href = "https://api.whatsapp.com/send?phone=558396905025&text=" + encodeURIComponent(msg);
+    btn.innerHTML = orig;
+  }, 600);
+});
 
-function filtrarLinks(){
-  const texto=document.getElementById("pesquisa").value.toLowerCase().trim();
-  document.querySelectorAll(".pin-card").forEach(card=>{
-    const tags=(card.getAttribute("data-tags")||"").toLowerCase();
-    const nome=card.innerText.toLowerCase();
-    if(texto===""){card.style.display=card.classList.contains("escondido")?"none":"flex";}
-    else{card.style.display=(tags.includes(texto)||nome.includes(texto))?"flex":"none";}
+var mFotos = [], mIdx = 0;
+function abrirModal(tema){
+  mFotos = tema.fotos; mIdx = 0;
+  document.getElementById("modal-titulo").textContent = tema.nome;
+  var ms = document.getElementById("modal-slides");
+  var md = document.getElementById("modal-dots");
+  ms.innerHTML = mFotos.map(function(f){ return '<div class="slide"><img src="'+f+'" alt="'+tema.nome+'"></div>'; }).join("");
+  md.innerHTML = "";
+  mFotos.forEach(function(_, i){
+    var d = document.createElement("div");
+    d.className = "dot" + (i === 0 ? " on" : "");
+    d.addEventListener("click", function(){ goModal(i); });
+    md.appendChild(d);
   });
+  syncModal();
+  document.getElementById("modal").classList.add("on");
 }
-
-function slidePrev(){
-  const box=document.getElementById("slides-box");
-  const total=box.querySelectorAll(".slide-item").length;
-  const cur=parseInt(box.dataset.cur||0);
-  const next=(cur-1+total)%total;
-  box.style.transform=`translateX(-${next*100}%)`;
-  box.dataset.cur=next;
+function goModal(n){ mIdx = (n + mFotos.length) % mFotos.length; syncModal(); }
+function syncModal(){
+  document.getElementById("modal-slides").style.transform = "translateX(-" + (mIdx * 100) + "%)";
+  document.querySelectorAll("#modal-dots .dot").forEach(function(d, i){ d.className = "dot" + (i === mIdx ? " on" : ""); });
 }
-function slideNext(){
-  const box=document.getElementById("slides-box");
-  const total=box.querySelectorAll(".slide-item").length;
-  const cur=parseInt(box.dataset.cur||0);
-  const next=(cur+1)%total;
-  box.style.transform=`translateX(-${next*100}%)`;
-  box.dataset.cur=next;
-}
+function fecharModal(){ document.getElementById("modal").classList.remove("on"); }
+document.getElementById("modal-prev").addEventListener("click", function(){ goModal(mIdx - 1); });
+document.getElementById("modal-next").addEventListener("click", function(){ goModal(mIdx + 1); });
+document.getElementById("modal-fechar").addEventListener("click", fecharModal);
+document.getElementById("modal").addEventListener("click", function(e){ if(e.target.id === "modal") fecharModal(); });
 </script>
-
-<a class="btn-float-whats" href="https://api.whatsapp.com/send?phone=558396905025&text=Oii%20Analu!%20%F0%9F%8C%BD%F0%9F%A4%A0%20Quero%20encomendar%20pro%20Arrai%C3%A1!" target="_blank">
-  <i class="fab fa-whatsapp"></i> Faça seu Pedido 🌽
-</a>
 </body>
 </html>
