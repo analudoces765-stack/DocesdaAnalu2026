@@ -1,25 +1,1022 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Em manutenção</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Doces da Analu — brigadeiros gourmet em João Pessoa e Cabedelo, PB.">
+<title>Doces da Analu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+:root {
+  --bg: #FEF6F9;
+  --white: #FFFFFF;
+  --pink: #D81B6A;
+  --pink-dark: #A8144F;
+  --pink-mid: #E8559A;
+  --pink-soft: #F9D0E4;
+  --pink-pale: #FDE8F2;
+  --ink: #2A0F1E;
+  --ink-mid: #6B3352;
+  --ink-soft: #A07088;
+  --line: #F0D8E8;
+  --green: #25D366;
+  --green-dark: #1DA851;
+
+  --pd-bg: #1E0A15;
+  --pd-surface: rgba(255,240,247,.045);
+  --pd-border: rgba(249,208,228,.11);
+  --pd-text: rgba(255,235,245,.92);
+  --pd-muted: rgba(249,208,228,.42);
+  --pd-pink-glow: rgba(216,27,106,.22);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--ink); -webkit-font-smoothing: antialiased; }
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+
+.wrap { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+section { scroll-margin-top: 110px; }
+
+.topbar {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(255,255,255,.96);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+}
+.topbar-inner {
+  max-width: 1100px; margin: 0 auto;
+  padding: 10px 24px;
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+}
+.brand-logo { height: 46px; width: auto; object-fit: contain; display: block; }
+.topbar-cta {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--pink); color: #fff;
+  padding: 10px 20px; border-radius: 999px;
+  font-weight: 700; font-size: 13.5px;
+  transition: background .2s;
+  box-shadow: 0 4px 14px rgba(216,27,106,.28);
+  flex-shrink: 0;
+}
+.topbar-cta:hover { background: var(--pink-dark); }
+.topbar-cta .label { display: inline; }
+
+.subnav {
+  display: flex; gap: 6px; overflow-x: auto;
+  padding: 0 24px 11px;
+  scrollbar-width: none;
+}
+.subnav::-webkit-scrollbar { display: none; }
+.subnav a {
+  flex-shrink: 0; padding: 7px 15px; border-radius: 999px;
+  font-size: 13px; font-weight: 600; color: var(--ink-mid);
+  white-space: nowrap;
+  border: 1px solid var(--line); background: var(--white);
+  transition: all .18s;
+}
+.subnav a:hover { border-color: var(--pink); color: var(--pink); }
+
+.hero { padding: 56px 0 64px; }
+.hero-grid { display: grid; grid-template-columns: 1fr; gap: 48px; align-items: center; }
+.hero-logo { display: block; width: min(200px, 52vw); margin: 0 auto 20px; }
+.eyebrow {
+  font-size: 11.5px; font-weight: 700; letter-spacing: .16em;
+  text-transform: uppercase; color: var(--pink); margin-bottom: 10px;
+}
+h1, h2, h3 { font-family: 'Cormorant Garamond', serif; font-weight: 600; line-height: 1.15; color: var(--ink); }
+h1 { font-size: clamp(30px, 5.5vw, 50px); margin-bottom: 16px; font-style: italic; }
+h2 { font-size: clamp(24px, 4vw, 34px); margin-bottom: 28px; }
+.hero-sub { font-size: 15.5px; line-height: 1.72; color: var(--ink-mid); max-width: 460px; margin-bottom: 30px; }
+.ctas { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 38px; }
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 9px;
+  padding: 14px 28px; border-radius: 999px;
+  font-weight: 700; font-size: 14.5px; border: none; cursor: pointer;
+  transition: all .2s ease;
+}
+.btn-pink { background: var(--pink); color: #fff; box-shadow: 0 6px 18px rgba(216,27,106,.3); }
+.btn-pink:hover { background: var(--pink-dark); transform: translateY(-1px); }
+.btn-outline { background: transparent; color: var(--pink); border: 2px solid var(--pink); }
+.btn-outline:hover { background: var(--pink); color: #fff; }
+
+.numeros { display: flex; gap: 0; list-style: none; }
+.numeros li { display: flex; flex-direction: column; gap: 3px; padding: 0 22px; border-left: 1px solid var(--line); }
+.numeros li:first-child { padding-left: 0; border-left: none; }
+.numeros strong { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600; color: var(--pink); }
+.numeros span { font-size: 11px; color: var(--ink-soft); text-transform: uppercase; letter-spacing: .07em; }
+
+.video-wrap { display: flex; justify-content: center; }
+.video-box {
+  width: 100%; max-width: 255px; aspect-ratio: 9/16;
+  border-radius: 22px; overflow: hidden;
+  border: 3px solid var(--pink-soft);
+  box-shadow: 0 28px 56px rgba(216,27,106,.14);
+}
+.video-box iframe { width: 100%; height: 100%; border: none; display: block; }
+
+.s-alt { background: var(--white); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.section { padding: 62px 0; }
+
+.sabores-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 8px; }
+.sabor-item {
+  display: flex; align-items: center; gap: 10px;
+  background: var(--white); border: 1px solid var(--line); border-radius: 12px;
+  padding: 12px 14px; transition: all .18s;
+}
+.sabor-item:hover { border-color: var(--pink); box-shadow: 0 2px 10px rgba(216,27,106,.07); }
+.sabor-n { font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 12px; color: var(--ink-soft); min-width: 18px; flex-shrink: 0; }
+.sabor-item span:last-child { font-weight: 500; font-size: 13.5px; color: var(--ink); }
+
+
+.section-pedido {
+  padding: 72px 0;
+  background: linear-gradient(160deg, #fce8f3 0%, #fdf2f8 50%, #f8e0ef 100%);
+  position: relative; overflow: hidden;
+}
+.section-pedido::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(216,27,106,.07) 0%, transparent 65%);
+  pointer-events: none;
+}
+.pd-wrap { max-width: 620px; margin: 0 auto; padding: 0 24px; position: relative; }
+
+.pd-header { text-align: center; margin-bottom: 44px; }
+.pd-eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 10.5px; font-weight: 700; letter-spacing: .2em;
+  text-transform: uppercase; color: var(--pink);
+  background: rgba(216,27,106,.08); border: 1px solid rgba(216,27,106,.2);
+  padding: 6px 16px; border-radius: 999px; margin-bottom: 16px;
+}
+.pd-title {
+  font-family: 'Cormorant Garamond', serif; font-weight: 600;
+  font-size: clamp(28px, 5vw, 42px); color: var(--ink);
+  line-height: 1.15; font-style: italic;
+}
+.pd-subtitle { font-size: 13.5px; color: var(--ink-soft); margin-top: 10px; letter-spacing: .01em; }
+
+.pd-progress {
+  display: flex; align-items: center; gap: 0;
+  margin-bottom: 36px; padding: 0 4px;
+}
+.pd-prog-step {
+  display: flex; flex-direction: column; align-items: center; gap: 6px;
+  flex: 1; cursor: pointer;
+}
+.pd-prog-circle {
+  width: 36px; height: 36px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: 13px;
+  border: 1.5px solid var(--line);
+  color: var(--ink-soft);
+  background: var(--white);
+  transition: all .3s;
+  position: relative; z-index: 1;
+}
+.pd-prog-circle.done { background: var(--pink); border-color: var(--pink); color: #fff; box-shadow: 0 0 0 4px rgba(216,27,106,.15); }
+.pd-prog-circle.active { background: var(--white); border-color: var(--pink); color: var(--pink); box-shadow: 0 0 0 4px rgba(216,27,106,.1); }
+.pd-prog-label { font-size: 10px; font-weight: 600; color: var(--ink-soft); text-align: center; white-space: nowrap; transition: color .3s; opacity: .5; }
+.pd-prog-label.active { color: var(--pink); opacity: 1; }
+.pd-prog-line { flex: 1; height: 1px; background: var(--line); margin: 0 -2px; margin-bottom: 20px; position: relative; }
+.pd-prog-line-fill { height: 100%; background: var(--pink); width: 0%; transition: width .45s ease; }
+
+.pd-step-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 20px; padding: 28px 24px;
+  box-shadow: 0 4px 24px rgba(216,27,106,.07);
+  display: none;
+  animation: fadeUp .35s ease;
+}
+.pd-step-card.active { display: block; }
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.pd-card-label {
+  font-size: 10.5px; font-weight: 700; letter-spacing: .15em;
+  text-transform: uppercase; color: var(--pink); margin-bottom: 6px;
+}
+.pd-card-title {
+  font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 600;
+  color: var(--ink); margin-bottom: 22px; font-style: italic;
+}
+
+.pd-combos { display: flex; flex-direction: column; gap: 9px; }
+
+.pd-combo-option {
+  display: flex; align-items: center; gap: 14px;
+  padding: 14px 18px; border-radius: 14px;
+  border: 1px solid var(--line);
+  background: var(--bg);
+  cursor: pointer; transition: border-color .2s, background .2s; position: relative;
+}
+.pd-combo-option:hover {
+  border-color: var(--pink-mid);
+  background: var(--pink-pale);
+}
+.pd-combo-option.selected {
+  border-color: var(--pink);
+  background: var(--pink-pale);
+}
+.pd-combo-option input { position: absolute; opacity: 0; width: 0; height: 0; }
+.pd-combo-radio {
+  width: 18px; height: 18px; border-radius: 50%; flex-shrink: 0;
+  border: 1.5px solid var(--line);
+  display: flex; align-items: center; justify-content: center;
+  transition: all .2s;
+}
+.pd-combo-option.selected .pd-combo-radio {
+  border-color: var(--pink); background: var(--pink);
+}
+.pd-combo-option.selected .pd-combo-radio::after {
+  content: ''; width: 7px; height: 7px; border-radius: 50%; background: #fff;
+}
+.pd-combo-info { flex: 1; min-width: 0; }
+.pd-combo-name { font-weight: 600; font-size: 14px; color: var(--ink); }
+.pd-combo-desc { font-size: 12px; color: var(--ink-soft); margin-top: 2px; }
+.pd-combo-badge {
+  font-size: 11px; font-weight: 600;
+  color: var(--ink-mid);
+  background: var(--white);
+  border: 1px solid var(--line);
+  padding: 4px 10px; border-radius: 999px; flex-shrink: 0;
+  white-space: nowrap;
+}
+.pd-combo-option.selected .pd-combo-badge {
+  background: var(--pink); border-color: var(--pink); color: #fff;
+}
+
+
+.pd-aviso-max {
+  display: none;
+  align-items: center; gap: 10px;
+  padding: 11px 15px; border-radius: 10px;
+  background: var(--pink-pale);
+  border: 1px solid var(--pink-soft);
+  color: var(--pink-dark);
+  font-size: 12.5px; font-weight: 600;
+  margin-bottom: 18px;
+}
+.pd-aviso-max.on { display: flex; }
+.pd-aviso-max i { color: var(--pink); font-size: 13px; flex-shrink: 0; }
+
+.pd-flavors { display: flex; flex-wrap: wrap; gap: 8px; }
+.pd-flavor {
+  position: relative;
+  padding: 9px 17px; border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--white);
+  font-size: 13px; font-weight: 600; color: var(--ink-mid);
+  cursor: pointer; transition: border-color .18s, background .18s, color .18s, transform .18s, box-shadow .18s;
+  user-select: none;
+}
+.pd-flavor input { position: absolute; opacity: 0; width: 0; height: 0; }
+.pd-flavor:has(input:checked) {
+  background: var(--pink);
+  border-color: var(--pink);
+  color: #fff;
+  box-shadow: 0 4px 14px rgba(216,27,106,.28);
+  transform: scale(1.04);
+}
+.pd-flavor:has(input:not(:disabled)):hover {
+  border-color: var(--pink-mid);
+  color: var(--pink);
+  background: var(--pink-pale);
+}
+.pd-flavor:has(input:disabled):not(:has(input:checked)) {
+  opacity: .3; cursor: not-allowed; transform: none;
+}
+
+.pd-resumo {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 14px; padding: 18px 20px; margin-bottom: 20px;
+}
+.pd-resumo-linha {
+  display: flex; justify-content: space-between; align-items: flex-start;
+  gap: 12px; padding: 8px 0;
+  border-bottom: 1px solid var(--line);
+}
+.pd-resumo-linha:last-child { border-bottom: none; }
+.pd-resumo-key {
+  color: var(--ink-soft);
+  font-size: 10.5px; font-weight: 700;
+  letter-spacing: .12em; text-transform: uppercase;
+  flex-shrink: 0;
+}
+.pd-resumo-val { color: var(--ink); font-weight: 600; font-size: 13.5px; text-align: right; }
+
+.pd-btn-whats {
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  width: 100%; padding: 16px; border-radius: 14px;
+  background: #25D366; color: #fff;
+  font-weight: 700; font-size: 15px; border: none; cursor: pointer;
+  transition: all .22s;
+  box-shadow: 0 8px 24px rgba(37,211,102,.25);
+  text-decoration: none; margin-bottom: 10px;
+}
+.pd-btn-whats:hover { background: #1DA851; transform: translateY(-2px); box-shadow: 0 14px 32px rgba(37,211,102,.34); }
+
+.pd-btn-insta {
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  width: 100%; padding: 13px; border-radius: 14px;
+  background: transparent; color: var(--ink-soft);
+  border: 1px solid var(--line);
+  font-weight: 600; font-size: 14px; cursor: pointer;
+  transition: all .2s; text-decoration: none;
+}
+.pd-btn-insta:hover { border-color: var(--pink-mid); color: var(--pink); }
+
+.pd-nav { display: flex; gap: 10px; margin-top: 22px; }
+.pd-btn-back {
+  display: flex; align-items: center; gap: 8px;
+  padding: 12px 20px; border-radius: 12px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  color: var(--ink-soft);
+  font-weight: 600; font-size: 13px;
+  cursor: pointer; transition: all .2s; flex-shrink: 0;
+}
+.pd-btn-back:hover { border-color: var(--pink-mid); color: var(--ink); }
+.pd-btn-next {
+  flex: 1; display: flex; align-items: center; justify-content: center; gap: 9px;
+  padding: 13px 20px; border-radius: 12px;
+  background: var(--pink); color: #fff;
+  font-weight: 700; font-size: 14px; border: none;
+  cursor: pointer; transition: all .2s;
+  box-shadow: 0 6px 20px rgba(216,27,106,.3);
+}
+.pd-btn-next:hover:not(:disabled) { background: var(--pink-dark); transform: translateY(-1px); }
+.pd-btn-next:disabled { opacity: .28; cursor: not-allowed; transform: none !important; box-shadow: none; }
+
+.galeria-frame {
+  max-width: 300px; margin: 0 auto; border-radius: 20px; overflow: hidden;
+  border: 1px solid var(--line); box-shadow: 0 20px 48px rgba(216,27,106,.1);
+}
+.slider { position: relative; overflow: hidden; }
+.slides { display: flex; transition: transform .5s cubic-bezier(.4,0,.2,1); }
+.slide { width: 100%; flex-shrink: 0; aspect-ratio: 4/5; overflow: hidden; }
+.slide img { width: 100%; height: 100%; object-fit: cover; background: var(--pink-pale); }
+.arr {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  background: rgba(255,255,255,.88); color: var(--pink);
+  border: none; width: 28px; height: 28px; border-radius: 50%;
+  cursor: pointer; z-index: 5;
+  display: flex; align-items: center; justify-content: center; font-size: 10px;
+  transition: all .2s; box-shadow: 0 2px 8px rgba(0,0,0,.15);
+}
+.arr:hover { background: var(--pink); color: #fff; transform: translateY(-50%) scale(1.08); }
+.arr-prev { left: 8px; } .arr-next { right: 8px; }
+.dots { display: flex; justify-content: center; gap: 6px; padding-top: 16px; }
+.dot { width: 6px; height: 6px; border-radius: 50%; background: var(--pink-soft); cursor: pointer; transition: all .3s; }
+.dot.on { background: var(--pink); width: 20px; border-radius: 3px; }
+
+.temas-intro { max-width: 520px; margin: 0 auto 32px; text-align: center; }
+.temas-intro p { font-size: 14.5px; color: var(--ink-mid); line-height: 1.68; }
+.temas-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 14px; }
+.tema {
+  background: var(--white); border: 1px solid var(--line); border-radius: 16px;
+  overflow: hidden; cursor: pointer;
+  transition: transform .2s, border-color .2s, box-shadow .2s;
+}
+.tema:hover { transform: translateY(-4px); border-color: var(--pink-mid); box-shadow: 0 10px 28px rgba(216,27,106,.13); }
+
+/* ── TEMAS: imagens maiores ── */
+.tema-img-wrap {
+  width: 100%;
+  aspect-ratio: 3/4;   /* retrato, bem mais alto */
+  overflow: hidden;
+  background: var(--pink-pale);
+}
+.tema-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* preenche sem barras brancas */
+  object-position: center top;
+  transition: transform .35s ease;
+}
+.tema:hover .tema-img-wrap img { transform: scale(1.04); }
+
+.tema-nome { padding: 12px 10px; text-align: center; font-weight: 700; font-size: 13px; }
+
+.modal-bg {
+  display: none; position: fixed; inset: 0;
+  background: rgba(42,15,30,.84); z-index: 9998;
+  align-items: center; justify-content: center; padding: 20px;
+}
+.modal-bg.on { display: flex; }
+.modal-box {
+  background: var(--white); border-radius: 20px;
+  max-width: 220px; width: 100%; padding: 22px;
+  border: 1px solid var(--line); position: relative;
+  max-height: 90vh; overflow-y: auto;
+}
+.modal-close {
+  position: absolute; top: 14px; right: 14px;
+  background: var(--pink); color: #fff; border: none;
+  width: 30px; height: 30px; border-radius: 50%; font-size: 18px;
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+}
+.modal-title {
+  font-family: 'Cormorant Garamond', serif; font-weight: 600;
+  font-size: 18px; text-align: center; margin-bottom: 14px; padding-right: 28px;
+}
+.modal-slider { position: relative; overflow: hidden; border-radius: 14px; border: 1px solid var(--line); }
+.modal-slides { display: flex; transition: transform .4s ease; }
+.modal-slides .slide { width: 100%; flex-shrink: 0; aspect-ratio: 4/5; overflow: hidden; }
+.modal-slides .slide img { width: 100%; height: 100%; object-fit: cover; }
+.modal-dots { display: flex; justify-content: center; gap: 6px; padding-top: 14px; }
+
+.contato-grid { display: grid; grid-template-columns: 1fr; gap: 32px; }
+.c-bloco h3 { font-family: 'Cormorant Garamond', serif; font-size: 18px; margin-bottom: 12px; }
+.c-bloco p { font-size: 14px; color: var(--ink-mid); display: flex; align-items: center; gap: 9px; }
+.c-bloco p i { color: var(--pink); width: 16px; }
+.social-links { display: flex; gap: 12px; }
+.social-links a {
+  width: 44px; height: 44px; border-radius: 50%;
+  border: 1.5px solid var(--pink-soft); color: var(--pink);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 19px; transition: all .2s;
+}
+.social-links a:hover { background: var(--pink); color: #fff; border-color: var(--pink); }
+.pagtos { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+.pagtos img { width: 38px; background: var(--white); padding: 7px; border-radius: 8px; border: 1px solid var(--line); }
+.pix-tag {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--white); border: 1px solid var(--line); border-radius: 8px; padding: 7px 12px;
+}
+.pix-tag svg { width: 18px; height: 18px; }
+.pix-tag span { font-size: 13px; font-weight: 700; }
+
+.rodape { background: var(--ink); color: #fff; padding: 40px 0 28px; }
+.rodape-inner {
+  max-width: 1100px; margin: 0 auto; padding: 0 24px;
+  display: flex; flex-direction: column; align-items: center; gap: 14px; text-align: center;
+}
+.rodape-logo { height: 52px; width: auto; opacity: .9; border-radius: 8px; }
+.rodape-copy { font-size: 12px; color: rgba(255,255,255,.42); }
+
+
+
+@media (min-width: 680px) {
+  .sabores-grid { grid-template-columns: repeat(3,1fr); }
+  .temas-grid   { grid-template-columns: repeat(3,1fr); }
+}
+@media (min-width: 800px) { .contato-grid { grid-template-columns: repeat(3,1fr); } }
+@media (min-width: 900px) {
+  .hero-grid { grid-template-columns: 1fr 1fr; align-items: center; }
+  .hero-logo { margin: 0 0 20px; }
+  .video-wrap { justify-content: flex-end; }
+  .subnav { justify-content: center; overflow-x: visible; }
+}
+@media (min-width: 1000px) {
+  .sabores-grid { grid-template-columns: repeat(4,1fr); }
+  .temas-grid   { grid-template-columns: repeat(4,1fr); }
+}
+@media (max-width: 380px) {
+  .topbar-cta .label { display: none; }
+  .topbar-cta { padding: 10px 14px; }
+}
+</style>
 </head>
-<body style="margin:0; display:flex; justify-content:center; align-items:center; height:100vh; background:#fff8f8; font-family:Arial, sans-serif; text-align:center;">
+<body>
 
+<header class="topbar">
+  <div class="topbar-inner">
+    <a href="#topo">
+      <img class="brand-logo" src="https://i.ibb.co/jkCF4Xhv/logo-set.jpg" alt="Doces da Analu">
+    </a>
+
+  </div>
+  <nav class="subnav">
+    <a href="#cardapio">Cardápio</a>
+    <a href="#pedido">Fazer pedido</a>
+    <a href="#galeria">Galeria</a>
+    <a href="#temas">Temas</a>
+    <a href="#contato">Contato</a>
+  </nav>
+</header>
+
+<main>
+
+<section class="hero" id="topo">
+  <div class="wrap hero-grid">
     <div>
-        <h1 style="color:#d63384; font-size:42px;">
-             Em manutenção 🚧
-        </h1>
+      <p class="eyebrow">Confeitaria artesanal</p>
+      <h1>Brigadeiros gourmet,<br></h1>
+      <p class="hero-sub">Doces artesanais feitos com ingredientes selecionados e receitas exclusivas para festas, eventos e momentos especiais. Faça seu pedido pelo WhatsApp..</p>
+      <div class="ctas">
+        <a class="btn btn-pink" href="#pedido">Fazer pedido</a>
+        <a class="btn btn-outline" href="#cardapio">Ver cardápio</a>
+      </div>
+      <ul class="numeros">
+        <li><strong>11</strong><span>sabores</span></li>
+        <li><strong>+ DE</strong><span>30 TEMAS</span></li>
+        <li><strong>JP · Cabedelo</strong><span>entrega local</span></li>
+      </ul>
+    </div>
+    <div class="video-wrap">
+      <div class="video-box">
+        <iframe src="https://www.youtube.com/embed/bfR6YmyRJ4E" title="Vídeo Doces da Analu" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</section>
 
-        <p style="font-size:24px; color:#444;">
-            Em breve retornaremos.
-        </p>
+<div style="background:var(--white); border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:16px 24px;">
+  <div style="max-width:1100px; margin:0 auto; display:flex; flex-wrap:wrap; gap:24px; justify-content:center; align-items:center;">
+    <span style="font-size:12.5px; font-weight:600; color:var(--ink-soft); display:flex; align-items:center; gap:7px;">
+      <i class="fas fa-leaf" style="color:var(--pink); font-size:11px;"></i> Ingredientes selecionados
+    </span>
+    <span style="font-size:12.5px; font-weight:600; color:var(--ink-soft); display:flex; align-items:center; gap:7px;">
+      <i class="fas fa-hand-sparkles" style="color:var(--pink); font-size:11px;"></i> 100% artesanal
+    </span>
+    <span style="font-size:12.5px; font-weight:600; color:var(--ink-soft); display:flex; align-items:center; gap:7px;">
+      <i class="fas fa-location-dot" style="color:var(--pink); font-size:11px;"></i> Entrega em JP e Cabedelo
+    </span>
+    <span style="font-size:12.5px; font-weight:600; color:var(--ink-soft); display:flex; align-items:center; gap:7px;">
+      <i class="fas fa-comment" style="color:var(--pink); font-size:11px;"></i> Atendimento pelo WhatsApp
+    </span>
+  </div>
+</div>
 
-        <p style="margin-top:30px; font-size:22px; color:#d63384; font-weight:bold;">
-            Doces da Analu agradece 💖
-        </p>
+<section class="section s-alt" id="cardapio">
+  <div class="wrap">
+    <p class="eyebrow">Cardápio</p>
+    <h2>Nossos sabores</h2>
+    <div class="sabores-grid">
+      <div class="sabor-item"><span class="sabor-n">01</span><span>Brigadeiro branco</span></div>
+      <div class="sabor-item"><span class="sabor-n">02</span><span>Brigadeiro ao leite</span></div>
+      <div class="sabor-item"><span class="sabor-n">03</span><span>Meio amargo</span></div>
+      <div class="sabor-item"><span class="sabor-n">04</span><span>Ninho</span></div>
+      <div class="sabor-item"><span class="sabor-n">05</span><span>Ninho colorido</span></div>
+      <div class="sabor-item"><span class="sabor-n">06</span><span>Surpresa de uva</span></div>
+      <div class="sabor-item"><span class="sabor-n">07</span><span>Casadinho</span></div>
+      <div class="sabor-item"><span class="sabor-n">08</span><span>Beijinho</span></div>
+      <div class="sabor-item"><span class="sabor-n">09</span><span>Amendoim</span></div>
+      <div class="sabor-item"><span class="sabor-n">10</span><span>Prestígio</span></div>
+      <div class="sabor-item"><span class="sabor-n">11</span><span>Confete</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section-pedido" id="pedido">
+  <div class="pd-wrap">
+
+    <div class="pd-header">
+      <div class="pd-eyebrow">Peça agora</div>
+      <h2 class="pd-title">Monte seu pedido</h2>
+      <p class="pd-subtitle">Rápido, fácil e direto no seu WhatsApp</p>
     </div>
 
+    <div class="pd-progress" id="pd-progress">
+      <div class="pd-prog-step" onclick="goStep(1)">
+        <div class="pd-prog-circle active" id="prog-1">1</div>
+        <span class="pd-prog-label active" id="prog-l1">Combo</span>
+      </div>
+      <div class="pd-prog-line"><div class="pd-prog-line-fill" id="line-1"></div></div>
+      <div class="pd-prog-step" onclick="goStep(2)">
+        <div class="pd-prog-circle" id="prog-2">2</div>
+        <span class="pd-prog-label" id="prog-l2">Sabores</span>
+      </div>
+      <div class="pd-prog-line"><div class="pd-prog-line-fill" id="line-2"></div></div>
+      <div class="pd-prog-step" onclick="goStep(3)">
+        <div class="pd-prog-circle" id="prog-3">3</div>
+        <span class="pd-prog-label" id="prog-l3">Confirmar</span>
+      </div>
+    </div>
+
+    <div class="pd-step-card active" id="step-1">
+      <div class="pd-card-label">Passo 1 de 3</div>
+      <div class="pd-card-title">Qual combo você quer?</div>
+
+      <div class="pd-combos" id="combo-list">
+        <label class="pd-combo-option" data-value="Caixinha (4 brigadeiros)" data-max="4" data-desc="4 brigadeiros">
+          <input type="radio" name="combo" value="Caixinha (4 brigadeiros)">
+          <div class="pd-combo-radio"></div>
+          <div class="pd-combo-info">
+            <div class="pd-combo-name">Caixinha</div>
+            <div class="pd-combo-desc">Ideal para presentear</div>
+          </div>
+          <span class="pd-combo-badge">4 unid.</span>
+        </label>
+        <label class="pd-combo-option" data-value="25 brigadeiros" data-max="2" data-desc="25 brigadeiros">
+          <input type="radio" name="combo" value="25 brigadeiros">
+          <div class="pd-combo-radio"></div>
+          <div class="pd-combo-info">
+            <div class="pd-combo-name">Mini festa</div>
+            <div class="pd-combo-desc">Perfeito para reuniões íntimas</div>
+          </div>
+          <span class="pd-combo-badge">25 unid.</span>
+        </label>
+        <label class="pd-combo-option" data-value="Meio cento — 50 brigadeiros" data-max="2" data-desc="50 brigadeiros">
+          <input type="radio" name="combo" value="Meio cento — 50 brigadeiros">
+          <div class="pd-combo-radio"></div>
+          <div class="pd-combo-info">
+            <div class="pd-combo-name">Meio cento</div>
+            <div class="pd-combo-desc">Para festas e eventos</div>
+          </div>
+          <span class="pd-combo-badge">50 unid.</span>
+        </label>
+        <label class="pd-combo-option" data-value="Cento completo — 100 brigadeiros" data-max="4" data-desc="100 brigadeiros">
+          <input type="radio" name="combo" value="Cento completo — 100 brigadeiros">
+          <div class="pd-combo-radio"></div>
+          <div class="pd-combo-info">
+            <div class="pd-combo-name">Cento completo</div>
+            <div class="pd-combo-desc">Para grandes celebrações</div>
+          </div>
+          <span class="pd-combo-badge">100 unid.</span>
+        </label>
+        <label class="pd-combo-option" data-value="orcamento" data-max="0" data-desc="Personalizado">
+          <input type="radio" name="combo" value="orcamento">
+          <div class="pd-combo-radio"></div>
+          <div class="pd-combo-info">
+            <div class="pd-combo-name">Orçamento personalizado</div>
+            <div class="pd-combo-desc">Quantidade e sabores à sua escolha</div>
+          </div>
+          <span class="pd-combo-badge">Custom</span>
+        </label>
+      </div>
+
+      <div class="pd-nav">
+        <button class="pd-btn-next" id="btn-next-1" onclick="goStep(2)" disabled>
+          Escolher sabores <i class="fas fa-arrow-right"></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="pd-step-card" id="step-2">
+      <div class="pd-card-label">Passo 2 de 3</div>
+      <div class="pd-card-title">Quais sabores?</div>
+      <div class="pd-aviso-max" id="aviso-max">
+        <i class="fas fa-circle-info"></i>
+        <span id="aviso-max-text"></span>
+      </div>
+      <div class="pd-flavors" id="flavor-list">
+        <label class="pd-flavor"><input type="checkbox" value="Brigadeiro Branco"><span>Branco</span></label>
+        <label class="pd-flavor"><input type="checkbox" value="Brigadeiro ao Leite"><span>Ao leite</span></label>
+        <label class="pd-flavor"><input type="checkbox" value="Meio Amargo"><span>Meio amargo</span></label>
+        <label class="pd-flavor"><input type="checkbox" value="Ninho"><span>Ninho</span></label>
+        <label class="pd-flavor"><input type="checkbox" value="Ninho Colorido"><span>Ninho colorido</span></label>
+        <label class="pd-flavor"><input type="checkbox" value="Surpresa de Uva"><span>Surpresa de uva</span></label>
+        <label class="pd-flavor"><input type="checkbox" value="Casadinho"><span>Casadinho</span></label>
+        <label class="pd-flavor"><input type="checkbox" value="Beijinho"><span>Beijinho</span></label>
+        <label class="pd-flavor"><input type="checkbox" value="Amendoim"><span>Amendoim</span></label>
+        <label class="pd-flavor"><input type="checkbox" value="Prestígio"><span>Prestígio</span></label>
+        <label class="pd-flavor"><input type="checkbox" value="Confete"><span>Confete</span></label>
+      </div>
+      <div class="pd-nav">
+        <button class="pd-btn-back" onclick="goStep(1)"><i class="fas fa-arrow-left"></i> Voltar</button>
+        <button class="pd-btn-next" id="btn-next-2" onclick="goStep(3)" disabled>
+          Revisar pedido <i class="fas fa-arrow-right"></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="pd-step-card" id="step-3">
+      <div class="pd-card-label">Passo 3 de 3</div>
+      <div class="pd-card-title">Confirme seu pedido</div>
+      <div class="pd-resumo" id="pd-resumo">
+        <div class="pd-resumo-linha">
+          <span class="pd-resumo-key">Combo</span>
+          <span class="pd-resumo-val" id="res-combo">—</span>
+        </div>
+        <div class="pd-resumo-linha">
+          <span class="pd-resumo-key">Sabores</span>
+          <span class="pd-resumo-val" id="res-sabores">—</span>
+        </div>
+      </div>
+      <a href="#" class="pd-btn-whats" id="btn-finalizar">
+        <i class="fa-brands fa-whatsapp" style="font-size:20px;"></i>
+        Enviar pedido no WhatsApp
+      </a>
+      <a href="https://instagram.com/_docesdaanalu_" target="_blank" class="pd-btn-insta">
+        <i class="fa-brands fa-instagram"></i> Ver no Instagram
+      </a>
+      <div class="pd-nav" style="margin-top:14px;">
+        <button class="pd-btn-back" onclick="goStep(2)"><i class="fas fa-arrow-left"></i> Alterar sabores</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="section s-alt" id="galeria">
+  <div class="wrap" style="max-width:680px;">
+    <p class="eyebrow">Galeria</p>
+    <h2>Trabalhos recentes</h2>
+    <div class="galeria-frame">
+      <div class="slider">
+        <div class="slides" id="slides">
+          <div class="slide"><img src="https://i.ibb.co/tp3jc54k/file-00000000c240720e9902998306ffe30b.png" alt="Produção"></div>
+        </div>
+      </div>
+    </div>
+    <div class="dots" id="galeria-dots"></div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     SEÇÃO TEMAS — imagens locais, cards maiores
+══════════════════════════════════════════════ -->
+<section class="section" id="temas">
+  <div class="wrap">
+    <p class="eyebrow">Temas</p>
+    <h2>Temas disponíveis</h2>
+    <div class="temas-intro">
+      <p>Cada tema é produzido com atenção aos detalhes para deixar sua festa ainda mais especial.</p>
+    </div>
+    <div class="temas-grid" id="temas-grid"></div>
+    <div style="margin-top:36px; text-align:center;">
+      <a href="https://br.pinterest.com/docesdaanalu2026/minhas-produ%C3%A7%C3%B5es/" target="_blank" style="
+        display:inline-flex; align-items:center; gap:16px;
+        background:#E60023; color:#fff;
+        padding:18px 30px; border-radius:16px;
+        text-decoration:none; transition:all .2s;
+        box-shadow:0 8px 24px rgba(230,0,35,.3);
+        max-width:400px; width:100%;
+      " onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 14px 32px rgba(230,0,35,.42)'"
+         onmouseout="this.style.transform='';this.style.boxShadow='0 8px 24px rgba(230,0,35,.3)'">
+        <i class="fa-brands fa-pinterest" style="font-size:32px; flex-shrink:0;"></i>
+        <div style="text-align:left;">
+          <div style="font-weight:700; font-size:15px; margin-bottom:3px;">Veja alguns dos meus temas no Pinterest</div>
+          <div style="font-size:12px; opacity:.85;">Clique para ver mais inspirações</div>
+        </div>
+        <i class="fas fa-arrow-right" style="margin-left:auto; font-size:13px; opacity:.75; flex-shrink:0;"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="section s-alt" id="contato">
+  <div class="wrap">
+    <p class="eyebrow">Contato</p>
+    <h2>Siga nossa página</h2>
+    <div class="contato-grid">
+      <div class="c-bloco">
+        <h3>Localização</h3>
+        <p><i class="fas fa-location-dot"></i> João Pessoa / Cabedelo — PB</p>
+      </div>
+      <div class="c-bloco">
+        <h3>Redes sociais</h3>
+        <div class="social-links">
+          <a href="https://instagram.com/_docesdaanalu_" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://wa.me/558396905025" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="https://br.pinterest.com/docesdaanalu2026/minhas-produ%C3%A7%C3%B5es/" target="_blank" aria-label="Pinterest"><i class="fa-brands fa-pinterest"></i></a>
+        </div>
+      </div>
+      <div class="c-bloco">
+        <h3>Formas de pagamento</h3>
+        <div class="pagtos">
+          <img src="https://cdn-icons-png.flaticon.com/512/196/196578.png" alt="Visa">
+          <img src="https://cdn-icons-png.flaticon.com/512/196/196561.png" alt="Mastercard">
+          <span class="pix-tag">
+            <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+              <path d="M14.5 32 L32 14.5 L49.5 32 L32 49.5 Z" stroke="#059669" stroke-width="4" fill="none"/>
+              <line x1="32" y1="14.5" x2="32" y2="49.5" stroke="#059669" stroke-width="3"/>
+              <line x1="14.5" y1="32" x2="49.5" y2="32" stroke="#059669" stroke-width="3"/>
+            </svg>
+            <span>Pix</span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="rodape">
+  <div class="rodape-inner">
+    <img class="rodape-logo" src="https://i.ibb.co/jkCF4Xhv/logo-set.jpg" alt="Doces da Analu">
+    <p class="rodape-copy">© <span id="ano"></span> Doces da Analu · Confeitaria artesanal ·</p>
+    <p class="rodape-copy" style="margin-top:4px;">Atendimento via WhatsApp · <a href="https://wa.me/558396905025" style="color:rgba(255,255,255,.5); text-decoration:underline;">(83) 9690-5025</a></p>
+  </div>
+</footer>
+
+<div class="modal-bg" id="modal">
+  <div class="modal-box">
+    <button class="modal-close" id="modal-fechar">&times;</button>
+    <h3 class="modal-title" id="modal-titulo"></h3>
+    <div class="modal-slider">
+      <div class="modal-slides" id="modal-slides"></div>
+      <button class="arr arr-prev" id="modal-prev"><i class="fas fa-chevron-left"></i></button>
+      <button class="arr arr-next" id="modal-next"><i class="fas fa-chevron-right"></i></button>
+    </div>
+    <div class="modal-dots" id="modal-dots"></div>
+  </div>
+</div>
+
+
+
+<script>
+document.getElementById("ano").textContent = new Date().getFullYear();
+
+/* ══════════════════════════════════════════
+   TEMAS — caminhos locais substituindo IMGBB
+   Coluna "fotos": primeira foto = capa do card
+══════════════════════════════════════════ */
+var TEMAS = [
+  { nome: "São João",  fotos: ["imagens/são joao.jfif"] },
+  { nome: "Copa",      fotos: ["imagens/copa.jfif"] },
+  { nome: "Flores",    fotos: ["imagens/flores.jfif"] },
+  { nome: "Crisma",   fotos: ["imagens/crisma.jfif"] }
+];
+
+(function(){
+  var g = document.getElementById("temas-grid");
+  TEMAS.forEach(function(t){
+    var c = document.createElement("div");
+    c.className = "tema";
+    /* wrapper com aspect-ratio para imagem grande */
+    c.innerHTML =
+      '<div class="tema-img-wrap">' +
+        '<img src="' + t.fotos[0] + '" alt="' + t.nome + '" loading="lazy">' +
+      '</div>' +
+      '<div class="tema-nome">' + t.nome + '</div>';
+    c.addEventListener("click", function(){ abrirModal(t); });
+    g.appendChild(c);
+  });
+})();
+
+(function(){
+  var slides = document.getElementById("slides");
+  var dotsEl = document.getElementById("galeria-dots");
+  var items = slides.querySelectorAll(".slide");
+  var total = items.length, cur = 0, timer;
+  function ir(n){
+    cur = (n + total) % total;
+    slides.style.transform = "translateX(-" + (cur * 100) + "%)";
+    dotsEl.querySelectorAll(".dot").forEach(function(d, i){ d.className = "dot" + (i === cur ? " on" : ""); });
+  }
+  items.forEach(function(_, i){
+    var d = document.createElement("div");
+    d.className = "dot" + (i === 0 ? " on" : "");
+    d.addEventListener("click", function(){ ir(i); reset(); });
+    dotsEl.appendChild(d);
+  });
+  function reset(){ clearInterval(timer); timer = setInterval(function(){ ir(cur + 1); }, 5000); }
+  document.querySelector(".arr-prev").addEventListener("click", function(){ ir(cur - 1); reset(); });
+  document.querySelector(".arr-next").addEventListener("click", function(){ ir(cur + 1); reset(); });
+  var tx = 0;
+  slides.addEventListener("touchstart", function(e){ tx = e.touches[0].clientX; }, { passive: true });
+  slides.addEventListener("touchend", function(e){
+    var d = tx - e.changedTouches[0].clientX;
+    if(Math.abs(d) > 40){ ir(cur + (d > 0 ? 1 : -1)); reset(); }
+  }, { passive: true });
+  reset();
+})();
+
+var currentStep = 1;
+var selectedCombo = null;
+var selectedMax = 0;
+var flavorCbs = document.querySelectorAll("#flavor-list input");
+
+var COMBO_MSGS = {
+  "Caixinha (4 brigadeiros)":             { emoji: "🎁", msg: "Caixinha selecionada! Escolha até 4 sabores diferentes." },
+  "25 brigadeiros":                        { emoji: "🎉", msg: "25 brigadeiros para animar qualquer encontro!" },
+  "Meio cento — 50 brigadeiros":           { emoji: "🥳", msg: "Meio cento! Para uma festa animada. Escolha até 2 sabores." },
+  "Cento completo — 100 brigadeiros":      { emoji: "✨", msg: "100 brigadeiros para uma celebração inesquecível!" },
+  "orcamento":                             { emoji: "💬", msg: "Ótimo! Vou te atender no WhatsApp para um orçamento especial." }
+};
+
+document.querySelectorAll(".pd-combo-option").forEach(function(opt){
+  opt.addEventListener("click", function(){
+    document.querySelectorAll(".pd-combo-option").forEach(function(o){ o.classList.remove("selected"); });
+    opt.classList.add("selected");
+    selectedCombo = opt.dataset.value;
+    selectedMax = parseInt(opt.dataset.max) || 0;
+    document.getElementById("btn-next-1").disabled = false;
+
+    if(selectedCombo === "orcamento"){
+      document.getElementById("btn-next-1").innerHTML = 'Solicitar orçamento <i class="fas fa-arrow-right"></i>';
+    } else {
+      document.getElementById("btn-next-1").innerHTML = 'Escolher sabores <i class="fas fa-arrow-right"></i>';
+    }
+  });
+});
+
+flavorCbs.forEach(function(cb){
+  cb.addEventListener("change", function(){
+    var sel = document.querySelectorAll("#flavor-list input:checked");
+    var avisoEl = document.getElementById("aviso-max");
+    var avisoText = document.getElementById("aviso-max-text");
+    if(selectedMax > 0){
+      avisoEl.classList.add("on");
+      if(sel.length >= selectedMax){
+        flavorCbs.forEach(function(b){ if(!b.checked) b.disabled = true; });
+        avisoText.textContent = sel.length + " de " + selectedMax + " sabores selecionados";
+      } else {
+        flavorCbs.forEach(function(b){ b.disabled = false; });
+        avisoText.textContent = "Escolha " + selectedMax + " sabores — " + sel.length + " selecionado(s)";
+      }
+    }
+    document.getElementById("btn-next-2").disabled = (sel.length === 0);
+  });
+});
+
+function goStep(n){
+  if(n === 2 && selectedCombo === "orcamento"){
+    location.href = "https://api.whatsapp.com/send?phone=558396905025&text=" + encodeURIComponent("Olá, Analu! Gostaria de solicitar um orçamento personalizado.");
+    return;
+  }
+  if(n > currentStep){
+    if(currentStep === 1 && !selectedCombo) return;
+    if(currentStep === 2){
+      var sel = document.querySelectorAll("#flavor-list input:checked");
+      if(sel.length === 0) return;
+    }
+  }
+
+  if(n === 3){
+    var sel = document.querySelectorAll("#flavor-list input:checked");
+    document.getElementById("res-combo").textContent = selectedCombo || "—";
+    document.getElementById("res-sabores").textContent = Array.from(sel).map(function(s){ return s.value; }).join(", ") || "—";
+  }
+
+  if(n === 2 && selectedMax > 0){
+    var avisoEl = document.getElementById("aviso-max");
+    var avisoText = document.getElementById("aviso-max-text");
+    var sel = document.querySelectorAll("#flavor-list input:checked");
+    avisoEl.classList.add("on");
+    avisoText.textContent = "Escolha até " + selectedMax + " sabores" + (sel.length ? " — " + sel.length + " selecionado(s)" : "");
+    flavorCbs.forEach(function(b){ b.disabled = false; });
+  }
+
+  currentStep = n;
+  document.querySelectorAll(".pd-step-card").forEach(function(c){ c.classList.remove("active"); });
+  document.getElementById("step-" + n).classList.add("active");
+
+  for(var i = 1; i <= 3; i++){
+    var circ = document.getElementById("prog-" + i);
+    var lbl  = document.getElementById("prog-l" + i);
+    circ.classList.remove("active", "done");
+    lbl.classList.remove("active");
+    if(i < n){
+      circ.classList.add("done");
+      circ.innerHTML = '<i class="fas fa-check" style="font-size:11px;"></i>';
+    } else if(i === n){
+      circ.classList.add("active");
+      circ.textContent = i;
+      lbl.classList.add("active");
+    } else {
+      circ.textContent = i;
+    }
+  }
+
+  document.getElementById("line-1").style.width = n >= 2 ? "100%" : "0%";
+  document.getElementById("line-2").style.width = n >= 3 ? "100%" : "0%";
+}
+
+document.getElementById("btn-finalizar").addEventListener("click", function(e){
+  e.preventDefault();
+  var btn = document.getElementById("btn-finalizar");
+  var sel = document.querySelectorAll("#flavor-list input:checked");
+  var sabores = Array.from(sel).map(function(s){ return s.value; }).join(", ");
+  var msg = "Olá, Analu! Gostaria de fazer o seguinte pedido:\n\n• Combo: " + selectedCombo + "\n• Sabores: " + sabores + "\n\nPoderia me passar o valor?";
+  var orig = btn.innerHTML;
+  btn.innerHTML = '<i class="fa-brands fa-whatsapp" style="font-size:20px;"></i> Abrindo WhatsApp…';
+  setTimeout(function(){
+    location.href = "https://api.whatsapp.com/send?phone=558396905025&text=" + encodeURIComponent(msg);
+    btn.innerHTML = orig;
+  }, 600);
+});
+
+var mFotos = [], mIdx = 0;
+function abrirModal(tema){
+  mFotos = tema.fotos; mIdx = 0;
+  document.getElementById("modal-titulo").textContent = tema.nome;
+  var ms = document.getElementById("modal-slides");
+  var md = document.getElementById("modal-dots");
+  ms.innerHTML = mFotos.map(function(f){ return '<div class="slide"><img src="'+f+'" alt="'+tema.nome+'"></div>'; }).join("");
+  md.innerHTML = "";
+  mFotos.forEach(function(_, i){
+    var d = document.createElement("div");
+    d.className = "dot" + (i === 0 ? " on" : "");
+    d.addEventListener("click", function(){ goModal(i); });
+    md.appendChild(d);
+  });
+  syncModal();
+  document.getElementById("modal").classList.add("on");
+}
+function goModal(n){ mIdx = (n + mFotos.length) % mFotos.length; syncModal(); }
+function syncModal(){
+  document.getElementById("modal-slides").style.transform = "translateX(-" + (mIdx * 100) + "%)";
+  document.querySelectorAll("#modal-dots .dot").forEach(function(d, i){ d.className = "dot" + (i === mIdx ? " on" : ""); });
+}
+function fecharModal(){ document.getElementById("modal").classList.remove("on"); }
+document.getElementById("modal-prev").addEventListener("click", function(){ goModal(mIdx - 1); });
+document.getElementById("modal-next").addEventListener("click", function(){ goModal(mIdx + 1); });
+document.getElementById("modal-fechar").addEventListener("click", fecharModal);
+document.getElementById("modal").addEventListener("click", function(e){ if(e.target.id === "modal") fecharModal(); });
+</script>
 </body>
 </html>
