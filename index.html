@@ -750,9 +750,9 @@ h2 { font-size: clamp(24px, 4vw, 34px); margin-bottom: 28px; }
 </footer>
 
 <!-- MODAL: sem setas, foto grande -->
-<div class="modal-bg" id="modal">
-  <div class="modal-box">
-    <button class="modal-close" id="modal-fechar">&times;</button>
+<div class="modal-bg" id="modal" onclick="if(event.target===this)fecharModal()">
+  <div class="modal-box" onclick="event.stopPropagation()">
+    <button class="modal-close" onclick="fecharModal()">&times;</button>
     <h3 class="modal-title" id="modal-titulo"></h3>
     <div class="modal-slider">
       <div class="modal-slides" id="modal-slides"></div>
@@ -938,8 +938,6 @@ function syncModal(){
   document.querySelectorAll("#modal-dots .dot").forEach(function(d, i){ d.className = "dot" + (i === mIdx ? " on" : ""); });
 }
 function fecharModal(){ document.getElementById("modal").classList.remove("on"); }
-document.getElementById("modal-fechar").addEventListener("click", fecharModal);
-document.getElementById("modal").addEventListener("click", function(e){ if(e.target.id === "modal") fecharModal(); });
 </script>
 </body>
 </html>
