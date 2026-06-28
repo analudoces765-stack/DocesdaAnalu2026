@@ -24,6 +24,13 @@
   --line: #F0D8E8;
   --green: #25D366;
   --green-dark: #1DA851;
+
+  --pd-bg: #1E0A15;
+  --pd-surface: rgba(255,240,247,.045);
+  --pd-border: rgba(249,208,228,.11);
+  --pd-text: rgba(255,235,245,.92);
+  --pd-muted: rgba(249,208,228,.42);
+  --pd-pink-glow: rgba(216,27,106,.22);
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -125,6 +132,7 @@ h2 { font-size: clamp(24px, 4vw, 34px); margin-bottom: 28px; }
 .sabor-n { font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 12px; color: var(--ink-soft); min-width: 18px; flex-shrink: 0; }
 .sabor-item span:last-child { font-weight: 500; font-size: 13.5px; color: var(--ink); }
 
+
 .section-pedido {
   padding: 72px 0;
   background: linear-gradient(160deg, #fce8f3 0%, #fdf2f8 50%, #f8e0ef 100%);
@@ -210,8 +218,14 @@ h2 { font-size: clamp(24px, 4vw, 34px); margin-bottom: 28px; }
   background: var(--bg);
   cursor: pointer; transition: border-color .2s, background .2s; position: relative;
 }
-.pd-combo-option:hover { border-color: var(--pink-mid); background: var(--pink-pale); }
-.pd-combo-option.selected { border-color: var(--pink); background: var(--pink-pale); }
+.pd-combo-option:hover {
+  border-color: var(--pink-mid);
+  background: var(--pink-pale);
+}
+.pd-combo-option.selected {
+  border-color: var(--pink);
+  background: var(--pink-pale);
+}
 .pd-combo-option input { position: absolute; opacity: 0; width: 0; height: 0; }
 .pd-combo-radio {
   width: 18px; height: 18px; border-radius: 50%; flex-shrink: 0;
@@ -219,7 +233,9 @@ h2 { font-size: clamp(24px, 4vw, 34px); margin-bottom: 28px; }
   display: flex; align-items: center; justify-content: center;
   transition: all .2s;
 }
-.pd-combo-option.selected .pd-combo-radio { border-color: var(--pink); background: var(--pink); }
+.pd-combo-option.selected .pd-combo-radio {
+  border-color: var(--pink); background: var(--pink);
+}
 .pd-combo-option.selected .pd-combo-radio::after {
   content: ''; width: 7px; height: 7px; border-radius: 50%; background: #fff;
 }
@@ -234,7 +250,10 @@ h2 { font-size: clamp(24px, 4vw, 34px); margin-bottom: 28px; }
   padding: 4px 10px; border-radius: 999px; flex-shrink: 0;
   white-space: nowrap;
 }
-.pd-combo-option.selected .pd-combo-badge { background: var(--pink); border-color: var(--pink); color: #fff; }
+.pd-combo-option.selected .pd-combo-badge {
+  background: var(--pink); border-color: var(--pink); color: #fff;
+}
+
 
 .pd-aviso-max {
   display: none;
@@ -261,22 +280,38 @@ h2 { font-size: clamp(24px, 4vw, 34px); margin-bottom: 28px; }
 }
 .pd-flavor input { position: absolute; opacity: 0; width: 0; height: 0; }
 .pd-flavor:has(input:checked) {
-  background: var(--pink); border-color: var(--pink); color: #fff;
-  box-shadow: 0 4px 14px rgba(216,27,106,.28); transform: scale(1.04);
+  background: var(--pink);
+  border-color: var(--pink);
+  color: #fff;
+  box-shadow: 0 4px 14px rgba(216,27,106,.28);
+  transform: scale(1.04);
 }
-.pd-flavor:has(input:not(:disabled)):hover { border-color: var(--pink-mid); color: var(--pink); background: var(--pink-pale); }
-.pd-flavor:has(input:disabled):not(:has(input:checked)) { opacity: .3; cursor: not-allowed; transform: none; }
+.pd-flavor:has(input:not(:disabled)):hover {
+  border-color: var(--pink-mid);
+  color: var(--pink);
+  background: var(--pink-pale);
+}
+.pd-flavor:has(input:disabled):not(:has(input:checked)) {
+  opacity: .3; cursor: not-allowed; transform: none;
+}
 
 .pd-resumo {
-  background: var(--bg); border: 1px solid var(--line);
+  background: var(--bg);
+  border: 1px solid var(--line);
   border-radius: 14px; padding: 18px 20px; margin-bottom: 20px;
 }
 .pd-resumo-linha {
   display: flex; justify-content: space-between; align-items: flex-start;
-  gap: 12px; padding: 8px 0; border-bottom: 1px solid var(--line);
+  gap: 12px; padding: 8px 0;
+  border-bottom: 1px solid var(--line);
 }
 .pd-resumo-linha:last-child { border-bottom: none; }
-.pd-resumo-key { color: var(--ink-soft); font-size: 10.5px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; flex-shrink: 0; }
+.pd-resumo-key {
+  color: var(--ink-soft);
+  font-size: 10.5px; font-weight: 700;
+  letter-spacing: .12em; text-transform: uppercase;
+  flex-shrink: 0;
+}
 .pd-resumo-val { color: var(--ink); font-weight: 600; font-size: 13.5px; text-align: right; }
 
 .pd-btn-whats {
@@ -284,7 +319,8 @@ h2 { font-size: clamp(24px, 4vw, 34px); margin-bottom: 28px; }
   width: 100%; padding: 16px; border-radius: 14px;
   background: #25D366; color: #fff;
   font-weight: 700; font-size: 15px; border: none; cursor: pointer;
-  transition: all .22s; box-shadow: 0 8px 24px rgba(37,211,102,.25);
+  transition: all .22s;
+  box-shadow: 0 8px 24px rgba(37,211,102,.25);
   text-decoration: none; margin-bottom: 10px;
 }
 .pd-btn-whats:hover { background: #1DA851; transform: translateY(-2px); box-shadow: 0 14px 32px rgba(37,211,102,.34); }
@@ -303,8 +339,10 @@ h2 { font-size: clamp(24px, 4vw, 34px); margin-bottom: 28px; }
 .pd-btn-back {
   display: flex; align-items: center; gap: 8px;
   padding: 12px 20px; border-radius: 12px;
-  background: var(--white); border: 1px solid var(--line);
-  color: var(--ink-soft); font-weight: 600; font-size: 13px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  color: var(--ink-soft);
+  font-weight: 600; font-size: 13px;
   cursor: pointer; transition: all .2s; flex-shrink: 0;
 }
 .pd-btn-back:hover { border-color: var(--pink-mid); color: var(--ink); }
@@ -313,7 +351,8 @@ h2 { font-size: clamp(24px, 4vw, 34px); margin-bottom: 28px; }
   padding: 13px 20px; border-radius: 12px;
   background: var(--pink); color: #fff;
   font-weight: 700; font-size: 14px; border: none;
-  cursor: pointer; transition: all .2s; box-shadow: 0 6px 20px rgba(216,27,106,.3);
+  cursor: pointer; transition: all .2s;
+  box-shadow: 0 6px 20px rgba(216,27,106,.3);
 }
 .pd-btn-next:hover:not(:disabled) { background: var(--pink-dark); transform: translateY(-1px); }
 .pd-btn-next:disabled { opacity: .28; cursor: not-allowed; transform: none !important; box-shadow: none; }
@@ -349,17 +388,25 @@ h2 { font-size: clamp(24px, 4vw, 34px); margin-bottom: 28px; }
   transition: transform .2s, border-color .2s, box-shadow .2s;
 }
 .tema:hover { transform: translateY(-4px); border-color: var(--pink-mid); box-shadow: 0 10px 28px rgba(216,27,106,.13); }
+
+/* ── TEMAS: imagens maiores ── */
 .tema-img-wrap {
-  width: 100%; aspect-ratio: 3/4; overflow: hidden; background: var(--pink-pale);
+  width: 100%;
+  aspect-ratio: 3/4;   /* retrato, bem mais alto */
+  overflow: hidden;
+  background: var(--pink-pale);
 }
 .tema-img-wrap img {
-  width: 100%; height: 100%; object-fit: cover; object-position: center top;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* preenche sem barras brancas */
+  object-position: center top;
   transition: transform .35s ease;
 }
 .tema:hover .tema-img-wrap img { transform: scale(1.04); }
+
 .tema-nome { padding: 12px 10px; text-align: center; font-weight: 700; font-size: 13px; }
 
-/* MODAL — sem setas, foto grande */
 .modal-bg {
   display: none; position: fixed; inset: 0;
   background: rgba(42,15,30,.84); z-index: 9998;
@@ -368,25 +415,23 @@ h2 { font-size: clamp(24px, 4vw, 34px); margin-bottom: 28px; }
 .modal-bg.on { display: flex; }
 .modal-box {
   background: var(--white); border-radius: 20px;
-  max-width: 480px; width: 100%; padding: 22px;
+  max-width: 220px; width: 100%; padding: 22px;
   border: 1px solid var(--line); position: relative;
-  max-height: 92vh; overflow-y: auto;
+  max-height: 90vh; overflow-y: auto;
 }
 .modal-close {
-  position: fixed; top: 16px; right: 16px;
+  position: absolute; top: 14px; right: 14px;
   background: var(--pink); color: #fff; border: none;
-  width: 38px; height: 38px; border-radius: 50%; font-size: 20px;
+  width: 30px; height: 30px; border-radius: 50%; font-size: 18px;
   cursor: pointer; display: flex; align-items: center; justify-content: center;
-  z-index: 9999;
-  box-shadow: 0 2px 12px rgba(0,0,0,.3);
 }
 .modal-title {
   font-family: 'Cormorant Garamond', serif; font-weight: 600;
-  font-size: 22px; text-align: center; margin-bottom: 14px; padding-right: 28px;
+  font-size: 18px; text-align: center; margin-bottom: 14px; padding-right: 28px;
 }
 .modal-slider { position: relative; overflow: hidden; border-radius: 14px; border: 1px solid var(--line); }
 .modal-slides { display: flex; transition: transform .4s ease; }
-.modal-slides .slide { width: 100%; flex-shrink: 0; aspect-ratio: 3/4; overflow: hidden; }
+.modal-slides .slide { width: 100%; flex-shrink: 0; aspect-ratio: 4/5; overflow: hidden; }
 .modal-slides .slide img { width: 100%; height: 100%; object-fit: cover; }
 .modal-dots { display: flex; justify-content: center; gap: 6px; padding-top: 14px; }
 
@@ -419,6 +464,8 @@ h2 { font-size: clamp(24px, 4vw, 34px); margin-bottom: 28px; }
 .rodape-logo { height: 52px; width: auto; opacity: .9; border-radius: 8px; }
 .rodape-copy { font-size: 12px; color: rgba(255,255,255,.42); }
 
+
+
 @media (min-width: 680px) {
   .sabores-grid { grid-template-columns: repeat(3,1fr); }
   .temas-grid   { grid-template-columns: repeat(3,1fr); }
@@ -447,6 +494,7 @@ h2 { font-size: clamp(24px, 4vw, 34px); margin-bottom: 28px; }
     <a href="#topo">
       <img class="brand-logo" src="https://i.ibb.co/jkCF4Xhv/logo-set.jpg" alt="Doces da Analu">
     </a>
+
   </div>
   <nav class="subnav">
     <a href="#cardapio">Cardápio</a>
@@ -463,8 +511,8 @@ h2 { font-size: clamp(24px, 4vw, 34px); margin-bottom: 28px; }
   <div class="wrap hero-grid">
     <div>
       <p class="eyebrow">Confeitaria artesanal</p>
-      <h1>Brigadeiros gourmet<br></h1>
-      <p class="hero-sub">Doces artesanais feitos com ingredientes selecionados e receitas exclusivas para festas, eventos e momentos especiais. Faça seu pedido pelo WhatsApp.</p>
+      <h1>Brigadeiros gourmet,<br></h1>
+      <p class="hero-sub">Doces artesanais feitos com ingredientes selecionados e receitas exclusivas para festas, eventos e momentos especiais. Faça seu pedido pelo WhatsApp..</p>
       <div class="ctas">
         <a class="btn btn-pink" href="#pedido">Fazer pedido</a>
         <a class="btn btn-outline" href="#cardapio">Ver cardápio</a>
@@ -549,6 +597,7 @@ h2 { font-size: clamp(24px, 4vw, 34px); margin-bottom: 28px; }
     <div class="pd-step-card active" id="step-1">
       <div class="pd-card-label">Passo 1 de 3</div>
       <div class="pd-card-title">Qual combo você quer?</div>
+
       <div class="pd-combos" id="combo-list">
         <label class="pd-combo-option" data-value="Caixinha (4 brigadeiros)" data-max="4" data-desc="4 brigadeiros">
           <input type="radio" name="combo" value="Caixinha (4 brigadeiros)">
@@ -596,6 +645,7 @@ h2 { font-size: clamp(24px, 4vw, 34px); margin-bottom: 28px; }
           <span class="pd-combo-badge">Custom</span>
         </label>
       </div>
+
       <div class="pd-nav">
         <button class="pd-btn-next" id="btn-next-1" onclick="goStep(2)" disabled>
           Escolher sabores <i class="fas fa-arrow-right"></i>
@@ -749,25 +799,29 @@ h2 { font-size: clamp(24px, 4vw, 34px); margin-bottom: 28px; }
   </div>
 </footer>
 
-<!-- MODAL: sem setas, foto grande -->
-<div class="modal-bg" id="modal" onclick="if(event.target===this)fecharModal()">
-  <div class="modal-box" onclick="event.stopPropagation()">
-    <button class="modal-close" onclick="fecharModal()">&times;</button>
+<div class="modal-bg" id="modal">
+  <div class="modal-box">
+    <button class="modal-close" id="modal-fechar">&times;</button>
     <h3 class="modal-title" id="modal-titulo"></h3>
     <div class="modal-slider">
       <div class="modal-slides" id="modal-slides"></div>
+      <button class="arr arr-prev" id="modal-prev"><i class="fas fa-chevron-left"></i></button>
+      <button class="arr arr-next" id="modal-next"><i class="fas fa-chevron-right"></i></button>
     </div>
     <div class="modal-dots" id="modal-dots"></div>
   </div>
 </div>
 
+
+
 <script>
 document.getElementById("ano").textContent = new Date().getFullYear();
+
 
 var TEMAS = [
   { nome: "São João",  fotos: ["imagens/sao joao.jfif"] },
   { nome: "Copa",      fotos: ["imagens/copa.jfif"] },
-  { nome: "Flores",   fotos: ["imagens/flores.jfif"] },
+  { nome: "Flores",    fotos: ["imagens/flores.jfif"] },
   { nome: "Crisma",   fotos: ["imagens/crisma.jfif"] }
 ];
 
@@ -776,6 +830,7 @@ var TEMAS = [
   TEMAS.forEach(function(t){
     var c = document.createElement("div");
     c.className = "tema";
+    /* wrapper com aspect-ratio para imagem grande */
     c.innerHTML =
       '<div class="tema-img-wrap">' +
         '<img src="' + t.fotos[0] + '" alt="' + t.nome + '" loading="lazy">' +
@@ -819,6 +874,14 @@ var selectedCombo = null;
 var selectedMax = 0;
 var flavorCbs = document.querySelectorAll("#flavor-list input");
 
+var COMBO_MSGS = {
+  "Caixinha (4 brigadeiros)":             { emoji: "🎁", msg: "Caixinha selecionada! Escolha até 4 sabores diferentes." },
+  "25 brigadeiros":                        { emoji: "🎉", msg: "25 brigadeiros para animar qualquer encontro!" },
+  "Meio cento — 50 brigadeiros":           { emoji: "🥳", msg: "Meio cento! Para uma festa animada. Escolha até 2 sabores." },
+  "Cento completo — 100 brigadeiros":      { emoji: "✨", msg: "100 brigadeiros para uma celebração inesquecível!" },
+  "orcamento":                             { emoji: "💬", msg: "Ótimo! Vou te atender no WhatsApp para um orçamento especial." }
+};
+
 document.querySelectorAll(".pd-combo-option").forEach(function(opt){
   opt.addEventListener("click", function(){
     document.querySelectorAll(".pd-combo-option").forEach(function(o){ o.classList.remove("selected"); });
@@ -826,6 +889,7 @@ document.querySelectorAll(".pd-combo-option").forEach(function(opt){
     selectedCombo = opt.dataset.value;
     selectedMax = parseInt(opt.dataset.max) || 0;
     document.getElementById("btn-next-1").disabled = false;
+
     if(selectedCombo === "orcamento"){
       document.getElementById("btn-next-1").innerHTML = 'Solicitar orçamento <i class="fas fa-arrow-right"></i>';
     } else {
@@ -865,11 +929,13 @@ function goStep(n){
       if(sel.length === 0) return;
     }
   }
+
   if(n === 3){
     var sel = document.querySelectorAll("#flavor-list input:checked");
     document.getElementById("res-combo").textContent = selectedCombo || "—";
     document.getElementById("res-sabores").textContent = Array.from(sel).map(function(s){ return s.value; }).join(", ") || "—";
   }
+
   if(n === 2 && selectedMax > 0){
     var avisoEl = document.getElementById("aviso-max");
     var avisoText = document.getElementById("aviso-max-text");
@@ -878,9 +944,11 @@ function goStep(n){
     avisoText.textContent = "Escolha até " + selectedMax + " sabores" + (sel.length ? " — " + sel.length + " selecionado(s)" : "");
     flavorCbs.forEach(function(b){ b.disabled = false; });
   }
+
   currentStep = n;
   document.querySelectorAll(".pd-step-card").forEach(function(c){ c.classList.remove("active"); });
   document.getElementById("step-" + n).classList.add("active");
+
   for(var i = 1; i <= 3; i++){
     var circ = document.getElementById("prog-" + i);
     var lbl  = document.getElementById("prog-l" + i);
@@ -897,6 +965,7 @@ function goStep(n){
       circ.textContent = i;
     }
   }
+
   document.getElementById("line-1").style.width = n >= 2 ? "100%" : "0%";
   document.getElementById("line-2").style.width = n >= 3 ? "100%" : "0%";
 }
@@ -938,6 +1007,10 @@ function syncModal(){
   document.querySelectorAll("#modal-dots .dot").forEach(function(d, i){ d.className = "dot" + (i === mIdx ? " on" : ""); });
 }
 function fecharModal(){ document.getElementById("modal").classList.remove("on"); }
+document.getElementById("modal-prev").addEventListener("click", function(){ goModal(mIdx - 1); });
+document.getElementById("modal-next").addEventListener("click", function(){ goModal(mIdx + 1); });
+document.getElementById("modal-fechar").addEventListener("click", fecharModal);
+document.getElementById("modal").addEventListener("click", function(e){ if(e.target.id === "modal") fecharModal(); });
 </script>
 </body>
 </html>
