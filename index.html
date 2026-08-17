@@ -11,9 +11,9 @@
 <meta name="theme-color" content="#D81B6A">
 <link rel="icon" type="image/jpeg" href="https://i.ibb.co/jkCF4Xhv/logo-set.jpg">
 <title>Doces da Analu | Brigadeiros Gourmet em João Pessoa e Cabedelo</title>
-<link rel="preconnect" href="https://i.ibb.co" crossorigin>
-<link rel="dns-prefetch" href="https://i.ibb.co">
-<link rel="preload" as="image" href="https://i.ibb.co/1J8fywYc/file-000000007d1c820eb32ce25274652c0c.png">
+<link rel="preconnect" href="https://images.weserv.nl" crossorigin>
+<link rel="dns-prefetch" href="https://images.weserv.nl">
+<link rel="preload" as="image" href="https://images.weserv.nl/?url=i.ibb.co/1J8fywYc/file-000000007d1c820eb32ce25274652c0c.png&w=700&q=78&output=webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -334,7 +334,7 @@ h2 { font-size: clamp(24px, 4vw, 34px); margin-bottom: 28px; }
   user-select: none;
 }
 .pd-flavor input { position: absolute; opacity: 0; width: 0; height: 0; }
-.pd-flavor:has(input:checked) {
+.pd-flavor:has(input:checked), .pd-flavor.selected {
   background: var(--pink);
   border-color: var(--pink);
   color: #fff;
@@ -763,7 +763,7 @@ h2 { font-size: clamp(24px, 4vw, 34px); margin-bottom: 28px; }
     <div class="galeria-frame" id="galeria-frame" style="cursor:pointer;">
       <div class="slider">
         <div class="slides" id="slides">
-          <div class="slide"><img src="https://i.ibb.co/1J8fywYc/file-000000007d1c820eb32ce25274652c0c.png" alt="Trabalho recente" loading="eager" fetchpriority="high" decoding="async"></div>
+          <div class="slide"><img src="https://images.weserv.nl/?url=i.ibb.co/1J8fywYc/file-000000007d1c820eb32ce25274652c0c.png&w=700&q=78&output=webp" alt="Trabalho recente" loading="eager" fetchpriority="high" decoding="async"></div>
         </div>
       </div>
     </div>
@@ -852,131 +852,14 @@ h2 { font-size: clamp(24px, 4vw, 34px); margin-bottom: 28px; }
 <script>
 document.getElementById("ano").textContent = new Date().getFullYear();
 
-var saborToastTimer;
-function irMontarPedido(){
-  var toast = document.getElementById("sabor-toast");
-  toast.classList.add("show");
-  clearTimeout(saborToastTimer);
-  saborToastTimer = setTimeout(function(){ toast.classList.remove("show"); }, 2200);
-  var alvo = document.getElementById("pedido");
-  if(alvo){ alvo.scrollIntoView({ behavior: "smooth", block: "start" }); }
-}
-
-var revealObserver = new IntersectionObserver(function(entries){
-  entries.forEach(function(entry){
-    if(entry.isIntersecting){
-      entry.target.classList.add("visible");
-      revealObserver.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.15, rootMargin: "0px 0px -60px 0px" });
-
-document.querySelectorAll(".reveal").forEach(function(el, i){
-  if(!el.style.transitionDelay) el.style.transitionDelay = (i % 6 * 70) + "ms";
-  revealObserver.observe(el);
-});
-
-// Pausa o vídeo do hero quando ele sai da tela e retoma quando volta,
-// evitando decodificação contínua em segundo plano (causa de travamentos).
-(function(){
-  var videoIframe = document.getElementById("hero-video");
-  if(!videoIframe) return;
-  function sendCmd(func){
-    try {
-      videoIframe.contentWindow.postMessage(JSON.stringify({ event: "command", func: func, args: [] }), "*");
-    } catch(e) {}
-  }
-  var videoObserver = new IntersectionObserver(function(entries){
-    entries.forEach(function(entry){
-      sendCmd(entry.isIntersecting ? "playVideo" : "pauseVideo");
-    });
-  }, { threshold: 0.25 });
-  videoObserver.observe(videoIframe);
-})();
-
-
-var TEMAS = [
-  { nome: "15 Anos",  fotos: ["https://i.ibb.co/7NG24jy8/IMG-20260816-WA0062.jpg"] },
-  { nome: "Infantil", fotos: ["https://i.ibb.co/vxR2ht7c/IMG-20260816-WA0061.jpg"] },
-  { nome: "Flores",   fotos: ["https://i.ibb.co/93bkSkWW/IMG-20260816-WA0059.jpg"] },
-  { nome: "Crisma",   fotos: ["https://i.ibb.co/ZzGXP5ZM/IMG-20260816-WA0060.jpg"] }
-];
-
-function pedirOrcamentoTema(nomeTema){
-  var msg = "Olá, Analu! Vi o tema \"" + nomeTema + "\" no site e gostaria de solicitar um orçamento.";
-  window.open("https://api.whatsapp.com/send?phone=558396905025&text=" + encodeURIComponent(msg), "_blank");
-}
-
-(function(){
-  var g = document.getElementById("temas-grid");
-  TEMAS.forEach(function(t, idx){
-    var c = document.createElement("div");
-    c.className = "tema reveal";
-    c.style.transitionDelay = (idx * 80) + "ms";
-    var wrap = document.createElement("div");
-    wrap.className = "tema-img-wrap";
-    var img = document.createElement("img");
-    img.src = t.fotos[0];
-    img.alt = t.nome;
-    img.loading = "lazy";
-    // Caso a foto ainda não tenha sido hospedada (ex.: caminho local "imagens/..."),
-    // mostra um placeholder elegante em vez de um ícone de imagem quebrada.
-    img.addEventListener("error", function(){
-      wrap.classList.add("no-photo");
-      wrap.innerHTML = '<i class="fas fa-image"></i>';
-    });
-    wrap.appendChild(img);
-    var nome = document.createElement("div");
-    nome.className = "tema-nome";
-    nome.textContent = t.nome;
-    c.appendChild(wrap);
-    c.appendChild(nome);
-    c.addEventListener("click", function(){ pedirOrcamentoTema(t.nome); });
-    g.appendChild(c);
-    revealObserver.observe(c);
-  });
-})();
-
-(function(){
-  var slides = document.getElementById("slides");
-  var dotsEl = document.getElementById("galeria-dots");
-  var items = slides.querySelectorAll(".slide");
-  var total = items.length, cur = 0, timer;
-  function ir(n){
-    cur = (n + total) % total;
-    slides.style.transform = "translateX(-" + (cur * 100) + "%)";
-    dotsEl.querySelectorAll(".dot").forEach(function(d, i){ d.className = "dot" + (i === cur ? " on" : ""); });
-  }
-  items.forEach(function(_, i){
-    var d = document.createElement("div");
-    d.className = "dot" + (i === 0 ? " on" : "");
-    d.addEventListener("click", function(){ ir(i); reset(); });
-    dotsEl.appendChild(d);
-  });
-  function reset(){ clearInterval(timer); timer = setInterval(function(){ ir(cur + 1); }, 5000); }
-  document.querySelector(".arr-prev").addEventListener("click", function(){ ir(cur - 1); reset(); });
-  document.querySelector(".arr-next").addEventListener("click", function(){ ir(cur + 1); reset(); });
-  var tx = 0;
-  slides.addEventListener("touchstart", function(e){ tx = e.touches[0].clientX; }, { passive: true });
-  slides.addEventListener("touchend", function(e){
-    var d = tx - e.changedTouches[0].clientX;
-    if(Math.abs(d) > 40){ ir(cur + (d > 0 ? 1 : -1)); reset(); }
-  }, { passive: true });
-  reset();
-})();
-
+/* ======================================================
+   PEDIDO — lógica crítica roda primeiro e isolada,
+   para nunca ser bloqueada por erros em outras partes.
+====================================================== */
 var currentStep = 1;
 var selectedCombo = null;
 var selectedMax = 0;
 var flavorCbs = document.querySelectorAll("#flavor-list input");
-
-var COMBO_MSGS = {
-  "Caixinha (4 brigadeiros)":             { emoji: "🎁", msg: "Caixinha selecionada! Escolha até 4 sabores diferentes." },
-  "25 brigadeiros":                        { emoji: "🎉", msg: "25 brigadeiros para animar qualquer encontro!" },
-  "Meio cento — 50 brigadeiros":           { emoji: "🥳", msg: "Meio cento! Para uma festa animada. Escolha até 2 sabores." },
-  "Cento completo — 100 brigadeiros":      { emoji: "✨", msg: "100 brigadeiros para uma celebração inesquecível!" },
-  "orcamento":                             { emoji: "💬", msg: "Ótimo! Vou te atender no WhatsApp para um orçamento especial." }
-};
 
 document.querySelectorAll(".pd-combo-option").forEach(function(opt){
   opt.addEventListener("click", function(){
@@ -996,6 +879,7 @@ document.querySelectorAll(".pd-combo-option").forEach(function(opt){
 
 flavorCbs.forEach(function(cb){
   cb.addEventListener("change", function(){
+    cb.closest(".pd-flavor").classList.toggle("selected", cb.checked);
     var sel = document.querySelectorAll("#flavor-list input:checked");
     var avisoEl = document.getElementById("aviso-max");
     var avisoText = document.getElementById("aviso-max-text");
@@ -1021,8 +905,8 @@ function goStep(n){
   if(n > currentStep){
     if(currentStep === 1 && !selectedCombo) return;
     if(currentStep === 2){
-      var sel = document.querySelectorAll("#flavor-list input:checked");
-      if(sel.length === 0) return;
+      var selCheck = document.querySelectorAll("#flavor-list input:checked");
+      if(selCheck.length === 0) return;
     }
   }
 
@@ -1035,9 +919,9 @@ function goStep(n){
   if(n === 2 && selectedMax > 0){
     var avisoEl = document.getElementById("aviso-max");
     var avisoText = document.getElementById("aviso-max-text");
-    var sel = document.querySelectorAll("#flavor-list input:checked");
+    var sel2 = document.querySelectorAll("#flavor-list input:checked");
     avisoEl.classList.add("on");
-    avisoText.textContent = "Escolha até " + selectedMax + " sabores" + (sel.length ? " — " + sel.length + " selecionado(s)" : "");
+    avisoText.textContent = "Escolha até " + selectedMax + " sabores" + (sel2.length ? " — " + sel2.length + " selecionado(s)" : "");
     flavorCbs.forEach(function(b){ b.disabled = false; });
   }
 
@@ -1080,10 +964,143 @@ document.getElementById("btn-finalizar").addEventListener("click", function(e){
   }, 600);
 });
 
-document.getElementById("galeria-frame").addEventListener("click", function(){
-  var msg = "Olá, Analu! Vi o trabalho recente de vocês no site e gostaria de solicitar um orçamento.";
-  window.open("https://api.whatsapp.com/send?phone=558396905025&text=" + encodeURIComponent(msg), "_blank");
-});
+var saborToastTimer;
+function irMontarPedido(){
+  var toast = document.getElementById("sabor-toast");
+  toast.classList.add("show");
+  clearTimeout(saborToastTimer);
+  saborToastTimer = setTimeout(function(){ toast.classList.remove("show"); }, 2200);
+  var alvo = document.getElementById("pedido");
+  if(alvo){ alvo.scrollIntoView({ behavior: "smooth", block: "start" }); }
+}
+
+var galeriaFrame = document.getElementById("galeria-frame");
+if(galeriaFrame){
+  galeriaFrame.addEventListener("click", function(){
+    var msg = "Olá, Analu! Vi o trabalho recente de vocês no site e gostaria de solicitar um orçamento.";
+    window.open("https://api.whatsapp.com/send?phone=558396905025&text=" + encodeURIComponent(msg), "_blank");
+  });
+}
+
+/* ======================================================
+   ITENS DECORATIVOS — cada um isolado em try/catch,
+   um erro aqui nunca deve travar o resto do site.
+====================================================== */
+
+var revealObserver = null;
+try {
+  if("IntersectionObserver" in window){
+    revealObserver = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add("visible");
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: "0px 0px -60px 0px" });
+
+    document.querySelectorAll(".reveal").forEach(function(el, i){
+      if(!el.style.transitionDelay) el.style.transitionDelay = (i % 6 * 70) + "ms";
+      revealObserver.observe(el);
+    });
+  } else {
+    document.querySelectorAll(".reveal").forEach(function(el){ el.classList.add("visible"); });
+  }
+} catch(e){
+  document.querySelectorAll(".reveal").forEach(function(el){ el.classList.add("visible"); });
+}
+
+// Pausa o vídeo do hero quando ele sai da tela e retoma quando volta,
+// evitando decodificação contínua em segundo plano (causa de travamentos).
+try {
+  (function(){
+    var videoIframe = document.getElementById("hero-video");
+    if(!videoIframe || !("IntersectionObserver" in window)) return;
+    function sendCmd(func){
+      try {
+        videoIframe.contentWindow.postMessage(JSON.stringify({ event: "command", func: func, args: [] }), "*");
+      } catch(e) {}
+    }
+    var videoObserver = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        sendCmd(entry.isIntersecting ? "playVideo" : "pauseVideo");
+      });
+    }, { threshold: 0.25 });
+    videoObserver.observe(videoIframe);
+  })();
+} catch(e){}
+
+try {
+  var TEMAS = [
+    { nome: "15 Anos",  fotos: ["https://i.ibb.co/7NG24jy8/IMG-20260816-WA0062.jpg"] },
+    { nome: "Infantil", fotos: ["https://i.ibb.co/vxR2ht7c/IMG-20260816-WA0061.jpg"] },
+    { nome: "Flores",   fotos: ["https://i.ibb.co/93bkSkWW/IMG-20260816-WA0059.jpg"] },
+    { nome: "Crisma",   fotos: ["https://i.ibb.co/ZzGXP5ZM/IMG-20260816-WA0060.jpg"] }
+  ];
+
+  window.pedirOrcamentoTema = function(nomeTema){
+    var msg = "Olá, Analu! Vi o tema \"" + nomeTema + "\" no site e gostaria de solicitar um orçamento.";
+    window.open("https://api.whatsapp.com/send?phone=558396905025&text=" + encodeURIComponent(msg), "_blank");
+  };
+
+  (function(){
+    var g = document.getElementById("temas-grid");
+    TEMAS.forEach(function(t, idx){
+      var c = document.createElement("div");
+      c.className = "tema reveal";
+      c.style.transitionDelay = (idx * 80) + "ms";
+      var wrap = document.createElement("div");
+      wrap.className = "tema-img-wrap";
+      var img = document.createElement("img");
+      img.src = t.fotos[0];
+      img.alt = t.nome;
+      img.loading = "lazy";
+      img.addEventListener("error", function(){
+        wrap.classList.add("no-photo");
+        wrap.innerHTML = '<i class="fas fa-image"></i>';
+      });
+      wrap.appendChild(img);
+      var nome = document.createElement("div");
+      nome.className = "tema-nome";
+      nome.textContent = t.nome;
+      c.appendChild(wrap);
+      c.appendChild(nome);
+      c.addEventListener("click", function(){ pedirOrcamentoTema(t.nome); });
+      g.appendChild(c);
+      if(revealObserver){ revealObserver.observe(c); } else { c.classList.add("visible"); }
+    });
+  })();
+} catch(e){}
+
+try {
+  (function(){
+    var slides = document.getElementById("slides");
+    var dotsEl = document.getElementById("galeria-dots");
+    var items = slides.querySelectorAll(".slide");
+    var total = items.length, cur = 0, timer;
+    function ir(n){
+      cur = (n + total) % total;
+      slides.style.transform = "translateX(-" + (cur * 100) + "%)";
+      dotsEl.querySelectorAll(".dot").forEach(function(d, i){ d.className = "dot" + (i === cur ? " on" : ""); });
+    }
+    items.forEach(function(_, i){
+      var d = document.createElement("div");
+      d.className = "dot" + (i === 0 ? " on" : "");
+      d.addEventListener("click", function(){ ir(i); reset(); });
+      dotsEl.appendChild(d);
+    });
+    function reset(){ clearInterval(timer); timer = setInterval(function(){ ir(cur + 1); }, 5000); }
+    document.querySelector(".arr-prev").addEventListener("click", function(){ ir(cur - 1); reset(); });
+    document.querySelector(".arr-next").addEventListener("click", function(){ ir(cur + 1); reset(); });
+    var tx = 0;
+    slides.addEventListener("touchstart", function(e){ tx = e.touches[0].clientX; }, { passive: true });
+    slides.addEventListener("touchend", function(e){
+      var d = tx - e.changedTouches[0].clientX;
+      if(Math.abs(d) > 40){ ir(cur + (d > 0 ? 1 : -1)); reset(); }
+    }, { passive: true });
+    reset();
+  })();
+} catch(e){}
 </script>
 </body>
 </html>
