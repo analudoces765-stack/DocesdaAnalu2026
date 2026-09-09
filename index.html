@@ -447,17 +447,16 @@ h2 { font-size: clamp(24px, 4vw, 34px); margin-bottom: 28px; }
 }
 .tema:hover { transform: translateY(-4px); border-color: var(--pink-mid); box-shadow: 0 10px 28px rgba(216,27,106,.13); }
 
-/* ── TEMAS: imagens maiores ── */
 .tema-img-wrap {
   width: 100%;
-  aspect-ratio: 3/4;   /* retrato, bem mais alto */
+  aspect-ratio: 3/4;
   overflow: hidden;
   background: var(--pink-pale);
 }
 .tema-img-wrap img {
   width: 100%;
   height: 100%;
-  object-fit: cover;   /* preenche sem barras brancas */
+  object-fit: cover;
   object-position: center top;
   transition: transform .35s ease;
 }
@@ -488,7 +487,7 @@ h2 { font-size: clamp(24px, 4vw, 34px); margin-bottom: 28px; }
   display: inline-flex; align-items: center; gap: 8px;
   background: var(--white); border: 1px solid var(--line); border-radius: 8px; padding: 7px 12px;
 }
-.pix-tag img { width: 18px; height: 18px; }
+.pix-tag img { width: 22px; height: 22px; object-fit: cover; border-radius: 4px; }
 .pix-tag span { font-size: 13px; font-weight: 700; }
 
 .rodape { background: var(--ink); color: #fff; padding: 40px 0 28px; }
@@ -557,9 +556,9 @@ h2 { font-size: clamp(24px, 4vw, 34px); margin-bottom: 28px; }
 <section class="hero" id="topo">
   <div class="wrap hero-grid">
     <div>
-      <p class="eyebrow">Confeitaria artesanal</p>
+      <p class="eyebrow">Doces da Analu</p>
       <h1>Brigadeiros gourmet para tornar sua festa inesquecível</h1>
-      <p class="hero-sub">Doces artesanais feitos com ingredientes selecionados e receitas exclusivas, para festas, eventos e momentos especiais. Monte seu pedido em minutos e finalize direto pelo WhatsApp.</p>
+      <p class="hero-sub"></p>
       <div class="ctas">
         <a class="btn btn-pink" href="#pedido">Fazer pedido</a>
         <a class="btn btn-outline" href="#cardapio">Ver cardápio</a>
@@ -567,7 +566,7 @@ h2 { font-size: clamp(24px, 4vw, 34px); margin-bottom: 28px; }
       <ul class="numeros">
         <li><strong>11</strong><span>sabores</span></li>
         <li><strong>30+</strong><span>temas</span></li>
-        <li><strong>JP · Cabedelo</strong><span>entrega local</span></li>
+        <li><strong>João Pessoa · Cabedelo</strong><span>entrega local</span></li>
       </ul>
     </div>
     <div class="video-wrap">
@@ -577,23 +576,6 @@ h2 { font-size: clamp(24px, 4vw, 34px); margin-bottom: 28px; }
     </div>
   </div>
 </section>
-
-<div style="background:var(--white); border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:16px 24px;">
-  <div style="max-width:1100px; margin:0 auto; display:flex; flex-wrap:wrap; gap:24px; justify-content:center; align-items:center;">
-    <span style="font-size:12.5px; font-weight:600; color:var(--ink-soft); display:flex; align-items:center; gap:7px;">
-      <i class="fas fa-leaf" style="color:var(--pink); font-size:11px;"></i> Ingredientes selecionados
-    </span>
-    <span style="font-size:12.5px; font-weight:600; color:var(--ink-soft); display:flex; align-items:center; gap:7px;">
-      <i class="fas fa-hand-sparkles" style="color:var(--pink); font-size:11px;"></i> 100% artesanal
-    </span>
-    <span style="font-size:12.5px; font-weight:600; color:var(--ink-soft); display:flex; align-items:center; gap:7px;">
-      <i class="fas fa-location-dot" style="color:var(--pink); font-size:11px;"></i> Entrega em JP e Cabedelo
-    </span>
-    <span style="font-size:12.5px; font-weight:600; color:var(--ink-soft); display:flex; align-items:center; gap:7px;">
-      <i class="fas fa-comment" style="color:var(--pink); font-size:11px;"></i> Atendimento pelo WhatsApp
-    </span>
-  </div>
-</div>
 
 <section class="section s-alt" id="cardapio">
   <div class="wrap reveal">
@@ -763,7 +745,7 @@ h2 { font-size: clamp(24px, 4vw, 34px); margin-bottom: 28px; }
     <div class="galeria-frame" id="galeria-frame" style="cursor:pointer;">
       <div class="slider">
         <div class="slides" id="slides">
-          <div class="slide"><img src="https://images.weserv.nl/?url=i.ibb.co/1J8fywYc/file-000000007d1c820eb32ce25274652c0c.png&w=700&q=78&output=webp" alt="Trabalho recente" loading="eager" fetchpriority="high" decoding="async"></div>
+          <div class="slide"><img src="https://images.weserv.nl/?url=i.ibb.co/chFYwQVd/6d860a18-fe0d-4366-b76c-fa14bd20f548.jpg&w=700&q=78&output=webp" alt="Trabalho recente" loading="eager" fetchpriority="high" decoding="async"></div>
         </div>
       </div>
     </div>
@@ -822,10 +804,7 @@ h2 { font-size: clamp(24px, 4vw, 34px); margin-bottom: 28px; }
         <div class="pagtos">
           <img src="https://cdn-icons-png.flaticon.com/512/196/196578.png" alt="Visa">
           <img src="https://cdn-icons-png.flaticon.com/512/196/196561.png" alt="Mastercard">
-          <span class="pix-tag">
-            <img src="https://dl.svgcdn.com/svg/simple-icons/pix.svg" alt="Pix" style="filter: invert(46%) sepia(59%) saturate(468%) hue-rotate(115deg) brightness(92%) contrast(92%);">
-            <span>Pix</span>
-          </span>
+          <img src="https://images.weserv.nl/?url=i.ibb.co/ynHypzSG/images.jpg&w=120&h=120&fit=contain&bg=white&output=webp" alt="Pix" style="object-fit:contain;">
         </div>
       </div>
     </div>
@@ -852,10 +831,7 @@ h2 { font-size: clamp(24px, 4vw, 34px); margin-bottom: 28px; }
 <script>
 document.getElementById("ano").textContent = new Date().getFullYear();
 
-/* ======================================================
-   PEDIDO — lógica crítica roda primeiro e isolada,
-   para nunca ser bloqueada por erros em outras partes.
-====================================================== */
+
 var currentStep = 1;
 var selectedCombo = null;
 var selectedMax = 0;
@@ -982,11 +958,6 @@ if(galeriaFrame){
   });
 }
 
-/* ======================================================
-   ITENS DECORATIVOS — cada um isolado em try/catch,
-   um erro aqui nunca deve travar o resto do site.
-====================================================== */
-
 var revealObserver = null;
 try {
   if("IntersectionObserver" in window){
@@ -1010,8 +981,7 @@ try {
   document.querySelectorAll(".reveal").forEach(function(el){ el.classList.add("visible"); });
 }
 
-// Pausa o vídeo do hero quando ele sai da tela e retoma quando volta,
-// evitando decodificação contínua em segundo plano (causa de travamentos).
+
 try {
   (function(){
     var videoIframe = document.getElementById("hero-video");
@@ -1078,6 +1048,7 @@ try {
     var dotsEl = document.getElementById("galeria-dots");
     var items = slides.querySelectorAll(".slide");
     var total = items.length, cur = 0, timer;
+    if(total <= 1){ return; }
     function ir(n){
       cur = (n + total) % total;
       slides.style.transform = "translateX(-" + (cur * 100) + "%)";
@@ -1090,8 +1061,10 @@ try {
       dotsEl.appendChild(d);
     });
     function reset(){ clearInterval(timer); timer = setInterval(function(){ ir(cur + 1); }, 5000); }
-    document.querySelector(".arr-prev").addEventListener("click", function(){ ir(cur - 1); reset(); });
-    document.querySelector(".arr-next").addEventListener("click", function(){ ir(cur + 1); reset(); });
+    var arrPrev = document.querySelector(".arr-prev");
+    var arrNext = document.querySelector(".arr-next");
+    if(arrPrev) arrPrev.addEventListener("click", function(){ ir(cur - 1); reset(); });
+    if(arrNext) arrNext.addEventListener("click", function(){ ir(cur + 1); reset(); });
     var tx = 0;
     slides.addEventListener("touchstart", function(e){ tx = e.touches[0].clientX; }, { passive: true });
     slides.addEventListener("touchend", function(e){
